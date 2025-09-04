@@ -3,6 +3,18 @@ import { vocabulary } from './vocabulary';
 import type { VocabularyWord } from './vocabulary';
 import { phrases } from './phrases';
 import type { Phrase } from './phrases';
+import { 
+  Button, 
+  Card, 
+  WordDisplay,
+  Select, 
+  SegmentedControl, 
+  ControlGroup, 
+  ToggleButton,
+  Input,
+  Feedback,
+  ChoiceButton
+} from './components';
 
 type LanguagePair = 'english-italian' | 'english-japanese';
 type Direction = 'forward' | 'reverse';
@@ -11,11 +23,11 @@ type WordOrPhrase = VocabularyWord | Phrase;
 
 export function LangApp() {
   const [currentWord, setCurrentWord] = useState<WordOrPhrase | null>(null);
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [, setShowAnswer] = useState(false);
   const [languagePair, setLanguagePair] = useState<LanguagePair>('english-italian');
   const [direction, setDirection] = useState<Direction>('forward');
   const [contentType, setContentType] = useState<ContentType>('vocabulary');
-  const [score, setScore] = useState({ correct: 0, total: 0 });
+  const [, setScore] = useState({ correct: 0, total: 0 });
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
   const [practiceMode, setPracticeMode] = useState<'flashcard' | 'typing' | 'multiple-choice'>('multiple-choice');
@@ -147,22 +159,6 @@ export function LangApp() {
     }
   };
 
-  const handleKnow = () => {
-    setScore(prev => ({
-      correct: prev.correct + 1,
-      total: prev.total + 1
-    }));
-    nextWord();
-  };
-
-  const handleDontKnow = () => {
-    setScore(prev => ({
-      correct: prev.correct,
-      total: prev.total + 1
-    }));
-    setShowAnswer(true);
-  };
-
   const handleSkip = () => {
     nextWord();
   };
@@ -190,17 +186,14 @@ export function LangApp() {
     }
   };
 
-  const resetScore = () => {
-    setScore({ correct: 0, total: 0 });
-    setUsedWords(new Set());
-    nextWord();
-  };
 
   useEffect(() => {
     nextWord();
   }, [selectedCategory, languagePair, direction, practiceMode, contentType]);
 
   if (!currentWord) return null;
+
+  const langs = getLanguages();
 
   return (
     <div className="bg-white max-md:h-full md:rounded-2xl p-4 shadow-2xl max-w-4xl mx-auto">
@@ -209,231 +202,156 @@ export function LangApp() {
       </header>
 
       <div className="flex flex-col gap-1">
-        <div className="segmented-control mb-2">
-          <button 
-            className={`segment ${practiceMode === 'flashcard' ? 'active' : ''}`}
-            onClick={() => setPracticeMode('flashcard')}
-          >
-            Flashcard
-          </button>
-          <button 
-            className={`segment ${practiceMode === 'multiple-choice' ? 'active' : ''}`}
-            onClick={() => setPracticeMode('multiple-choice')}
-          >
-            Choice
-          </button>
-          <button 
-            className={`segment ${practiceMode === 'typing' ? 'active' : ''}`}
-            onClick={() => setPracticeMode('typing')}
-          >
-            Typing
-          </button>
-        </div>
+        <SegmentedControl
+          value={practiceMode}
+          onChange={(value) => setPracticeMode(value as any)}
+          options={[
+            { value: 'flashcard', label: 'Flashcard' },
+            { value: 'multiple-choice', label: 'Choice' },
+            { value: 'typing', label: 'Typing' }
+          ]}
+        />
 
-        <div className="control-group">
-          <label>Content:</label>
-          <select
-            value={contentType}
-            onChange={(e) => {
-              setContentType((e.target as HTMLSelectElement).value as ContentType);
-              setSelectedCategory('all'); // Reset category when switching content type
-            }}
-          >
-            <option value="vocabulary">📝 Vocabulary</option>
-            <option value="phrases">💬 Phrases</option>
-          </select>
-        </div>
+        <Select
+          label="Content"
+          value={contentType}
+          onChange={(value) => {
+            setContentType(value as ContentType);
+            setSelectedCategory('all');
+          }}
+          options={[
+            { value: 'vocabulary', label: '📝 Vocabulary' },
+            { value: 'phrases', label: '💬 Phrases' }
+          ]}
+        />
 
-        <div className="control-group">
-          <label>Category:</label>
-          <select 
-            value={selectedCategory} 
-            onChange={(e) => setSelectedCategory((e.target as HTMLSelectElement).value)}
-          >
-            {categories.map(cat => (
-              <option key={cat} value={cat}>
-                {cat.charAt(0).toUpperCase() + cat.slice(1)}
-              </option>
-            ))}
-          </select>
-        </div>
+        <Select
+          label="Category"
+          value={selectedCategory}
+          onChange={setSelectedCategory}
+          options={categories.map(cat => ({
+            value: cat,
+            label: cat.charAt(0).toUpperCase() + cat.slice(1)
+          }))}
+        />
 
-        <div className="control-group">
-          <label>Language:</label>
-          <select
-            value={languagePair}
-            onChange={(e) => setLanguagePair((e.target as HTMLSelectElement).value as LanguagePair)}
-          >
-            <option value="english-italian">🇬🇧 English - Italian 🇮🇹</option>
-            <option value="english-japanese">🇬🇧 English - Japanese 🇯🇵</option>
-          </select>
-        </div>
+        <Select
+          label="Language"
+          value={languagePair}
+          onChange={(value) => setLanguagePair(value as LanguagePair)}
+          options={[
+            { value: 'english-italian', label: '🇬🇧 English - Italian 🇮🇹' },
+            { value: 'english-japanese', label: '🇬🇧 English - Japanese 🇯🇵' }
+          ]}
+        />
 
-        <div className="control-group">
-          <label>Direction:</label>
-          <button 
-            className="toggle-btn"
-            onClick={() => setDirection(direction === 'forward' ? 'reverse' : 'forward')}
-          >
-            {(() => {
-              const langs = getLanguages();
-              return `${langs.fromFlag} → ${langs.toFlag}`;
-            })()}
-          </button>
-        </div>
+        <ControlGroup label="Direction">
+          <ToggleButton onClick={() => setDirection(direction === 'forward' ? 'reverse' : 'forward')}>
+            {`${langs.fromFlag} → ${langs.toFlag}`}
+          </ToggleButton>
+        </ControlGroup>
       </div>
 
-      <div className="mt-2 card">
-        <div className="card-content">
-          <div className="question">
-            <span className="label">
-              {getLanguages().fromLabel}:
-            </span>
-            <div className="word-with-speak">
-              <h2 className="word">
-                {getWordText(currentWord, getLanguages().from)}
-              </h2>
-              <button 
-                className="btn-speak"
-                onClick={() => speakText(getWordText(currentWord, getLanguages().from), getLanguages().from)}
-                title="Speak"
-              >
-                🔊
-              </button>
+      <Card className="mt-2">
+        <WordDisplay
+          label={langs.fromLabel}
+          word={getWordText(currentWord, langs.from)}
+          onSpeak={() => speakText(getWordText(currentWord, langs.from), langs.from)}
+        />
+
+        {practiceMode === 'flashcard' ? (
+          <>
+            <WordDisplay
+              label={langs.toLabel}
+              word={getWordText(currentWord, langs.to)}
+              onSpeak={() => speakText(getWordText(currentWord, langs.to), langs.to)}
+              color="primary"
+            />
+
+            <div className="flex justify-center">
+              <Button onClick={handleSkip}>
+                Next →
+              </Button>
             </div>
-          </div>
+          </>
+        ) : practiceMode === 'typing' ? (
+          <>
+            <div className="mb-6">
+              <Input
+                value={userInput}
+                onChange={setUserInput}
+                onKeyDown={(e) => e.key === 'Enter' && (feedback ? nextWord() : checkAnswer())}
+                placeholder={`Type the ${langs.toLabel} translation`}
+                disabled={feedback !== null}
+              />
+            </div>
 
-          {practiceMode === 'flashcard' ? (
-            <>
-              <div className="answer">
-                <span className="label">
-                  {getLanguages().toLabel}:
-                </span>
-                <div className="word-with-speak">
-                  <h2 className="word">
-                    {getWordText(currentWord, getLanguages().to)}
-                  </h2>
-                  <button 
-                    className="btn-speak"
-                    onClick={() => speakText(getWordText(currentWord, getLanguages().to), getLanguages().to)}
-                    title="Speak"
-                  >
-                    🔊
-                  </button>
-                </div>
-              </div>
+            {feedback && (
+              <Feedback
+                type={feedback}
+                correctAnswer={feedback === 'incorrect' ? getWordText(currentWord, langs.to) : undefined}
+                onSpeak={feedback === 'incorrect' ? () => speakText(getWordText(currentWord, langs.to), langs.to) : undefined}
+              />
+            )}
 
-              <div className="flex justify-center">
-                <button className="btn btn-primary" onClick={handleSkip}>
-                  Next →
-                </button>
-              </div>
-            </>
-          ) : practiceMode === 'typing' ? (
-            <>
-              <div className="mb-6">
-                <input
-                  type="text"
-                  value={userInput}
-                  onChange={(e) => setUserInput((e.target as HTMLInputElement).value)}
-                  onKeyDown={(e) => e.key === 'Enter' && (feedback ? nextWord() : checkAnswer())}
-                  placeholder={`Type the ${getLanguages().toLabel} translation`}
-                  disabled={feedback !== null}
-                />
-              </div>
-
-              {feedback && (
-                <div className={`feedback feedback-${feedback}`}>
-                  {feedback === 'correct' ? '✓ Correct!' : '✗ Incorrect'}
-                  {feedback === 'incorrect' && (
-                    <div className="correct-answer">
-                      <span>The answer is: {getWordText(currentWord, getLanguages().to)}</span>
-                      <button 
-                        className="btn-speak btn-speak-inline"
-                        onClick={() => speakText(getWordText(currentWord, getLanguages().to), getLanguages().to)}
-                        title="Speak"
-                      >
-                        🔊
-                      </button>
-                    </div>
-                  )}
-                </div>
-              )}
-
-              <div className="flex flex-wrap justify-center gap-4">
-                {!feedback ? (
-                  <>
-                    <button className="btn btn-primary" onClick={checkAnswer}>
-                      Check Answer
-                    </button>
-                    <button className="btn btn-skip" onClick={handleSkip}>
-                      Next →
-                    </button>
-                  </>
-                ) : (
-                  <button className="btn btn-primary" onClick={nextWord}>
-                    Next word →
-                  </button>
-                )}
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                {multipleChoiceOptions.map((option, index) => {
-                  const correctAnswer = getWordText(currentWord, getLanguages().to);
-                  const isCorrectOption = option === correctAnswer;
-                  const isSelected = option === selectedOption;
-                  
-                  let buttonClass = 'btn-choice';
-                  if (feedback) {
-                    if (isCorrectOption) {
-                      buttonClass += ' correct';
-                    } else if (isSelected && !isCorrectOption) {
-                      buttonClass += ' incorrect';
-                    }
-                  }
-                  
-                  return (
-                    <div key={index} className="relative">
-                      <button
-                        className={buttonClass}
-                        onClick={() => handleMultipleChoiceSelection(option)}
-                        disabled={feedback !== null}
-                      >
-                        {option}
-                      </button>
-                      <button 
-                        className="btn-speak btn-speak-choice"
-                        onClick={() => speakText(option, getLanguages().to)}
-                        title="Speak"
-                      >
-                        🔊
-                      </button>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {!feedback && (
-                <div className="flex justify-center">
-                  <button className="btn btn-skip" onClick={handleSkip}>
+            <div className="flex flex-wrap justify-center gap-4">
+              {!feedback ? (
+                <>
+                  <Button onClick={checkAnswer}>
+                    Check Answer
+                  </Button>
+                  <Button variant="skip" onClick={handleSkip}>
                     Next →
-                  </button>
-                </div>
+                  </Button>
+                </>
+              ) : (
+                <Button onClick={nextWord}>
+                  Next word →
+                </Button>
               )}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              {multipleChoiceOptions.map((option, index) => {
+                const correctAnswer = getWordText(currentWord, langs.to);
+                const isCorrectOption = option === correctAnswer;
+                const isSelected = option === selectedOption;
+                
+                return (
+                  <ChoiceButton
+                    key={index}
+                    option={option}
+                    isCorrect={isCorrectOption}
+                    isSelected={isSelected}
+                    showFeedback={feedback !== null}
+                    onClick={() => handleMultipleChoiceSelection(option)}
+                    onSpeak={() => speakText(option, langs.to)}
+                    disabled={feedback !== null}
+                  />
+                );
+              })}
+            </div>
 
-              {feedback && (
-                <div className="flex justify-center">
-                  <button className="btn btn-primary" onClick={nextWord}>
-                    Next word →
-                  </button>
-                </div>
-              )}
-            </>
-          )}
-        </div>
-      </div>
+            {!feedback && (
+              <div className="flex justify-center">
+                <Button variant="skip" onClick={handleSkip}>
+                  Next →
+                </Button>
+              </div>
+            )}
+
+            {feedback && (
+              <div className="flex justify-center">
+                <Button onClick={nextWord}>
+                  Next word →
+                </Button>
+              </div>
+            )}
+          </>
+        )}
+      </Card>
     </div>
   );
 }
