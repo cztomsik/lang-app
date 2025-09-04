@@ -167,6 +167,29 @@ export function VocabularyPractice() {
     nextWord();
   };
 
+  const speakText = (text: string, language: string) => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      
+      // Set language codes
+      switch (language) {
+        case 'english':
+          utterance.lang = 'en-US';
+          break;
+        case 'italian':
+          utterance.lang = 'it-IT';
+          break;
+        case 'japanese':
+          utterance.lang = 'ja-JP';
+          break;
+        default:
+          utterance.lang = 'en-US';
+      }
+      
+      speechSynthesis.speak(utterance);
+    }
+  };
+
   const resetScore = () => {
     setScore({ correct: 0, total: 0 });
     setUsedWords(new Set());
@@ -265,9 +288,18 @@ export function VocabularyPractice() {
             <span className="label">
               {getLanguages().fromLabel}:
             </span>
-            <h2 className="word">
-              {getWordText(currentWord, getLanguages().from)}
-            </h2>
+            <div className="word-with-speak">
+              <h2 className="word">
+                {getWordText(currentWord, getLanguages().from)}
+              </h2>
+              <button 
+                className="btn-speak"
+                onClick={() => speakText(getWordText(currentWord, getLanguages().from), getLanguages().from)}
+                title="Speak"
+              >
+                🔊
+              </button>
+            </div>
           </div>
 
           {practiceMode === 'flashcard' ? (
@@ -277,9 +309,18 @@ export function VocabularyPractice() {
                   <span className="label">
                     {getLanguages().toLabel}:
                   </span>
-                  <h2 className="word">
-                    {getWordText(currentWord, getLanguages().to)}
-                  </h2>
+                  <div className="word-with-speak">
+                    <h2 className="word">
+                      {getWordText(currentWord, getLanguages().to)}
+                    </h2>
+                    <button 
+                      className="btn-speak"
+                      onClick={() => speakText(getWordText(currentWord, getLanguages().to), getLanguages().to)}
+                      title="Speak"
+                    >
+                      🔊
+                    </button>
+                  </div>
                 </div>
               )}
 
@@ -321,7 +362,14 @@ export function VocabularyPractice() {
                   {feedback === 'correct' ? '✓ Correct!' : '✗ Incorrect'}
                   {feedback === 'incorrect' && (
                     <div className="correct-answer">
-                      The answer is: {getWordText(currentWord, getLanguages().to)}
+                      <span>The answer is: {getWordText(currentWord, getLanguages().to)}</span>
+                      <button 
+                        className="btn-speak btn-speak-inline"
+                        onClick={() => speakText(getWordText(currentWord, getLanguages().to), getLanguages().to)}
+                        title="Speak"
+                      >
+                        🔊
+                      </button>
                     </div>
                   )}
                 </div>
@@ -362,14 +410,22 @@ export function VocabularyPractice() {
                   }
                   
                   return (
-                    <button
-                      key={index}
-                      className={buttonClass}
-                      onClick={() => handleMultipleChoiceSelection(option)}
-                      disabled={feedback !== null}
-                    >
-                      {option}
-                    </button>
+                    <div key={index} className="choice-with-speak">
+                      <button
+                        className={buttonClass}
+                        onClick={() => handleMultipleChoiceSelection(option)}
+                        disabled={feedback !== null}
+                      >
+                        {option}
+                      </button>
+                      <button 
+                        className="btn-speak btn-speak-choice"
+                        onClick={() => speakText(option, getLanguages().to)}
+                        title="Speak"
+                      >
+                        🔊
+                      </button>
+                    </div>
                   );
                 })}
               </div>
