@@ -205,18 +205,33 @@ export function LangApp() {
   return (
     <div className="vocab-container">
       <header className="vocab-header">
-        <h1>Language Vocabulary Practice</h1>
-        <div className="score">
-          Score: {score.correct} / {score.total}
-          {score.total > 0 && (
-            <span className="percentage">
-              ({Math.round((score.correct / score.total) * 100)}%)
-            </span>
-          )}
-        </div>
+        <h1>Lingoo</h1>
       </header>
 
       <div className="controls">
+        <div className="control-group mode-selector">
+          <div className="segmented-control">
+            <button 
+              className={`segment ${practiceMode === 'flashcard' ? 'active' : ''}`}
+              onClick={() => setPracticeMode('flashcard')}
+            >
+              Flashcard
+            </button>
+            <button 
+              className={`segment ${practiceMode === 'multiple-choice' ? 'active' : ''}`}
+              onClick={() => setPracticeMode('multiple-choice')}
+            >
+              Multiple Choice
+            </button>
+            <button 
+              className={`segment ${practiceMode === 'typing' ? 'active' : ''}`}
+              onClick={() => setPracticeMode('typing')}
+            >
+              Typing
+            </button>
+          </div>
+        </div>
+
         <div className="control-group">
           <label>Content:</label>
           <select
@@ -268,18 +283,6 @@ export function LangApp() {
             })()}
           </button>
         </div>
-
-        <div className="control-group">
-          <label>Mode:</label>
-          <select 
-            value={practiceMode} 
-            onChange={(e) => setPracticeMode((e.target as HTMLSelectElement).value as 'flashcard' | 'typing' | 'multiple-choice')}
-          >
-            <option value="multiple-choice">Multiple Choice</option>
-            <option value="flashcard">Flashcard</option>
-            <option value="typing">Typing</option>
-          </select>
-        </div>
       </div>
 
       <div className="card">
@@ -304,44 +307,28 @@ export function LangApp() {
 
           {practiceMode === 'flashcard' ? (
             <>
-              {showAnswer && (
-                <div className="answer">
-                  <span className="label">
-                    {getLanguages().toLabel}:
-                  </span>
-                  <div className="word-with-speak">
-                    <h2 className="word">
-                      {getWordText(currentWord, getLanguages().to)}
-                    </h2>
-                    <button 
-                      className="btn-speak"
-                      onClick={() => speakText(getWordText(currentWord, getLanguages().to), getLanguages().to)}
-                      title="Speak"
-                    >
-                      🔊
-                    </button>
-                  </div>
+              <div className="answer">
+                <span className="label">
+                  {getLanguages().toLabel}:
+                </span>
+                <div className="word-with-speak">
+                  <h2 className="word">
+                    {getWordText(currentWord, getLanguages().to)}
+                  </h2>
+                  <button 
+                    className="btn-speak"
+                    onClick={() => speakText(getWordText(currentWord, getLanguages().to), getLanguages().to)}
+                    title="Speak"
+                  >
+                    🔊
+                  </button>
                 </div>
-              )}
+              </div>
 
               <div className="buttons">
-                {!showAnswer ? (
-                  <>
-                    <button className="btn btn-success" onClick={handleKnow}>
-                      I know it ✓
-                    </button>
-                    <button className="btn btn-danger" onClick={handleDontKnow}>
-                      Show answer
-                    </button>
-                    <button className="btn btn-skip" onClick={handleSkip}>
-                      Skip →
-                    </button>
-                  </>
-                ) : (
-                  <button className="btn btn-primary" onClick={nextWord}>
-                    Next word →
-                  </button>
-                )}
+                <button className="btn btn-primary" onClick={handleSkip}>
+                  Next →
+                </button>
               </div>
             </>
           ) : practiceMode === 'typing' ? (
@@ -382,7 +369,7 @@ export function LangApp() {
                       Check Answer
                     </button>
                     <button className="btn btn-skip" onClick={handleSkip}>
-                      Skip →
+                      Next →
                     </button>
                   </>
                 ) : (
@@ -433,7 +420,7 @@ export function LangApp() {
               {!feedback && (
                 <div className="buttons">
                   <button className="btn btn-skip" onClick={handleSkip}>
-                    Skip →
+                    Next →
                   </button>
                 </div>
               )}
@@ -450,9 +437,6 @@ export function LangApp() {
         </div>
       </div>
 
-      <button className="btn btn-reset" onClick={resetScore}>
-        Reset Score
-      </button>
     </div>
   );
 }

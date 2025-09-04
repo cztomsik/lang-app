@@ -67,6 +67,41 @@ body {
   gap: 10px;
 }
 
+.control-group.mode-selector {
+  width: 100%;
+}
+
+.segmented-control {
+  display: flex;
+  background: #e0e0e0;
+  border-radius: 8px;
+  padding: 2px;
+  flex: 1;
+}
+
+.segment {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 6px;
+}
+
+.segment:hover:not(.active) {
+  color: #333;
+}
+
+.segment.active {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
 .control-group label {
   font-size: 14px;
   color: #666;
@@ -436,8 +471,21 @@ input[type="text"]:disabled {
     padding: 4px 0;
   }
   
+  .control-group.mode-selector {
+    padding: 0;
+  }
+  
   .control-group label {
     flex-shrink: 0;
+  }
+  
+  .segmented-control {
+    width: 100%;
+  }
+  
+  .segment {
+    font-size: 13px;
+    padding: 10px 8px;
   }
   
   select, .toggle-btn {
