@@ -245,6 +245,19 @@ input[type="text"]:disabled {
   color: #667eea;
 }
 
+.btn-skip {
+  background: transparent;
+  color: #999;
+  border: 2px solid #ddd;
+  font-size: 14px;
+}
+
+.btn-skip:hover {
+  border-color: #999;
+  color: #666;
+  background: #f8f8f8;
+}
+
 .multiple-choice-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

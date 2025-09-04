@@ -153,6 +153,10 @@ export function VocabularyPractice() {
     setShowAnswer(true);
   };
 
+  const handleSkip = () => {
+    nextWord();
+  };
+
   const resetScore = () => {
     setScore({ correct: 0, total: 0 });
     setUsedWords(new Set());
@@ -264,6 +268,9 @@ export function VocabularyPractice() {
                     <button className="btn btn-danger" onClick={handleDontKnow}>
                       Show answer
                     </button>
+                    <button className="btn btn-skip" onClick={handleSkip}>
+                      Skip →
+                    </button>
                   </>
                 ) : (
                   <button className="btn btn-primary" onClick={nextWord}>
@@ -298,9 +305,14 @@ export function VocabularyPractice() {
 
               <div className="buttons">
                 {!feedback ? (
-                  <button className="btn btn-primary" onClick={checkAnswer}>
-                    Check Answer
-                  </button>
+                  <>
+                    <button className="btn btn-primary" onClick={checkAnswer}>
+                      Check Answer
+                    </button>
+                    <button className="btn btn-skip" onClick={handleSkip}>
+                      Skip →
+                    </button>
+                  </>
                 ) : (
                   <button className="btn btn-primary" onClick={nextWord}>
                     Next word →
@@ -337,6 +349,14 @@ export function VocabularyPractice() {
                   );
                 })}
               </div>
+
+              {!feedback && (
+                <div className="buttons">
+                  <button className="btn btn-skip" onClick={handleSkip}>
+                    Skip →
+                  </button>
+                </div>
+              )}
 
               {feedback && (
                 <div className="buttons">
