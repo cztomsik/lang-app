@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'preact/hooks';
-import { vocabulary } from '../data/vocabulary';
-import type { VocabularyWord } from '../data/vocabulary';
-import { phrases } from '../data/phrases';
-import type { Phrase } from '../data/phrases';
+import { vocabulary } from './vocabulary';
+import type { VocabularyWord } from './vocabulary';
+import { phrases } from './phrases';
+import type { Phrase } from './phrases';
 
 type LanguagePair = 'english-italian' | 'english-japanese';
 type Direction = 'forward' | 'reverse';
 type ContentType = 'vocabulary' | 'phrases';
 type WordOrPhrase = VocabularyWord | Phrase;
 
-export function VocabularyPractice() {
+export function LangApp() {
   const [currentWord, setCurrentWord] = useState<WordOrPhrase | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [languagePair, setLanguagePair] = useState<LanguagePair>('english-italian');
