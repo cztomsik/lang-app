@@ -139,90 +139,7 @@ export const vocabulary: VocabularyWord[] = [
   { english: "Brown", italian: "Marrone", japanese: "茶色 [chairo]", category: "Colors" },
   { english: "Gray", italian: "Grigio", japanese: "灰色 [haiiro]", category: "Colors" },
   
-  // Common Phrases
-  { english: "Excuse me", italian: "Scusi", japanese: "すみません [sumimasen]", category: "Phrases" },
-  { english: "I'm sorry", italian: "Mi dispiace", japanese: "ごめんなさい [gomen nasai]", category: "Phrases" },
-  { english: "Help", italian: "Aiuto", japanese: "助けて [tasukete]", category: "Phrases" },
-  { english: "I don't understand", italian: "Non capisco", japanese: "わかりません [wakarimasen]", category: "Phrases" },
-  { english: "Do you speak English?", italian: "Parla inglese?", japanese: "英語を話せますか [eigo wo hanasemasu ka]", category: "Phrases" },
-  { english: "How much?", italian: "Quanto costa?", japanese: "いくらですか [ikura desu ka]", category: "Phrases" },
-  { english: "Where is...?", italian: "Dov'è...?", japanese: "...はどこですか [...wa doko desu ka]", category: "Phrases" },
-  { english: "I would like...", italian: "Vorrei...", japanese: "...をください [...wo kudasai]", category: "Phrases" },
-  { english: "Can you help me?", italian: "Può aiutarmi?", japanese: "手伝ってくれますか [tetsudatte kuremasu ka]", category: "Phrases" },
-  { english: "Nice to meet you", italian: "Piacere", japanese: "はじめまして [hajimemashite]", category: "Phrases" },
-  
-  // Restaurant Phrases
-  { english: "Table for two, please", italian: "Un tavolo per due, per favore", japanese: "二人用のテーブルをお願いします [futari you no teeburu wo onegaishimasu]", category: "Restaurant" },
-  { english: "The bill, please", italian: "Il conto, per favore", japanese: "お会計をお願いします [okaikei wo onegaishimasu]", category: "Restaurant" },
-  { english: "The menu, please", italian: "Il menù, per favore", japanese: "メニューをお願いします [menyuu wo onegaishimasu]", category: "Restaurant" },
-  { english: "I'll have this", italian: "Prendo questo", japanese: "これにします [kore ni shimasu]", category: "Restaurant" },
-  { english: "Is this spicy?", italian: "È piccante?", japanese: "辛いですか [karai desu ka]", category: "Restaurant" },
-  { english: "No meat, please", italian: "Senza carne, per favore", japanese: "お肉なしでお願いします [oniku nashi de onegaishimasu]", category: "Restaurant" },
-  { english: "More water, please", italian: "Ancora acqua, per favore", japanese: "お水をもう一杯お願いします [omizu wo mou ippai onegaishimasu]", category: "Restaurant" },
-  { english: "This is delicious", italian: "È delizioso", japanese: "美味しいです [oishii desu]", category: "Restaurant" },
-  { english: "Do you have WiFi?", italian: "Avete WiFi?", japanese: "WiFiはありますか [WiFi wa arimasu ka]", category: "Restaurant" },
-  { english: "Can I pay by card?", italian: "Posso pagare con carta?", japanese: "カードで払えますか [kaado de haraemasu ka]", category: "Restaurant" },
-  
-  // Travel Phrases
-  { english: "One ticket, please", italian: "Un biglietto, per favore", japanese: "切符を一枚お願いします [kippu wo ichimai onegaishimasu]", category: "Travel" },
-  { english: "Return ticket", italian: "Biglietto di andata e ritorno", japanese: "往復切符 [oufuku kippu]", category: "Travel" },
-  { english: "What time is the train?", italian: "A che ora è il treno?", japanese: "電車は何時ですか [densha wa nanji desu ka]", category: "Travel" },
-  { english: "Platform number?", italian: "Che binario?", japanese: "何番線ですか [nanban sen desu ka]", category: "Travel" },
-  { english: "Is this seat free?", italian: "È libero questo posto?", japanese: "この席は空いていますか [kono seki wa aiteimasu ka]", category: "Travel" },
-  { english: "I have a reservation", italian: "Ho una prenotazione", japanese: "予約があります [yoyaku ga arimasu]", category: "Travel" },
-  { english: "Check-in, please", italian: "Check-in, per favore", japanese: "チェックインお願いします [chekkuin onegaishimasu]", category: "Travel" },
-  { english: "My passport", italian: "Il mio passaporto", japanese: "私のパスポート [watashi no pasupooto]", category: "Travel" },
-  { english: "Which gate?", italian: "Che gate?", japanese: "何番ゲートですか [nanban geeto desu ka]", category: "Travel" },
-  { english: "Is the flight delayed?", italian: "Il volo è in ritardo?", japanese: "フライトは遅れていますか [furaito wa okurete imasu ka]", category: "Travel" },
-  
-  // Shopping Phrases
-  { english: "How much is this?", italian: "Quanto costa questo?", japanese: "これはいくらですか [kore wa ikura desu ka]", category: "Shopping" },
-  { english: "Can I try this on?", italian: "Posso provare questo?", japanese: "これを試着できますか [kore wo shichaku dekimasu ka]", category: "Shopping" },
-  { english: "Do you have this in large?", italian: "Avete questo in taglia grande?", japanese: "これのLサイズはありますか [kore no L saizu wa arimasu ka]", category: "Shopping" },
-  { english: "Different color?", italian: "Colore diverso?", japanese: "違う色はありますか [chigau iro wa arimasu ka]", category: "Shopping" },
-  { english: "Too expensive", italian: "Troppo caro", japanese: "高すぎます [takasugimasu]", category: "Shopping" },
-  { english: "I'll take it", italian: "Lo prendo", japanese: "これにします [kore ni shimasu]", category: "Shopping" },
-  { english: "Plastic bag, please", italian: "Sacchetto di plastica, per favore", japanese: "袋をお願いします [fukuro wo onegaishimasu]", category: "Shopping" },
-  { english: "Receipt, please", italian: "Ricevuta, per favore", japanese: "レシートをお願いします [reshiito wo onegaishimasu]", category: "Shopping" },
-  
-  // Emergency Phrases
-  { english: "Call the police", italian: "Chiama la polizia", japanese: "警察を呼んでください [keisatsu wo yonde kudasai]", category: "Emergency" },
-  { english: "I need a doctor", italian: "Ho bisogno di un medico", japanese: "医者が必要です [isha ga hitsuyou desu]", category: "Emergency" },
-  { english: "Call an ambulance", italian: "Chiama un'ambulanza", japanese: "救急車を呼んでください [kyuukyuusha wo yonde kudasai]", category: "Emergency" },
-  { english: "Fire!", italian: "Fuoco!", japanese: "火事です [kaji desu]", category: "Emergency" },
-  { english: "I'm lost", italian: "Mi sono perso", japanese: "道に迷いました [michi ni mayoimashita]", category: "Emergency" },
-  { english: "My phone was stolen", italian: "Mi hanno rubato il telefono", japanese: "携帯を盗まれました [keitai wo nusumaremashita]", category: "Emergency" },
-  { english: "I need the embassy", italian: "Ho bisogno dell'ambasciata", japanese: "大使館が必要です [taishikan ga hitsuyou desu]", category: "Emergency" },
-  { english: "I feel sick", italian: "Mi sento male", japanese: "気分が悪いです [kibun ga warui desu]", category: "Emergency" },
-  
-  // Places
-  { english: "Home", italian: "Casa", japanese: "家 [ie/uchi]", category: "Places" },
-  { english: "School", italian: "Scuola", japanese: "学校 [gakkou]", category: "Places" },
-  { english: "Work", italian: "Lavoro", japanese: "仕事 [shigoto]", category: "Places" },
-  { english: "Store", italian: "Negozio", japanese: "店 [mise]", category: "Places" },
-  { english: "Restaurant", italian: "Ristorante", japanese: "レストラン [resutoran]", category: "Places" },
-  { english: "Hotel", italian: "Hotel/Albergo", japanese: "ホテル [hoteru]", category: "Places" },
-  { english: "Hospital", italian: "Ospedale", japanese: "病院 [byouin]", category: "Places" },
-  { english: "Station", italian: "Stazione", japanese: "駅 [eki]", category: "Places" },
-  { english: "Airport", italian: "Aeroporto", japanese: "空港 [kuukou]", category: "Places" },
-  { english: "Bank", italian: "Banca", japanese: "銀行 [ginkou]", category: "Places" },
-  { english: "Post office", italian: "Ufficio postale", japanese: "郵便局 [yuubinkyoku]", category: "Places" },
-  { english: "Bathroom", italian: "Bagno", japanese: "トイレ [toire]", category: "Places" },
-  
-  // Emotions
-  { english: "Happy", italian: "Felice", japanese: "嬉しい [ureshii]", category: "Emotions" },
-  { english: "Sad", italian: "Triste", japanese: "悲しい [kanashii]", category: "Emotions" },
-  { english: "Angry", italian: "Arrabbiato", japanese: "怒っている [okotte iru]", category: "Emotions" },
-  { english: "Tired", italian: "Stanco", japanese: "疲れた [tsukareta]", category: "Emotions" },
-  { english: "Hungry", italian: "Affamato", japanese: "お腹すいた [onaka suita]", category: "Emotions" },
-  { english: "Thirsty", italian: "Assetato", japanese: "喉が渇いた [nodo ga kawaita]", category: "Emotions" },
-  { english: "Sick", italian: "Malato", japanese: "病気 [byouki]", category: "Emotions" },
-  { english: "Scared", italian: "Spaventato", japanese: "怖い [kowai]", category: "Emotions" },
-  { english: "Excited", italian: "Emozionato", japanese: "ワクワク [wakuwaku]", category: "Emotions" },
-  { english: "Bored", italian: "Annoiato", japanese: "退屈 [taikutsu]", category: "Emotions" },
-  { english: "Surprised", italian: "Sorpreso", japanese: "驚いた [odoroita]", category: "Emotions" },
-  
-  // Pronouns
+  // Grammar Words - Pronouns
   { english: "I", italian: "Io", japanese: "私 [watashi]", category: "Grammar" },
   { english: "You", italian: "Tu", japanese: "あなた [anata]", category: "Grammar" },
   { english: "He", italian: "Lui", japanese: "彼 [kare]", category: "Grammar" },
@@ -230,7 +147,7 @@ export const vocabulary: VocabularyWord[] = [
   { english: "We", italian: "Noi", japanese: "私たち [watashitachi]", category: "Grammar" },
   { english: "They", italian: "Loro", japanese: "彼ら [karera]", category: "Grammar" },
   
-  // Possessives
+  // Grammar Words - Possessives
   { english: "My", italian: "Mio/Mia", japanese: "私の [watashi no]", category: "Grammar" },
   { english: "Your", italian: "Tuo/Tua", japanese: "あなたの [anata no]", category: "Grammar" },
   { english: "His", italian: "Suo", japanese: "彼の [kare no]", category: "Grammar" },
@@ -238,11 +155,9 @@ export const vocabulary: VocabularyWord[] = [
   { english: "Our", italian: "Nostro/Nostra", japanese: "私たちの [watashitachi no]", category: "Grammar" },
   { english: "Their", italian: "Loro", japanese: "彼らの [karera no]", category: "Grammar" },
   
-  // Articles
+  // Grammar Words - Articles & Prepositions
   { english: "The", italian: "Il/La/Lo/Gli/Le", japanese: "その [sono]", category: "Grammar" },
   { english: "A/An", italian: "Un/Una", japanese: "一つの [hitotsu no]", category: "Grammar" },
-  
-  // Prepositions
   { english: "In", italian: "In", japanese: "中に [naka ni]", category: "Grammar" },
   { english: "At", italian: "A/Da", japanese: "で [de]", category: "Grammar" },
   { english: "On", italian: "Su", japanese: "上に [ue ni]", category: "Grammar" },
@@ -252,7 +167,7 @@ export const vocabulary: VocabularyWord[] = [
   { english: "For", italian: "Per", japanese: "ために [tame ni]", category: "Grammar" },
   { english: "Of", italian: "Di", japanese: "の [no]", category: "Grammar" },
   
-  // Conjunctions & Common Words
+  // Grammar Words - Conjunctions & Common Words
   { english: "And", italian: "E", japanese: "と [to]", category: "Grammar" },
   { english: "But", italian: "Ma", japanese: "でも [demo]", category: "Grammar" },
   { english: "Or", italian: "O", japanese: "または [mata wa]", category: "Grammar" },
@@ -290,16 +205,6 @@ export const vocabulary: VocabularyWord[] = [
   { english: "Knee", italian: "Ginocchio", japanese: "膝 [hiza]", category: "Body" },
   { english: "Foot", italian: "Piede", japanese: "足 [ashi]", category: "Body" },
   
-  // Health Phrases
-  { english: "My head hurts", italian: "Mi fa male la testa", japanese: "頭が痛いです [atama ga itai desu]", category: "Health" },
-  { english: "I have a fever", italian: "Ho la febbre", japanese: "熱があります [netsu ga arimasu]", category: "Health" },
-  { english: "I feel dizzy", italian: "Mi gira la testa", japanese: "めまいがします [memai ga shimasu]", category: "Health" },
-  { english: "I need medicine", italian: "Ho bisogno di medicine", japanese: "薬が必要です [kusuri ga hitsuyou desu]", category: "Health" },
-  { english: "Where is the pharmacy?", italian: "Dov'è la farmacia?", japanese: "薬局はどこですか [yakkyoku wa doko desu ka]", category: "Health" },
-  { english: "I'm allergic to...", italian: "Sono allergico a...", japanese: "...にアレルギーがあります [...ni areruggii ga arimasu]", category: "Health" },
-  { english: "Call a doctor", italian: "Chiama un dottore", japanese: "医者を呼んでください [isha wo yonde kudasai]", category: "Health" },
-  { english: "I cut my finger", italian: "Mi sono tagliato il dito", japanese: "指を切りました [yubi wo kirimashita]", category: "Health" },
-  
   // Weather & Seasons
   { english: "Hot", italian: "Caldo", japanese: "暑い [atsui]", category: "Weather" },
   { english: "Cold", italian: "Freddo", japanese: "寒い [samui]", category: "Weather" },
@@ -314,9 +219,6 @@ export const vocabulary: VocabularyWord[] = [
   { english: "Summer", italian: "Estate", japanese: "夏 [natsu]", category: "Weather" },
   { english: "Autumn/Fall", italian: "Autunno", japanese: "秋 [aki]", category: "Weather" },
   { english: "Winter", italian: "Inverno", japanese: "冬 [fuyu]", category: "Weather" },
-  { english: "What's the weather like?", italian: "Com'è il tempo?", japanese: "天気はどうですか [tenki wa dou desu ka]", category: "Weather" },
-  { english: "It's raining", italian: "Sta piovendo", japanese: "雨が降っています [ame ga futte imasu]", category: "Weather" },
-  { english: "I need an umbrella", italian: "Ho bisogno di un ombrello", japanese: "傘が必要です [kasa ga hitsuyou desu]", category: "Weather" },
   
   // Technology
   { english: "Phone", italian: "Telefono", japanese: "電話 [denwa]", category: "Technology" },
@@ -328,10 +230,6 @@ export const vocabulary: VocabularyWord[] = [
   { english: "Charger", italian: "Caricabatterie", japanese: "充電器 [juudenki]", category: "Technology" },
   { english: "Battery", italian: "Batteria", japanese: "バッテリー [batterii]", category: "Technology" },
   { english: "Camera", italian: "Fotocamera", japanese: "カメラ [kamera]", category: "Technology" },
-  { english: "My phone is dead", italian: "Il mio telefono è scarico", japanese: "携帯の電池が切れました [keitai no denchi ga kiremashita]", category: "Technology" },
-  { english: "Where can I charge this?", italian: "Dove posso caricare questo?", japanese: "これをどこで充電できますか [kore wo doko de juuden dekimasu ka]", category: "Technology" },
-  { english: "What's the WiFi password?", italian: "Qual è la password del WiFi?", japanese: "WiFiのパスワードは何ですか [WiFi no pasuwaado wa nan desu ka]", category: "Technology" },
-  { english: "Can you take a photo?", italian: "Puoi fare una foto?", japanese: "写真を撮ってもらえますか [shashin wo totte moraemasu ka]", category: "Technology" },
   
   // Transportation
   { english: "Car", italian: "Macchina", japanese: "車 [kuruma]", category: "Transportation" },
@@ -343,11 +241,9 @@ export const vocabulary: VocabularyWord[] = [
   { english: "Bicycle", italian: "Bicicletta", japanese: "自転車 [jitensha]", category: "Transportation" },
   { english: "Motorcycle", italian: "Motocicletta", japanese: "バイク [baiku]", category: "Transportation" },
   { english: "Boat", italian: "Barca", japanese: "船 [fune]", category: "Transportation" },
-  { english: "How do I get to...?", italian: "Come arrivo a...?", japanese: "...にはどう行きますか [...ni wa dou ikimasu ka]", category: "Transportation" },
   { english: "Bus stop", italian: "Fermata dell'autobus", japanese: "バス停 [basu tei]", category: "Transportation" },
   { english: "Train station", italian: "Stazione ferroviaria", japanese: "駅 [eki]", category: "Transportation" },
   { english: "Traffic jam", italian: "Ingorgo", japanese: "渋滞 [juutai]", category: "Transportation" },
-  { english: "Is it far?", italian: "È lontano?", japanese: "遠いですか [tooi desu ka]", category: "Transportation" },
   
   // Money & Banking
   { english: "Money", italian: "Soldi", japanese: "お金 [okane]", category: "Money" },
@@ -359,10 +255,6 @@ export const vocabulary: VocabularyWord[] = [
   { english: "Receipt", italian: "Ricevuta", japanese: "レシート [reshiito]", category: "Money" },
   { english: "Tip", italian: "Mancia", japanese: "チップ [chippu]", category: "Money" },
   { english: "Price", italian: "Prezzo", japanese: "値段 [nedan]", category: "Money" },
-  { english: "Where is the ATM?", italian: "Dov'è il bancomat?", japanese: "ATMはどこですか [ATM wa doko desu ka]", category: "Money" },
-  { english: "Can you break this bill?", italian: "Può cambiare questa banconota?", japanese: "この札を崩してもらえますか [kono satsu wo kuzushite moraemasu ka]", category: "Money" },
-  { english: "Is tip included?", italian: "La mancia è inclusa?", japanese: "チップは含まれていますか [chippu wa fukumarete imasu ka]", category: "Money" },
-  { english: "How much is it?", italian: "Quanto costa?", japanese: "いくらですか [ikura desu ka]", category: "Money" },
   
   // Directions
   { english: "Left", italian: "Sinistra", japanese: "左 [hidari]", category: "Directions" },
@@ -374,10 +266,31 @@ export const vocabulary: VocabularyWord[] = [
   { english: "West", italian: "Ovest", japanese: "西 [nishi]", category: "Directions" },
   { english: "Map", italian: "Mappa", japanese: "地図 [chizu]", category: "Directions" },
   { english: "GPS", italian: "GPS", japanese: "GPS [jiipiesu]", category: "Directions" },
-  { english: "Turn left", italian: "Gira a sinistra", japanese: "左に曲がって [hidari ni magatte]", category: "Directions" },
-  { english: "Turn right", italian: "Gira a destra", japanese: "右に曲がって [migi ni magatte]", category: "Directions" },
-  { english: "Go straight", italian: "Va dritto", japanese: "まっすぐ行って [massugu itte]", category: "Directions" },
-  { english: "It's on the right", italian: "È sulla destra", japanese: "右側にあります [migigawa ni arimasu]", category: "Directions" },
-  { english: "I'm looking for...", italian: "Sto cercando...", japanese: "...を探しています [...wo sagashite imasu]", category: "Directions" },
-  { english: "Can you show me on the map?", italian: "Puoi mostrarmi sulla mappa?", japanese: "地図で教えてもらえますか [chizu de oshiete moraemasu ka]", category: "Directions" },
+  
+  // Places
+  { english: "Home", italian: "Casa", japanese: "家 [ie/uchi]", category: "Places" },
+  { english: "School", italian: "Scuola", japanese: "学校 [gakkou]", category: "Places" },
+  { english: "Work", italian: "Lavoro", japanese: "仕事 [shigoto]", category: "Places" },
+  { english: "Store", italian: "Negozio", japanese: "店 [mise]", category: "Places" },
+  { english: "Restaurant", italian: "Ristorante", japanese: "レストラン [resutoran]", category: "Places" },
+  { english: "Hotel", italian: "Hotel/Albergo", japanese: "ホテル [hoteru]", category: "Places" },
+  { english: "Hospital", italian: "Ospedale", japanese: "病院 [byouin]", category: "Places" },
+  { english: "Station", italian: "Stazione", japanese: "駅 [eki]", category: "Places" },
+  { english: "Airport", italian: "Aeroporto", japanese: "空港 [kuukou]", category: "Places" },
+  { english: "Bank", italian: "Banca", japanese: "銀行 [ginkou]", category: "Places" },
+  { english: "Post office", italian: "Ufficio postale", japanese: "郵便局 [yuubinkyoku]", category: "Places" },
+  { english: "Bathroom", italian: "Bagno", japanese: "トイレ [toire]", category: "Places" },
+  
+  // Emotions
+  { english: "Happy", italian: "Felice", japanese: "嬉しい [ureshii]", category: "Emotions" },
+  { english: "Sad", italian: "Triste", japanese: "悲しい [kanashii]", category: "Emotions" },
+  { english: "Angry", italian: "Arrabbiato", japanese: "怒っている [okotte iru]", category: "Emotions" },
+  { english: "Tired", italian: "Stanco", japanese: "疲れた [tsukareta]", category: "Emotions" },
+  { english: "Hungry", italian: "Affamato", japanese: "お腹すいた [onaka suita]", category: "Emotions" },
+  { english: "Thirsty", italian: "Assetato", japanese: "喉が渇いた [nodo ga kawaita]", category: "Emotions" },
+  { english: "Sick", italian: "Malato", japanese: "病気 [byouki]", category: "Emotions" },
+  { english: "Scared", italian: "Spaventato", japanese: "怖い [kowai]", category: "Emotions" },
+  { english: "Excited", italian: "Emozionato", japanese: "ワクワク [wakuwaku]", category: "Emotions" },
+  { english: "Bored", italian: "Annoiato", japanese: "退屈 [taikutsu]", category: "Emotions" },
+  { english: "Surprised", italian: "Sorpreso", japanese: "驚いた [odoroita]", category: "Emotions" },
 ];

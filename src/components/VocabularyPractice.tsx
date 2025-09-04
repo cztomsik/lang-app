@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'preact/hooks';
-import { vocabulary } from '../data/data';
-import type { VocabularyWord } from '../data/data';
+import { vocabulary } from '../data/vocabulary';
+import type { VocabularyWord } from '../data/vocabulary';
+import { phrases } from '../data/phrases';
+import type { Phrase } from '../data/phrases';
 
 type LanguagePair = 'english-italian' | 'english-japanese';
 type Direction = 'forward' | 'reverse';
+type ContentType = 'vocabulary' | 'phrases';
+type WordOrPhrase = VocabularyWord | Phrase;
 
 export function VocabularyPractice() {
-  const [currentWord, setCurrentWord] = useState<VocabularyWord | null>(null);
+  const [currentWord, setCurrentWord] = useState<WordOrPhrase | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [languagePair, setLanguagePair] = useState<LanguagePair>('english-italian');
   const [direction, setDirection] = useState<Direction>('forward');
+  const [contentType, setContentType] = useState<ContentType>('vocabulary');
   const [score, setScore] = useState({ correct: 0, total: 0 });
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
@@ -19,7 +24,11 @@ export function VocabularyPractice() {
   const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>([]);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-  const categories = ['all', ...Array.from(new Set(vocabulary.map(w => w.category)))];
+  const getCurrentData = () => {
+    return contentType === 'vocabulary' ? vocabulary : phrases;
+  };
+
+  const categories = ['all', ...Array.from(new Set(getCurrentData().map(w => w.category)))];
   
   const getLanguages = () => {
     if (languagePair === 'english-italian') {
@@ -33,13 +42,14 @@ export function VocabularyPractice() {
     }
   };
   
-  const getWordText = (word: VocabularyWord, language: string): string => {
-    return word[language as keyof VocabularyWord] as string;
+  const getWordText = (word: WordOrPhrase, language: string): string => {
+    return word[language as keyof WordOrPhrase] as string;
   };
 
   const getFilteredWords = () => {
-    if (selectedCategory === 'all') return vocabulary;
-    return vocabulary.filter(w => w.category === selectedCategory);
+    const data = getCurrentData();
+    if (selectedCategory === 'all') return data;
+    return data.filter(w => w.category === selectedCategory);
   };
 
   const getRandomWord = () => {
@@ -165,7 +175,7 @@ export function VocabularyPractice() {
 
   useEffect(() => {
     nextWord();
-  }, [selectedCategory, languagePair, direction, practiceMode]);
+  }, [selectedCategory, languagePair, direction, practiceMode, contentType]);
 
   if (!currentWord) return null;
 
@@ -184,6 +194,20 @@ export function VocabularyPractice() {
       </header>
 
       <div className="controls">
+        <div className="control-group">
+          <label>Content:</label>
+          <select
+            value={contentType}
+            onChange={(e) => {
+              setContentType((e.target as HTMLSelectElement).value as ContentType);
+              setSelectedCategory('all'); // Reset category when switching content type
+            }}
+          >
+            <option value="vocabulary">📝 Vocabulary</option>
+            <option value="phrases">💬 Phrases</option>
+          </select>
+        </div>
+
         <div className="control-group">
           <label>Category:</label>
           <select 
