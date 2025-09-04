@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'preact/hooks';
-import { vocabulary } from '../data/vocabulary';
-import type { VocabularyWord } from '../data/vocabulary';
+import { vocabulary } from '../data/data';
+import type { VocabularyWord } from '../data/data';
 
 type LanguagePair = 'english-italian' | 'english-japanese';
 type Direction = 'forward' | 'reverse';
