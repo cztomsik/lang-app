@@ -2,18 +2,40 @@ import { useState, useEffect } from 'preact/hooks';
 import { vocabulary } from '../data/vocabulary';
 import type { VocabularyWord } from '../data/vocabulary';
 
+type LanguagePair = 'english-italian' | 'english-japanese';
+type Direction = 'forward' | 'reverse';
+
 export function VocabularyPractice() {
   const [currentWord, setCurrentWord] = useState<VocabularyWord | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [isItalianToEnglish, setIsItalianToEnglish] = useState(false);
+  const [languagePair, setLanguagePair] = useState<LanguagePair>('english-italian');
+  const [direction, setDirection] = useState<Direction>('forward');
   const [score, setScore] = useState({ correct: 0, total: 0 });
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
-  const [practiceMode, setPracticeMode] = useState<'flashcard' | 'typing'>('flashcard');
+  const [practiceMode, setPracticeMode] = useState<'flashcard' | 'typing' | 'multiple-choice'>('multiple-choice');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [usedWords, setUsedWords] = useState<Set<number>>(new Set());
+  const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>([]);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const categories = ['all', ...Array.from(new Set(vocabulary.map(w => w.category)))];
+  
+  const getLanguages = () => {
+    if (languagePair === 'english-italian') {
+      return direction === 'forward' 
+        ? { from: 'english', to: 'italian', fromLabel: 'English', toLabel: 'Italian', fromFlag: '🇬🇧', toFlag: '🇮🇹' }
+        : { from: 'italian', to: 'english', fromLabel: 'Italian', toLabel: 'English', fromFlag: '🇮🇹', toFlag: '🇬🇧' };
+    } else {
+      return direction === 'forward'
+        ? { from: 'english', to: 'japanese', fromLabel: 'English', toLabel: 'Japanese', fromFlag: '🇬🇧', toFlag: '🇯🇵' }
+        : { from: 'japanese', to: 'english', fromLabel: 'Japanese', toLabel: 'English', fromFlag: '🇯🇵', toFlag: '🇬🇧' };
+    }
+  };
+  
+  const getWordText = (word: VocabularyWord, language: string): string => {
+    return word[language as keyof VocabularyWord] as string;
+  };
 
   const getFilteredWords = () => {
     if (selectedCategory === 'all') return vocabulary;
@@ -35,18 +57,74 @@ export function VocabularyPractice() {
     return words[randomIndex];
   };
 
+  const generateMultipleChoiceOptions = (correctWord: VocabularyWord) => {
+    const langs = getLanguages();
+    const correctAnswer = getWordText(correctWord, langs.to);
+    const allWords = getFilteredWords().filter(w => w !== correctWord);
+    
+    // Get 3 random incorrect options
+    const incorrectOptions: string[] = [];
+    const usedIndices = new Set<number>();
+    
+    while (incorrectOptions.length < 3 && incorrectOptions.length < allWords.length) {
+      const randomIndex = Math.floor(Math.random() * allWords.length);
+      if (!usedIndices.has(randomIndex)) {
+        usedIndices.add(randomIndex);
+        const wrongAnswer = getWordText(allWords[randomIndex], langs.to);
+        if (wrongAnswer !== correctAnswer) {
+          incorrectOptions.push(wrongAnswer);
+        }
+      }
+    }
+    
+    // Combine correct answer with incorrect options and shuffle
+    const allOptions = [correctAnswer, ...incorrectOptions];
+    for (let i = allOptions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [allOptions[i], allOptions[j]] = [allOptions[j], allOptions[i]];
+    }
+    
+    return allOptions;
+  };
+
   const nextWord = () => {
-    setCurrentWord(getRandomWord());
+    const newWord = getRandomWord();
+    setCurrentWord(newWord);
     setShowAnswer(false);
     setUserInput('');
     setFeedback(null);
+    setSelectedOption(null);
+    
+    if (practiceMode === 'multiple-choice' && newWord) {
+      setMultipleChoiceOptions(generateMultipleChoiceOptions(newWord));
+    }
   };
 
   const checkAnswer = () => {
     if (!currentWord) return;
     
-    const expectedAnswer = isItalianToEnglish ? currentWord.english : currentWord.italian;
+    const langs = getLanguages();
+    const expectedAnswer = getWordText(currentWord, langs.to);
     const isCorrect = userInput.toLowerCase().trim() === expectedAnswer.toLowerCase();
+    
+    setFeedback(isCorrect ? 'correct' : 'incorrect');
+    setScore(prev => ({
+      correct: prev.correct + (isCorrect ? 1 : 0),
+      total: prev.total + 1
+    }));
+    
+    if (!isCorrect) {
+      setShowAnswer(true);
+    }
+  };
+
+  const handleMultipleChoiceSelection = (option: string) => {
+    if (feedback) return; // Already answered
+    
+    setSelectedOption(option);
+    const langs = getLanguages();
+    const correctAnswer = getWordText(currentWord!, langs.to);
+    const isCorrect = option === correctAnswer;
     
     setFeedback(isCorrect ? 'correct' : 'incorrect');
     setScore(prev => ({
@@ -83,14 +161,14 @@ export function VocabularyPractice() {
 
   useEffect(() => {
     nextWord();
-  }, [selectedCategory, isItalianToEnglish]);
+  }, [selectedCategory, languagePair, direction, practiceMode]);
 
   if (!currentWord) return null;
 
   return (
     <div className="vocab-container">
       <header className="vocab-header">
-        <h1>English-Italian Vocabulary Practice</h1>
+        <h1>Language Vocabulary Practice</h1>
         <div className="score">
           Score: {score.correct} / {score.total}
           {score.total > 0 && (
@@ -117,12 +195,26 @@ export function VocabularyPractice() {
         </div>
 
         <div className="control-group">
+          <label>Language:</label>
+          <select
+            value={languagePair}
+            onChange={(e) => setLanguagePair((e.target as HTMLSelectElement).value as LanguagePair)}
+          >
+            <option value="english-italian">🇬🇧 English - Italian 🇮🇹</option>
+            <option value="english-japanese">🇬🇧 English - Japanese 🇯🇵</option>
+          </select>
+        </div>
+
+        <div className="control-group">
           <label>Direction:</label>
           <button 
             className="toggle-btn"
-            onClick={() => setIsItalianToEnglish(!isItalianToEnglish)}
+            onClick={() => setDirection(direction === 'forward' ? 'reverse' : 'forward')}
           >
-            {isItalianToEnglish ? '🇮🇹 → 🇬🇧' : '🇬🇧 → 🇮🇹'}
+            {(() => {
+              const langs = getLanguages();
+              return `${langs.fromFlag} → ${langs.toFlag}`;
+            })()}
           </button>
         </div>
 
@@ -130,8 +222,9 @@ export function VocabularyPractice() {
           <label>Mode:</label>
           <select 
             value={practiceMode} 
-            onChange={(e) => setPracticeMode((e.target as HTMLSelectElement).value as 'flashcard' | 'typing')}
+            onChange={(e) => setPracticeMode((e.target as HTMLSelectElement).value as 'flashcard' | 'typing' | 'multiple-choice')}
           >
+            <option value="multiple-choice">Multiple Choice</option>
             <option value="flashcard">Flashcard</option>
             <option value="typing">Typing</option>
           </select>
@@ -142,10 +235,10 @@ export function VocabularyPractice() {
         <div className="card-content">
           <div className="question">
             <span className="label">
-              {isItalianToEnglish ? 'Italian' : 'English'}:
+              {getLanguages().fromLabel}:
             </span>
             <h2 className="word">
-              {isItalianToEnglish ? currentWord.italian : currentWord.english}
+              {getWordText(currentWord, getLanguages().from)}
             </h2>
           </div>
 
@@ -154,10 +247,10 @@ export function VocabularyPractice() {
               {showAnswer && (
                 <div className="answer">
                   <span className="label">
-                    {isItalianToEnglish ? 'English' : 'Italian'}:
+                    {getLanguages().toLabel}:
                   </span>
                   <h2 className="word">
-                    {isItalianToEnglish ? currentWord.english : currentWord.italian}
+                    {getWordText(currentWord, getLanguages().to)}
                   </h2>
                 </div>
               )}
@@ -179,7 +272,7 @@ export function VocabularyPractice() {
                 )}
               </div>
             </>
-          ) : (
+          ) : practiceMode === 'typing' ? (
             <>
               <div className="input-group">
                 <input
@@ -187,7 +280,7 @@ export function VocabularyPractice() {
                   value={userInput}
                   onChange={(e) => setUserInput((e.target as HTMLInputElement).value)}
                   onKeyDown={(e) => e.key === 'Enter' && (feedback ? nextWord() : checkAnswer())}
-                  placeholder={`Type the ${isItalianToEnglish ? 'English' : 'Italian'} translation`}
+                  placeholder={`Type the ${getLanguages().toLabel} translation`}
                   disabled={feedback !== null}
                 />
               </div>
@@ -197,7 +290,7 @@ export function VocabularyPractice() {
                   {feedback === 'correct' ? '✓ Correct!' : '✗ Incorrect'}
                   {feedback === 'incorrect' && (
                     <div className="correct-answer">
-                      The answer is: {isItalianToEnglish ? currentWord.english : currentWord.italian}
+                      The answer is: {getWordText(currentWord, getLanguages().to)}
                     </div>
                   )}
                 </div>
@@ -214,6 +307,44 @@ export function VocabularyPractice() {
                   </button>
                 )}
               </div>
+            </>
+          ) : (
+            <>
+              <div className="multiple-choice-grid">
+                {multipleChoiceOptions.map((option, index) => {
+                  const correctAnswer = getWordText(currentWord, getLanguages().to);
+                  const isCorrectOption = option === correctAnswer;
+                  const isSelected = option === selectedOption;
+                  
+                  let buttonClass = 'btn-choice';
+                  if (feedback) {
+                    if (isCorrectOption) {
+                      buttonClass += ' correct';
+                    } else if (isSelected && !isCorrectOption) {
+                      buttonClass += ' incorrect';
+                    }
+                  }
+                  
+                  return (
+                    <button
+                      key={index}
+                      className={buttonClass}
+                      onClick={() => handleMultipleChoiceSelection(option)}
+                      disabled={feedback !== null}
+                    >
+                      {option}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {feedback && (
+                <div className="buttons">
+                  <button className="btn btn-primary" onClick={nextWord}>
+                    Next word →
+                  </button>
+                </div>
+              )}
             </>
           )}
         </div>

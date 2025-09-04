@@ -245,6 +245,67 @@ input[type="text"]:disabled {
   color: #667eea;
 }
 
+.multiple-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.btn-choice {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-choice:hover:not(:disabled) {
+  border-color: #667eea;
+  background: #f8f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.btn-choice:disabled {
+  cursor: not-allowed;
+}
+
+.btn-choice.correct {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  border-color: #38f9d7;
+  color: white;
+  font-weight: bold;
+  animation: correctPulse 0.5s ease;
+}
+
+.btn-choice.incorrect {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-color: #f5576c;
+  color: white;
+  animation: incorrectShake 0.5s ease;
+}
+
+@keyframes correctPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes incorrectShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
 @media (max-width: 600px) {
   .vocab-container {
     padding: 20px;
@@ -269,5 +330,15 @@ input[type="text"]:disabled {
   
   input[type="text"] {
     font-size: 16px;
+  }
+  
+  .multiple-choice-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn-choice {
+    font-size: 16px;
+    min-height: 60px;
+    padding: 15px;
   }
 }
