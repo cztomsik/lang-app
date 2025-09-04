@@ -203,33 +203,31 @@ export function LangApp() {
   if (!currentWord) return null;
 
   return (
-    <div className="vocab-container">
-      <header className="vocab-header">
-        <h1>minilingoo</h1>
+    <div className="bg-white max-md:h-full md:rounded-2xl p-4 shadow-2xl max-w-4xl mx-auto">
+      <header className="text-center mb-4">
+        <h1 className="text-3xl font-bold text-gray-800">minilingoo</h1>
       </header>
 
-      <div className="controls">
-        <div className="control-group mode-selector">
-          <div className="segmented-control">
-            <button 
-              className={`segment ${practiceMode === 'flashcard' ? 'active' : ''}`}
-              onClick={() => setPracticeMode('flashcard')}
-            >
-              Flashcard
-            </button>
-            <button 
-              className={`segment ${practiceMode === 'multiple-choice' ? 'active' : ''}`}
-              onClick={() => setPracticeMode('multiple-choice')}
-            >
-              Multiple Choice
-            </button>
-            <button 
-              className={`segment ${practiceMode === 'typing' ? 'active' : ''}`}
-              onClick={() => setPracticeMode('typing')}
-            >
-              Typing
-            </button>
-          </div>
+      <div className="flex flex-col gap-1">
+        <div className="segmented-control mb-2">
+          <button 
+            className={`segment ${practiceMode === 'flashcard' ? 'active' : ''}`}
+            onClick={() => setPracticeMode('flashcard')}
+          >
+            Flashcard
+          </button>
+          <button 
+            className={`segment ${practiceMode === 'multiple-choice' ? 'active' : ''}`}
+            onClick={() => setPracticeMode('multiple-choice')}
+          >
+            Choice
+          </button>
+          <button 
+            className={`segment ${practiceMode === 'typing' ? 'active' : ''}`}
+            onClick={() => setPracticeMode('typing')}
+          >
+            Typing
+          </button>
         </div>
 
         <div className="control-group">
@@ -285,7 +283,7 @@ export function LangApp() {
         </div>
       </div>
 
-      <div className="card">
+      <div className="mt-2 card">
         <div className="card-content">
           <div className="question">
             <span className="label">
@@ -325,7 +323,7 @@ export function LangApp() {
                 </div>
               </div>
 
-              <div className="buttons">
+              <div className="flex justify-center">
                 <button className="btn btn-primary" onClick={handleSkip}>
                   Next →
                 </button>
@@ -333,7 +331,7 @@ export function LangApp() {
             </>
           ) : practiceMode === 'typing' ? (
             <>
-              <div className="input-group">
+              <div className="mb-6">
                 <input
                   type="text"
                   value={userInput}
@@ -362,7 +360,7 @@ export function LangApp() {
                 </div>
               )}
 
-              <div className="buttons">
+              <div className="flex flex-wrap justify-center gap-4">
                 {!feedback ? (
                   <>
                     <button className="btn btn-primary" onClick={checkAnswer}>
@@ -381,7 +379,7 @@ export function LangApp() {
             </>
           ) : (
             <>
-              <div className="multiple-choice-grid">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 {multipleChoiceOptions.map((option, index) => {
                   const correctAnswer = getWordText(currentWord, getLanguages().to);
                   const isCorrectOption = option === correctAnswer;
@@ -397,7 +395,7 @@ export function LangApp() {
                   }
                   
                   return (
-                    <div key={index} className="choice-with-speak">
+                    <div key={index} className="relative">
                       <button
                         className={buttonClass}
                         onClick={() => handleMultipleChoiceSelection(option)}
@@ -418,7 +416,7 @@ export function LangApp() {
               </div>
 
               {!feedback && (
-                <div className="buttons">
+                <div className="flex justify-center">
                   <button className="btn btn-skip" onClick={handleSkip}>
                     Next →
                   </button>
@@ -426,7 +424,7 @@ export function LangApp() {
               )}
 
               {feedback && (
-                <div className="buttons">
+                <div className="flex justify-center">
                   <button className="btn btn-primary" onClick={nextWord}>
                     Next word →
                   </button>
@@ -436,7 +434,6 @@ export function LangApp() {
           )}
         </div>
       </div>
-
     </div>
   );
 }
