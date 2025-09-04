@@ -205,7 +205,7 @@ export function LangApp() {
   return (
     <div className="vocab-container">
       <header className="vocab-header">
-        <h1>Lingoo</h1>
+        <h1>minilingoo</h1>
       </header>
 
       <div className="controls">
