@@ -16,7 +16,7 @@ import {
   ChoiceButton,
 } from './components';
 
-type LanguagePair = 'english-italian' | 'english-japanese'; // | 'czech-portuguese';
+type LanguagePair = 'english-italian' | 'english-japanese' | 'english-czech' | 'english-portuguese' | 'czech-portuguese';
 type Direction = 'forward' | 'reverse';
 type ContentType = 'vocabulary' | 'phrases';
 type WordOrPhrase = VocabularyWord | Phrase;
@@ -71,7 +71,7 @@ export function LangApp() {
             fromFlag: '🇮🇹',
             toFlag: '🇬🇧',
           };
-    } else {
+    } else if (languagePair === 'english-japanese') {
       return direction === 'forward'
         ? {
             from: 'english',
@@ -88,6 +88,60 @@ export function LangApp() {
             toLabel: 'English',
             fromFlag: '🇯🇵',
             toFlag: '🇬🇧',
+          };
+    } else if (languagePair === 'english-czech') {
+      return direction === 'forward'
+        ? {
+            from: 'english',
+            to: 'czech',
+            fromLabel: 'English',
+            toLabel: 'Czech',
+            fromFlag: '🇬🇧',
+            toFlag: '🇨🇿',
+          }
+        : {
+            from: 'czech',
+            to: 'english',
+            fromLabel: 'Czech',
+            toLabel: 'English',
+            fromFlag: '🇨🇿',
+            toFlag: '🇬🇧',
+          };
+    } else if (languagePair === 'english-portuguese') {
+      return direction === 'forward'
+        ? {
+            from: 'english',
+            to: 'portuguese',
+            fromLabel: 'English',
+            toLabel: 'Portuguese',
+            fromFlag: '🇬🇧',
+            toFlag: '🇵🇹',
+          }
+        : {
+            from: 'portuguese',
+            to: 'english',
+            fromLabel: 'Portuguese',
+            toLabel: 'English',
+            fromFlag: '🇵🇹',
+            toFlag: '🇬🇧',
+          };
+    } else { // czech-portuguese
+      return direction === 'forward'
+        ? {
+            from: 'czech',
+            to: 'portuguese',
+            fromLabel: 'Czech',
+            toLabel: 'Portuguese',
+            fromFlag: '🇨🇿',
+            toFlag: '🇵🇹',
+          }
+        : {
+            from: 'portuguese',
+            to: 'czech',
+            fromLabel: 'Portuguese',
+            toLabel: 'Czech',
+            fromFlag: '🇵🇹',
+            toFlag: '🇨🇿',
           };
     }
   };
@@ -220,12 +274,12 @@ export function LangApp() {
         case 'japanese':
           utterance.lang = 'ja-JP';
           break;
-        // case 'czech':
-        //   utterance.lang = 'cs-CZ';
-        //   break;
-        // case 'portuguese':
-        //   utterance.lang = 'pt-PT';
-        //   break;
+        case 'czech':
+          utterance.lang = 'cs-CZ';
+          break;
+        case 'portuguese':
+          utterance.lang = 'pt-PT';
+          break;
         default:
           utterance.lang = 'en-US';
       }
@@ -289,7 +343,9 @@ export function LangApp() {
           options={[
             { value: 'english-italian', label: '🇬🇧 English - Italian 🇮🇹' },
             { value: 'english-japanese', label: '🇬🇧 English - Japanese 🇯🇵' },
-            // { value: 'czech-portuguese', label: '🇨🇿 Czech - Portuguese 🇵🇹' }
+            { value: 'english-czech', label: '🇬🇧 English - Czech 🇨🇿' },
+            { value: 'english-portuguese', label: '🇬🇧 English - Portuguese 🇵🇹' },
+            { value: 'czech-portuguese', label: '🇨🇿 Czech - Portuguese 🇵🇹' }
           ]}
         />
 
