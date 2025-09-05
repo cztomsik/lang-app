@@ -16,17 +16,15 @@ import {
   ChoiceButton,
 } from './components';
 
-type LanguagePair = 'english-italian' | 'english-japanese' | 'english-czech' | 'english-portuguese' | 'czech-portuguese';
-type Direction = 'forward' | 'reverse';
+type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese';
 type ContentType = 'vocabulary' | 'phrases';
 type WordOrPhrase = VocabularyWord | Phrase;
 
 export function LangApp() {
   const [currentWord, setCurrentWord] = useState<WordOrPhrase | null>(null);
   const [, setShowAnswer] = useState(false);
-  const [languagePair, setLanguagePair] =
-    useState<LanguagePair>('english-italian');
-  const [direction, setDirection] = useState<Direction>('forward');
+  const [fromLanguage, setFromLanguage] = useState<Language>('english');
+  const [toLanguage, setToLanguage] = useState<Language>('italian');
   const [contentType, setContentType] = useState<ContentType>('vocabulary');
   const [, setScore] = useState({ correct: 0, total: 0 });
   const [userInput, setUserInput] = useState('');
@@ -52,98 +50,33 @@ export function LangApp() {
     ...Array.from(new Set(getCurrentData().map((w) => w.category))),
   ];
 
-  const getLanguages = () => {
-    if (languagePair === 'english-italian') {
-      return direction === 'forward'
-        ? {
-            from: 'english',
-            to: 'italian',
-            fromLabel: 'English',
-            toLabel: 'Italian',
-            fromFlag: '🇬🇧',
-            toFlag: '🇮🇹',
-          }
-        : {
-            from: 'italian',
-            to: 'english',
-            fromLabel: 'Italian',
-            toLabel: 'English',
-            fromFlag: '🇮🇹',
-            toFlag: '🇬🇧',
-          };
-    } else if (languagePair === 'english-japanese') {
-      return direction === 'forward'
-        ? {
-            from: 'english',
-            to: 'japanese',
-            fromLabel: 'English',
-            toLabel: 'Japanese',
-            fromFlag: '🇬🇧',
-            toFlag: '🇯🇵',
-          }
-        : {
-            from: 'japanese',
-            to: 'english',
-            fromLabel: 'Japanese',
-            toLabel: 'English',
-            fromFlag: '🇯🇵',
-            toFlag: '🇬🇧',
-          };
-    } else if (languagePair === 'english-czech') {
-      return direction === 'forward'
-        ? {
-            from: 'english',
-            to: 'czech',
-            fromLabel: 'English',
-            toLabel: 'Czech',
-            fromFlag: '🇬🇧',
-            toFlag: '🇨🇿',
-          }
-        : {
-            from: 'czech',
-            to: 'english',
-            fromLabel: 'Czech',
-            toLabel: 'English',
-            fromFlag: '🇨🇿',
-            toFlag: '🇬🇧',
-          };
-    } else if (languagePair === 'english-portuguese') {
-      return direction === 'forward'
-        ? {
-            from: 'english',
-            to: 'portuguese',
-            fromLabel: 'English',
-            toLabel: 'Portuguese',
-            fromFlag: '🇬🇧',
-            toFlag: '🇵🇹',
-          }
-        : {
-            from: 'portuguese',
-            to: 'english',
-            fromLabel: 'Portuguese',
-            toLabel: 'English',
-            fromFlag: '🇵🇹',
-            toFlag: '🇬🇧',
-          };
-    } else { // czech-portuguese
-      return direction === 'forward'
-        ? {
-            from: 'czech',
-            to: 'portuguese',
-            fromLabel: 'Czech',
-            toLabel: 'Portuguese',
-            fromFlag: '🇨🇿',
-            toFlag: '🇵🇹',
-          }
-        : {
-            from: 'portuguese',
-            to: 'czech',
-            fromLabel: 'Portuguese',
-            toLabel: 'Czech',
-            fromFlag: '🇵🇹',
-            toFlag: '🇨🇿',
-          };
+  const getLanguageInfo = (language: Language) => {
+    switch (language) {
+      case 'english':
+        return { label: 'English', flag: '🇬🇧' };
+      case 'italian':
+        return { label: 'Italian', flag: '🇮🇹' };
+      case 'japanese':
+        return { label: 'Japanese', flag: '🇯🇵' };
+      case 'czech':
+        return { label: 'Czech', flag: '🇨🇿' };
+      case 'portuguese':
+        return { label: 'Portuguese', flag: '🇵🇹' };
     }
+  };
+
+  const getLanguages = () => {
+    const fromInfo = getLanguageInfo(fromLanguage);
+    const toInfo = getLanguageInfo(toLanguage);
+    
+    return {
+      from: fromLanguage,
+      to: toLanguage,
+      fromLabel: fromInfo.label,
+      toLabel: toInfo.label,
+      fromFlag: fromInfo.flag,
+      toFlag: toInfo.flag,
+    };
   };
 
   const getWordText = (word: WordOrPhrase, language: string): string => {
@@ -278,7 +211,7 @@ export function LangApp() {
           utterance.lang = 'cs-CZ';
           break;
         case 'portuguese':
-          utterance.lang = 'pt-PT';
+          utterance.lang = 'pt-BR';
           break;
         default:
           utterance.lang = 'en-US';
@@ -290,7 +223,7 @@ export function LangApp() {
 
   useEffect(() => {
     nextWord();
-  }, [selectedCategory, languagePair, direction, practiceMode, contentType]);
+  }, [selectedCategory, fromLanguage, toLanguage, practiceMode, contentType]);
 
   if (!currentWord) return null;
 
@@ -337,25 +270,40 @@ export function LangApp() {
         />
 
         <Select
-          label="Language"
-          value={languagePair}
-          onChange={(value) => setLanguagePair(value as LanguagePair)}
+          label="From Language"
+          value={fromLanguage}
+          onChange={(value) => setFromLanguage(value as Language)}
           options={[
-            { value: 'english-italian', label: '🇬🇧 English - Italian 🇮🇹' },
-            { value: 'english-japanese', label: '🇬🇧 English - Japanese 🇯🇵' },
-            { value: 'english-czech', label: '🇬🇧 English - Czech 🇨🇿' },
-            { value: 'english-portuguese', label: '🇬🇧 English - Portuguese 🇵🇹' },
-            { value: 'czech-portuguese', label: '🇨🇿 Czech - Portuguese 🇵🇹' }
+            { value: 'english', label: '🇬🇧 English' },
+            { value: 'italian', label: '🇮🇹 Italian' },
+            { value: 'japanese', label: '🇯🇵 Japanese' },
+            { value: 'czech', label: '🇨🇿 Czech' },
+            { value: 'portuguese', label: '🇵🇹 Portuguese' }
           ]}
         />
 
-        <ControlGroup label="Direction">
+        <Select
+          label="To Language"
+          value={toLanguage}
+          onChange={(value) => setToLanguage(value as Language)}
+          options={[
+            { value: 'english', label: '🇬🇧 English' },
+            { value: 'italian', label: '🇮🇹 Italian' },
+            { value: 'japanese', label: '🇯🇵 Japanese' },
+            { value: 'czech', label: '🇨🇿 Czech' },
+            { value: 'portuguese', label: '🇵🇹 Portuguese' }
+          ]}
+        />
+
+        <ControlGroup label="Languages">
           <ToggleButton
-            onClick={() =>
-              setDirection(direction === 'forward' ? 'reverse' : 'forward')
-            }
+            onClick={() => {
+              const temp = fromLanguage;
+              setFromLanguage(toLanguage);
+              setToLanguage(temp);
+            }}
           >
-            {`${langs.fromFlag} → ${langs.toFlag}`}
+            {`${langs.fromFlag} ⇄ ${langs.toFlag}`}
           </ToggleButton>
         </ControlGroup>
       </div>
