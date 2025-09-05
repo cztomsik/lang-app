@@ -16,7 +16,7 @@ import {
   ChoiceButton,
 } from './components';
 
-type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese';
+type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
 type ContentType = 'vocabulary' | 'phrases';
 type WordOrPhrase = VocabularyWord | Phrase;
 
@@ -62,6 +62,8 @@ export function LangApp() {
         return { label: 'Czech', flag: '🇨🇿' };
       case 'portuguese':
         return { label: 'Portuguese', flag: '🇵🇹' };
+      case 'spanish':
+        return { label: 'Spanish', flag: '🇪🇸' };
     }
   };
 
@@ -213,6 +215,9 @@ export function LangApp() {
         case 'portuguese':
           utterance.lang = 'pt-BR';
           break;
+        case 'spanish':
+          utterance.lang = 'es-ES';
+          break;
         default:
           utterance.lang = 'en-US';
       }
@@ -278,7 +283,8 @@ export function LangApp() {
             { value: 'italian', label: '🇮🇹 Italian' },
             { value: 'japanese', label: '🇯🇵 Japanese' },
             { value: 'czech', label: '🇨🇿 Czech' },
-            { value: 'portuguese', label: '🇵🇹 Portuguese' }
+            { value: 'portuguese', label: '🇵🇹 Portuguese' },
+            { value: 'spanish', label: '🇪🇸 Spanish' }
           ]}
         />
 
@@ -291,7 +297,8 @@ export function LangApp() {
             { value: 'italian', label: '🇮🇹 Italian' },
             { value: 'japanese', label: '🇯🇵 Japanese' },
             { value: 'czech', label: '🇨🇿 Czech' },
-            { value: 'portuguese', label: '🇵🇹 Portuguese' }
+            { value: 'portuguese', label: '🇵🇹 Portuguese' },
+            { value: 'spanish', label: '🇪🇸 Spanish' }
           ]}
         />
 

@@ -4,6 +4,7 @@ export type Phrase = {
   japanese: string;
   czech: string;
   portuguese: string;
+  spanish: string;
   category: string;
 };
 
@@ -15,6 +16,7 @@ export const phrases: Phrase[] = [
     japanese: 'すみません [sumimasen]',
     czech: 'Prominťte',
     portuguese: 'Com licença',
+    spanish: 'Disculpe',
     category: 'Basic',
   },
   {
@@ -23,6 +25,7 @@ export const phrases: Phrase[] = [
     japanese: 'ごめんなさい [gomen nasai]',
     czech: 'Promiňte',
     portuguese: 'Desculpe',
+    spanish: 'Lo siento',
     category: 'Basic',
   },
   {
@@ -31,6 +34,7 @@ export const phrases: Phrase[] = [
     japanese: '助けて [tasukete]',
     czech: 'Pomoc',
     portuguese: 'Ajuda',
+    spanish: 'Ayuda',
     category: 'Basic',
   },
   {
@@ -39,6 +43,7 @@ export const phrases: Phrase[] = [
     japanese: 'わかりません [wakarimasen]',
     czech: 'Nerozumím',
     portuguese: 'Não entendo',
+    spanish: 'No entiendo',
     category: 'Basic',
   },
   {
@@ -47,6 +52,7 @@ export const phrases: Phrase[] = [
     japanese: '英語を話せますか [eigo wo hanasemasu ka]',
     czech: 'Mluvite anglicky?',
     portuguese: 'Você fala inglês?',
+    spanish: '¿Habla inglés?',
     category: 'Basic',
   },
   {
@@ -55,6 +61,7 @@ export const phrases: Phrase[] = [
     japanese: 'いくらですか [ikura desu ka]',
     czech: 'Kolik to stojí?',
     portuguese: 'Quanto custa?',
+    spanish: '¿Cuánto cuesta?',
     category: 'Basic',
   },
   {
@@ -63,6 +70,7 @@ export const phrases: Phrase[] = [
     japanese: '...はどこですか [...wa doko desu ka]',
     czech: 'Kde je...?',
     portuguese: 'Onde é...?',
+    spanish: '¿Dónde está...?',
     category: 'Basic',
   },
   {
@@ -71,6 +79,7 @@ export const phrases: Phrase[] = [
     japanese: '...をください [...wo kudasai]',
     czech: 'Chtěl bych...',
     portuguese: 'Eu gostaria...',
+    spanish: 'Me gustaría...',
     category: 'Basic',
   },
   {
@@ -79,6 +88,7 @@ export const phrases: Phrase[] = [
     japanese: '手伝ってくれますか [tetsudatte kuremasu ka]',
     czech: 'Můžete mi pomoci?',
     portuguese: 'Você pode me ajudar?',
+    spanish: '¿Puede ayudarme?',
     category: 'Basic',
   },
   {
@@ -87,6 +97,7 @@ export const phrases: Phrase[] = [
     japanese: 'はじめまして [hajimemashite]',
     czech: 'Těší mě',
     portuguese: 'Prazer em conhecê-lo',
+    spanish: 'Mucho gusto',
     category: 'Basic',
   },
 
@@ -98,6 +109,7 @@ export const phrases: Phrase[] = [
       '二人用のテーブルをお願いします [futari you no teeburu wo onegaishimasu]',
     czech: 'Stůl pro dva, prosím',
     portuguese: 'Mesa para dois, por favor',
+    spanish: 'Mesa para dos, por favor',
     category: 'Restaurant',
   },
   {
@@ -106,6 +118,7 @@ export const phrases: Phrase[] = [
     japanese: 'お会計をお願いします [okaikei wo onegaishimasu]',
     czech: 'Účet, prosím',
     portuguese: 'A conta, por favor',
+    spanish: 'La cuenta, por favor',
     category: 'Restaurant',
   },
   {
@@ -114,6 +127,7 @@ export const phrases: Phrase[] = [
     japanese: 'メニューをお願いします [menyuu wo onegaishimasu]',
     czech: 'Menu, prosím',
     portuguese: 'O cardápio, por favor',
+    spanish: 'El menú, por favor',
     category: 'Restaurant',
   },
   {
@@ -122,6 +136,7 @@ export const phrases: Phrase[] = [
     japanese: 'これにします [kore ni shimasu]',
     czech: 'Dám si tohle',
     portuguese: 'Vou querer isto',
+    spanish: 'Voy a tomar esto',
     category: 'Restaurant',
   },
   {
@@ -130,6 +145,7 @@ export const phrases: Phrase[] = [
     japanese: '辛いですか [karai desu ka]',
     czech: 'Je to pálivé?',
     portuguese: 'É picante?',
+    spanish: '¿Está picante?',
     category: 'Restaurant',
   },
   {
@@ -138,6 +154,7 @@ export const phrases: Phrase[] = [
     japanese: 'お肉なしでお願いします [oniku nashi de onegaishimasu]',
     czech: 'Bez masa, prosím',
     portuguese: 'Sem carne, por favor',
+    spanish: 'Sin carne, por favor',
     category: 'Restaurant',
   },
   {
@@ -146,6 +163,7 @@ export const phrases: Phrase[] = [
     japanese: 'お水をもう一杯お願いします [omizu wo mou ippai onegaishimasu]',
     czech: 'Ještě vodu, prosím',
     portuguese: 'Mais água, por favor',
+    spanish: 'Más agua, por favor',
     category: 'Restaurant',
   },
   {
@@ -154,6 +172,7 @@ export const phrases: Phrase[] = [
     japanese: '美味しいです [oishii desu]',
     czech: 'Tohle je chutné',
     portuguese: 'Isto está delicioso',
+    spanish: 'Esto está delicioso',
     category: 'Restaurant',
   },
   {
@@ -162,6 +181,7 @@ export const phrases: Phrase[] = [
     japanese: 'WiFiはありますか [WiFi wa arimasu ka]',
     czech: 'Máte WiFi?',
     portuguese: 'Vocês têm WiFi?',
+    spanish: '¿Tienen WiFi?',
     category: 'Restaurant',
   },
   {
@@ -170,6 +190,7 @@ export const phrases: Phrase[] = [
     japanese: 'カードで払えますか [kaado de haraemasu ka]',
     czech: 'Mohu platit kartou?',
     portuguese: 'Posso pagar com cartão?',
+    spanish: '¿Puedo pagar con tarjeta?',
     category: 'Restaurant',
   },
 
@@ -180,6 +201,7 @@ export const phrases: Phrase[] = [
     japanese: '切符を一枚お願いします [kippu wo ichimai onegaishimasu]',
     czech: 'Jeden lístek, prosím',
     portuguese: 'Um bilhete, por favor',
+    spanish: 'Un boleto, por favor',
     category: 'Travel',
   },
   {
@@ -188,6 +210,7 @@ export const phrases: Phrase[] = [
     japanese: '往復切符 [oufuku kippu]',
     czech: 'Zpáteční lístek',
     portuguese: 'Bilhete de ida e volta',
+    spanish: 'Boleto de ida y vuelta',
     category: 'Travel',
   },
   {
@@ -196,6 +219,7 @@ export const phrases: Phrase[] = [
     japanese: '電車は何時ですか [densha wa nanji desu ka]',
     czech: 'V kolik jede vlak?',
     portuguese: 'Que horas é o trem?',
+    spanish: '¿A qué hora es el tren?',
     category: 'Travel',
   },
   {
@@ -204,6 +228,7 @@ export const phrases: Phrase[] = [
     japanese: '何番線ですか [nanban sen desu ka]',
     czech: 'Číslo nástupiště?',
     portuguese: 'Número da plataforma?',
+    spanish: '¿Número de andén?',
     category: 'Travel',
   },
   {
@@ -212,6 +237,7 @@ export const phrases: Phrase[] = [
     japanese: 'この席は空いていますか [kono seki wa aiteimasu ka]',
     czech: 'Je tohle místo volné?',
     portuguese: 'Este lugar está livre?',
+    spanish: '¿Está libre este asiento?',
     category: 'Travel',
   },
   {
@@ -220,6 +246,7 @@ export const phrases: Phrase[] = [
     japanese: '予約があります [yoyaku ga arimasu]',
     czech: 'Mám rezervaci',
     portuguese: 'Tenho uma reserva',
+    spanish: 'Tengo una reservación',
     category: 'Travel',
   },
   {
@@ -228,6 +255,7 @@ export const phrases: Phrase[] = [
     japanese: 'チェックインお願いします [chekkuin onegaishimasu]',
     czech: 'Check-in, prosím',
     portuguese: 'Check-in, por favor',
+    spanish: 'Check-in, por favor',
     category: 'Travel',
   },
   {
@@ -236,6 +264,7 @@ export const phrases: Phrase[] = [
     japanese: '私のパスポート [watashi no pasupooto]',
     czech: 'Můj pas',
     portuguese: 'Meu passaporte',
+    spanish: 'Mi pasaporte',
     category: 'Travel',
   },
   {
@@ -244,6 +273,7 @@ export const phrases: Phrase[] = [
     japanese: '何番ゲートですか [nanban geeto desu ka]',
     czech: 'Který gate?',
     portuguese: 'Qual portão?',
+    spanish: '¿Cuál puerta?',
     category: 'Travel',
   },
   {
@@ -252,6 +282,7 @@ export const phrases: Phrase[] = [
     japanese: 'フライトは遅れていますか [furaito wa okurete imasu ka]',
     czech: 'Je let opožděný?',
     portuguese: 'O voo está atrasado?',
+    spanish: '¿Está retrasado el vuelo?',
     category: 'Travel',
   },
 
@@ -262,6 +293,7 @@ export const phrases: Phrase[] = [
     japanese: 'これはいくらですか [kore wa ikura desu ka]',
     czech: 'Kolik tohle stojí?',
     portuguese: 'Quanto custa isto?',
+    spanish: '¿Cuánto cuesta esto?',
     category: 'Shopping',
   },
   {
@@ -270,6 +302,7 @@ export const phrases: Phrase[] = [
     japanese: 'これを試着できますか [kore wo shichaku dekimasu ka]',
     czech: 'Mohu si tohle zkusit?',
     portuguese: 'Posso experimentar isto?',
+    spanish: '¿Puedo probarme esto?',
     category: 'Shopping',
   },
   {
@@ -278,6 +311,7 @@ export const phrases: Phrase[] = [
     japanese: 'これのLサイズはありますか [kore no L saizu wa arimasu ka]',
     czech: 'Máte tohle ve velikosti L?',
     portuguese: 'Vocês têm isto em tamanho grande?',
+    spanish: '¿Tienen esto en talla grande?',
     category: 'Shopping',
   },
   {
@@ -286,6 +320,7 @@ export const phrases: Phrase[] = [
     japanese: '違う色はありますか [chigau iro wa arimasu ka]',
     czech: 'Jiná barva?',
     portuguese: 'Cor diferente?',
+    spanish: '¿Color diferente?',
     category: 'Shopping',
   },
   {
@@ -294,6 +329,7 @@ export const phrases: Phrase[] = [
     japanese: '高すぎます [takasugimasu]',
     czech: 'Příliš drahé',
     portuguese: 'Muito caro',
+    spanish: 'Muy caro',
     category: 'Shopping',
   },
   {
@@ -302,6 +338,7 @@ export const phrases: Phrase[] = [
     japanese: 'これにします [kore ni shimasu]',
     czech: 'Vezmu si to',
     portuguese: 'Vou levar',
+    spanish: 'Me lo llevo',
     category: 'Shopping',
   },
   {
@@ -310,6 +347,7 @@ export const phrases: Phrase[] = [
     japanese: '袋をお願いします [fukuro wo onegaishimasu]',
     czech: 'Igelitku, prosím',
     portuguese: 'Saco plástico, por favor',
+    spanish: 'Bolsa plástica, por favor',
     category: 'Shopping',
   },
   {
@@ -318,6 +356,7 @@ export const phrases: Phrase[] = [
     japanese: 'レシートをお願いします [reshiito wo onegaishimasu]',
     czech: 'Účtenku, prosím',
     portuguese: 'Recibo, por favor',
+    spanish: 'Recibo, por favor',
     category: 'Shopping',
   },
 
@@ -328,6 +367,7 @@ export const phrases: Phrase[] = [
     japanese: '警察を呼んでください [keisatsu wo yonde kudasai]',
     czech: 'Zavolejte policii',
     portuguese: 'Chame a polícia',
+    spanish: 'Llame a la policía',
     category: 'Emergency',
   },
   {
@@ -336,6 +376,7 @@ export const phrases: Phrase[] = [
     japanese: '医者が必要です [isha ga hitsuyou desu]',
     czech: 'Potřebuji lékaře',
     portuguese: 'Preciso de um médico',
+    spanish: 'Necesito un médico',
     category: 'Emergency',
   },
   {
@@ -344,6 +385,7 @@ export const phrases: Phrase[] = [
     japanese: '救急車を呼んでください [kyuukyuusha wo yonde kudasai]',
     czech: 'Zavolejte záchrannáře',
     portuguese: 'Chame uma ambulância',
+    spanish: 'Llame una ambulancia',
     category: 'Emergency',
   },
   {
@@ -352,6 +394,7 @@ export const phrases: Phrase[] = [
     japanese: '火事です [kaji desu]',
     czech: 'Hoří!',
     portuguese: 'Fogo!',
+    spanish: '¡Fuego!',
     category: 'Emergency',
   },
   {
@@ -360,6 +403,7 @@ export const phrases: Phrase[] = [
     japanese: '道に迷いました [michi ni mayoimashita]',
     czech: 'Ztratil jsem se',
     portuguese: 'Estou perdido',
+    spanish: 'Estoy perdido',
     category: 'Emergency',
   },
   {
@@ -368,6 +412,7 @@ export const phrases: Phrase[] = [
     japanese: '携帯を盗まれました [keitai wo nusumaremashita]',
     czech: 'Ukradli mi telefon',
     portuguese: 'Roubaram meu telefone',
+    spanish: 'Me robaron el teléfono',
     category: 'Emergency',
   },
   {
@@ -376,6 +421,7 @@ export const phrases: Phrase[] = [
     japanese: '大使館が必要です [taishikan ga hitsuyou desu]',
     czech: 'Potřebuji velvyslanectví',
     portuguese: 'Preciso da embaixada',
+    spanish: 'Necesito la embajada',
     category: 'Emergency',
   },
   {
@@ -384,6 +430,7 @@ export const phrases: Phrase[] = [
     japanese: '気分が悪いです [kibun ga warui desu]',
     czech: 'Cítím se špatně',
     portuguese: 'Sinto-me mal',
+    spanish: 'Me siento mal',
     category: 'Emergency',
   },
 
@@ -394,6 +441,7 @@ export const phrases: Phrase[] = [
     japanese: '頭が痛いです [atama ga itai desu]',
     czech: 'Bolí mě hlava',
     portuguese: 'Minha cabeça dói',
+    spanish: 'Me duele la cabeza',
     category: 'Health',
   },
   {
@@ -402,6 +450,7 @@ export const phrases: Phrase[] = [
     japanese: '熱があります [netsu ga arimasu]',
     czech: 'Mám horŭčku',
     portuguese: 'Tenho febre',
+    spanish: 'Tengo fiebre',
     category: 'Health',
   },
   {
@@ -410,6 +459,7 @@ export const phrases: Phrase[] = [
     japanese: 'めまいがします [memai ga shimasu]',
     czech: 'Je mi závratě',
     portuguese: 'Sinto-me tonto',
+    spanish: 'Me siento mareado',
     category: 'Health',
   },
   {
@@ -418,6 +468,7 @@ export const phrases: Phrase[] = [
     japanese: '薬が必要です [kusuri ga hitsuyou desu]',
     czech: 'Potřebuji léky',
     portuguese: 'Preciso de remédios',
+    spanish: 'Necesito medicina',
     category: 'Health',
   },
   {
@@ -426,6 +477,7 @@ export const phrases: Phrase[] = [
     japanese: '薬局はどこですか [yakkyoku wa doko desu ka]',
     czech: 'Kde je lékárna?',
     portuguese: 'Onde é a farmácia?',
+    spanish: '¿Dónde está la farmacia?',
     category: 'Health',
   },
   {
@@ -434,6 +486,7 @@ export const phrases: Phrase[] = [
     japanese: '...にアレルギーがあります [...ni areruggii ga arimasu]',
     czech: 'Jsem alergický na...',
     portuguese: 'Sou alérgico a...',
+    spanish: 'Soy alérgico a...',
     category: 'Health',
   },
   {
@@ -442,6 +495,7 @@ export const phrases: Phrase[] = [
     japanese: '医者を呼んでください [isha wo yonde kudasai]',
     czech: 'Zavolejte lékaře',
     portuguese: 'Chame um médico',
+    spanish: 'Llame un médico',
     category: 'Health',
   },
   {
@@ -450,6 +504,7 @@ export const phrases: Phrase[] = [
     japanese: '指を切りました [yubi wo kirimashita]',
     czech: 'Řízl jsem si prst',
     portuguese: 'Cortei meu dedo',
+    spanish: 'Me corté el dedo',
     category: 'Health',
   },
 
@@ -460,6 +515,7 @@ export const phrases: Phrase[] = [
     japanese: '天気はどうですか [tenki wa dou desu ka]',
     czech: 'Jaké je počasí?',
     portuguese: 'Como está o tempo?',
+    spanish: '¿Cómo está el clima?',
     category: 'Weather',
   },
   {
@@ -468,6 +524,7 @@ export const phrases: Phrase[] = [
     japanese: '雨が降っています [ame ga futte imasu]',
     czech: 'Prší',
     portuguese: 'Está chovendo',
+    spanish: 'Está lloviendo',
     category: 'Weather',
   },
   {
@@ -476,6 +533,7 @@ export const phrases: Phrase[] = [
     japanese: '傘が必要です [kasa ga hitsuyou desu]',
     czech: 'Potřebuji deštník',
     portuguese: 'Preciso de um guarda-chuva',
+    spanish: 'Necesito un paraguas',
     category: 'Weather',
   },
 
@@ -486,6 +544,7 @@ export const phrases: Phrase[] = [
     japanese: '携帯の電池が切れました [keitai no denchi ga kiremashita]',
     czech: 'Můj telefon je vybitý',
     portuguese: 'Meu telefone está sem bateria',
+    spanish: 'Mi teléfono está muerto',
     category: 'Technology',
   },
   {
@@ -494,6 +553,7 @@ export const phrases: Phrase[] = [
     japanese: 'これをどこで充電できますか [kore wo doko de juuden dekimasu ka]',
     czech: 'Kde to mohu nabít?',
     portuguese: 'Onde posso carregar isto?',
+    spanish: '¿Dónde puedo cargar esto?',
     category: 'Technology',
   },
   {
@@ -502,6 +562,7 @@ export const phrases: Phrase[] = [
     japanese: 'WiFiのパスワードは何ですか [WiFi no pasuwaado wa nan desu ka]',
     czech: 'Jaké je heslo k WiFi?',
     portuguese: 'Qual é a senha do WiFi?',
+    spanish: '¿Cuál es la contraseña del WiFi?',
     category: 'Technology',
   },
   {
@@ -510,6 +571,7 @@ export const phrases: Phrase[] = [
     japanese: '写真を撮ってもらえますか [shashin wo totte moraemasu ka]',
     czech: 'Můžete vyčit fotku?',
     portuguese: 'Você pode tirar uma foto?',
+    spanish: '¿Puede tomar una foto?',
     category: 'Technology',
   },
 
@@ -520,6 +582,7 @@ export const phrases: Phrase[] = [
     japanese: '...にはどう行きますか [...ni wa dou ikimasu ka]',
     czech: 'Jak se dostanu do...?',
     portuguese: 'Como chego a...?',
+    spanish: '¿Cómo llego a...?',
     category: 'Transportation',
   },
   {
@@ -528,6 +591,7 @@ export const phrases: Phrase[] = [
     japanese: '遠いですか [tooi desu ka]',
     czech: 'Je to daleko?',
     portuguese: 'É longe?',
+    spanish: '¿Está lejos?',
     category: 'Transportation',
   },
 
@@ -538,6 +602,7 @@ export const phrases: Phrase[] = [
     japanese: 'ATMはどこですか [ATM wa doko desu ka]',
     czech: 'Kde je bankomat?',
     portuguese: 'Onde é o caixa eletrônico?',
+    spanish: '¿Dónde está el cajero?',
     category: 'Money',
   },
   {
@@ -547,6 +612,7 @@ export const phrases: Phrase[] = [
       'この札を崩してもらえますか [kono satsu wo kuzushite moraemasu ka]',
     czech: 'Můžete rozměnit tuto bankovku?',
     portuguese: 'Pode trocar esta nota?',
+    spanish: '¿Puede cambiar este billete?',
     category: 'Money',
   },
   {
@@ -555,6 +621,7 @@ export const phrases: Phrase[] = [
     japanese: 'チップは含まれていますか [chippu wa fukumarete imasu ka]',
     czech: 'Je spršné začenuto?',
     portuguese: 'A gorjeta está incluída?',
+    spanish: '¿Está incluida la propina?',
     category: 'Money',
   },
   {
@@ -563,6 +630,7 @@ export const phrases: Phrase[] = [
     japanese: 'いくらですか [ikura desu ka]',
     czech: 'Kolik to stojí?',
     portuguese: 'Quanto custa?',
+    spanish: '¿Cuánto cuesta?',
     category: 'Money',
   },
 
@@ -573,6 +641,7 @@ export const phrases: Phrase[] = [
     japanese: '左に曲がって [hidari ni magatte]',
     czech: 'Zahniťte doleva',
     portuguese: 'Vire à esquerda',
+    spanish: 'Gire a la izquierda',
     category: 'Directions',
   },
   {
@@ -581,6 +650,7 @@ export const phrases: Phrase[] = [
     japanese: '右に曲がって [migi ni magatte]',
     czech: 'Zahniťte doprava',
     portuguese: 'Vire à direita',
+    spanish: 'Gire a la derecha',
     category: 'Directions',
   },
   {
@@ -589,6 +659,7 @@ export const phrases: Phrase[] = [
     japanese: 'まっすぐ行って [massugu itte]',
     czech: 'Jděte rovně',
     portuguese: 'Siga em frente',
+    spanish: 'Siga derecho',
     category: 'Directions',
   },
   {
@@ -597,6 +668,7 @@ export const phrases: Phrase[] = [
     japanese: '右側にあります [migigawa ni arimasu]',
     czech: 'Je to vpravo',
     portuguese: 'Está à direita',
+    spanish: 'Está a la derecha',
     category: 'Directions',
   },
   {
@@ -605,6 +677,7 @@ export const phrases: Phrase[] = [
     japanese: '...を探しています [...wo sagashite imasu]',
     czech: 'Hledám...',
     portuguese: 'Estou procurando...',
+    spanish: 'Estoy buscando...',
     category: 'Directions',
   },
   {
@@ -613,6 +686,7 @@ export const phrases: Phrase[] = [
     japanese: '地図で教えてもらえますか [chizu de oshiete moraemasu ka]',
     czech: 'Můžete mi to ukázat na mapě?',
     portuguese: 'Você pode me mostrar no mapa?',
+    spanish: '¿Puede enseñarme en el mapa?',
     category: 'Directions',
   },
 ];

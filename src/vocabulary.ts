@@ -4,6 +4,7 @@ export type VocabularyWord = {
   japanese: string;
   czech: string;
   portuguese: string;
+  spanish: string;
   category: string;
 };
 
@@ -15,6 +16,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'こんにちは [konnichiwa]',
     czech: 'Ahoj',
     portuguese: 'Olá',
+    spanish: 'Hola',
     category: 'Greetings',
   },
   {
@@ -23,6 +25,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'おはよう [ohayou]',
     czech: 'Dobré ráno',
     portuguese: 'Bom dia',
+    spanish: 'Buenos días',
     category: 'Greetings',
   },
   {
@@ -31,6 +34,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'こんばんは [konbanwa]',
     czech: 'Dobrý večer',
     portuguese: 'Boa noite',
+    spanish: 'Buenas tardes',
     category: 'Greetings',
   },
   {
@@ -39,6 +43,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'さようなら [sayounara]',
     czech: 'Sbohem',
     portuguese: 'Tchau',
+    spanish: 'Adiós',
     category: 'Greetings',
   },
   {
@@ -47,6 +52,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'お願いします [onegaishimasu]',
     czech: 'Prosím',
     portuguese: 'Por favor',
+    spanish: 'Por favor',
     category: 'Greetings',
   },
   {
@@ -55,6 +61,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'ありがとう [arigatou]',
     czech: 'Děkuji',
     portuguese: 'Obrigado',
+    spanish: 'Gracias',
     category: 'Greetings',
   },
   {
@@ -63,6 +70,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'どういたしまして [douitashimashite]',
     czech: 'Prosím',
     portuguese: 'De nada',
+    spanish: 'De nada',
     category: 'Greetings',
   },
 
@@ -73,6 +81,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '一 [ichi]',
     czech: 'Jeden',
     portuguese: 'Um',
+    spanish: 'Uno',
     category: 'Numbers',
   },
   {
@@ -81,6 +90,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '二 [ni]',
     czech: 'Dva',
     portuguese: 'Dois',
+    spanish: 'Dos',
     category: 'Numbers',
   },
   {
@@ -89,6 +99,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '三 [san]',
     czech: 'Tři',
     portuguese: 'Três',
+    spanish: 'Tres',
     category: 'Numbers',
   },
   {
@@ -97,6 +108,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '四 [yon/shi]',
     czech: 'Čtyři',
     portuguese: 'Quatro',
+    spanish: 'Cuatro',
     category: 'Numbers',
   },
   {
@@ -105,6 +117,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '五 [go]',
     czech: 'Pět',
     portuguese: 'Cinco',
+    spanish: 'Cinco',
     category: 'Numbers',
   },
   {
@@ -113,6 +126,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '六 [roku]',
     czech: 'Šest',
     portuguese: 'Seis',
+    spanish: 'Seis',
     category: 'Numbers',
   },
   {
@@ -121,6 +135,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '七 [nana/shichi]',
     czech: 'Sedm',
     portuguese: 'Sete',
+    spanish: 'Siete',
     category: 'Numbers',
   },
   {
@@ -129,6 +144,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '八 [hachi]',
     czech: 'Osm',
     portuguese: 'Oito',
+    spanish: 'Ocho',
     category: 'Numbers',
   },
   {
@@ -137,6 +153,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '九 [kyuu/ku]',
     czech: 'Devět',
     portuguese: 'Nove',
+    spanish: 'Nueve',
     category: 'Numbers',
   },
   {
@@ -145,6 +162,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '十 [juu]',
     czech: 'Deset',
     portuguese: 'Dez',
+    spanish: 'Diez',
     category: 'Numbers',
   },
 
@@ -155,6 +173,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '水 [mizu]',
     czech: 'Voda',
     portuguese: 'Água',
+    spanish: 'Agua',
     category: 'Food',
   },
   {
@@ -163,6 +182,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'パン [pan]',
     czech: 'Chléb',
     portuguese: 'Pão',
+    spanish: 'Pan',
     category: 'Food',
   },
   {
@@ -171,6 +191,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'ワイン [wain]',
     czech: 'Víno',
     portuguese: 'Vinho',
+    spanish: 'Vino',
     category: 'Food',
   },
   {
@@ -179,6 +200,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'コーヒー [koohii]',
     czech: 'Káva',
     portuguese: 'Café',
+    spanish: 'Café',
     category: 'Food',
   },
   {
@@ -187,6 +209,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'ピザ [piza]',
     czech: 'Pizza',
     portuguese: 'Pizza',
+    spanish: 'Pizza',
     category: 'Food',
   },
   {
@@ -195,6 +218,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'パスタ [pasuta]',
     czech: 'Těstoviny',
     portuguese: 'Massa',
+    spanish: 'Pasta',
     category: 'Food',
   },
   {
@@ -203,6 +227,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'アイスクリーム [aisu kuriimu]',
     czech: 'Zmrzlina',
     portuguese: 'Sorvete',
+    spanish: 'Helado',
     category: 'Food',
   },
   {
@@ -211,6 +236,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'チーズ [chiizu]',
     czech: 'Sýr',
     portuguese: 'Queijo',
+    spanish: 'Queso',
     category: 'Food',
   },
   {
@@ -219,6 +245,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '肉 [niku]',
     czech: 'Maso',
     portuguese: 'Carne',
+    spanish: 'Carne',
     category: 'Food',
   },
   {
@@ -227,6 +254,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '魚 [sakana]',
     czech: 'Ryba',
     portuguese: 'Peixe',
+    spanish: 'Pescado',
     category: 'Food',
   },
 
@@ -237,6 +265,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'はい [hai]',
     czech: 'Ano',
     portuguese: 'Sim',
+    spanish: 'Sí',
     category: 'Common',
   },
   {
@@ -245,6 +274,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'いいえ [iie]',
     czech: 'Ne',
     portuguese: 'Não',
+    spanish: 'No',
     category: 'Common',
   },
   {
@@ -253,6 +283,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '家 [ie]',
     czech: 'Dům',
     portuguese: 'Casa',
+    spanish: 'Casa',
     category: 'Common',
   },
   {
@@ -261,6 +292,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '家族 [kazoku]',
     czech: 'Rodina',
     portuguese: 'Família',
+    spanish: 'Familia',
     category: 'Common',
   },
   {
@@ -269,6 +301,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '友達 [tomodachi]',
     czech: 'Přítel',
     portuguese: 'Amigo',
+    spanish: 'Amigo',
     category: 'Common',
   },
   {
@@ -277,6 +310,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '愛 [ai]',
     czech: 'Láska',
     portuguese: 'Amor',
+    spanish: 'Amor',
     category: 'Common',
   },
   {
@@ -285,6 +319,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '美しい [utsukushii]',
     czech: 'Krásný',
     portuguese: 'Bonito',
+    spanish: 'Hermoso',
     category: 'Common',
   },
   {
@@ -293,6 +328,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '良い [yoi/ii]',
     czech: 'Dobrý',
     portuguese: 'Bom',
+    spanish: 'Bueno',
     category: 'Common',
   },
   {
@@ -301,6 +337,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '悪い [warui]',
     czech: 'Špatný',
     portuguese: 'Mau',
+    spanish: 'Malo',
     category: 'Common',
   },
   {
@@ -309,6 +346,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '大きい [ookii]',
     czech: 'Velký',
     portuguese: 'Grande',
+    spanish: 'Grande',
     category: 'Common',
   },
   {
@@ -317,6 +355,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '小さい [chiisai]',
     czech: 'Malý',
     portuguese: 'Pequeno',
+    spanish: 'Pequeño',
     category: 'Common',
   },
 
@@ -327,6 +366,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '月曜日 [getsuyoubi]',
     czech: 'Pondělí',
     portuguese: 'Segunda-feira',
+    spanish: 'Lunes',
     category: 'Days',
   },
   {
@@ -335,6 +375,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '火曜日 [kayoubi]',
     czech: 'Úterý',
     portuguese: 'Terça-feira',
+    spanish: 'Martes',
     category: 'Days',
   },
   {
@@ -343,6 +384,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '水曜日 [suiyoubi]',
     czech: 'Středa',
     portuguese: 'Quarta-feira',
+    spanish: 'Miércoles',
     category: 'Days',
   },
   {
@@ -351,6 +393,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '木曜日 [mokuyoubi]',
     czech: 'Čtvrtek',
     portuguese: 'Quinta-feira',
+    spanish: 'Jueves',
     category: 'Days',
   },
   {
@@ -359,6 +402,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '金曜日 [kinyoubi]',
     czech: 'Pátek',
     portuguese: 'Sexta-feira',
+    spanish: 'Viernes',
     category: 'Days',
   },
   {
@@ -367,6 +411,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '土曜日 [doyoubi]',
     czech: 'Sobota',
     portuguese: 'Sábado',
+    spanish: 'Sábado',
     category: 'Days',
   },
   {
@@ -375,6 +420,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '日曜日 [nichiyoubi]',
     czech: 'Neděle',
     portuguese: 'Domingo',
+    spanish: 'Domingo',
     category: 'Days',
   },
 
@@ -385,6 +431,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'です [desu]',
     czech: 'Být',
     portuguese: 'Ser/Estar',
+    spanish: 'Ser/Estar',
     category: 'Verbs',
   },
   {
@@ -393,6 +440,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '持つ [motsu]',
     czech: 'Mít',
     portuguese: 'Ter',
+    spanish: 'Tener',
     category: 'Verbs',
   },
   {
@@ -401,6 +449,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'する [suru]',
     czech: 'Dělat',
     portuguese: 'Fazer',
+    spanish: 'Hacer',
     category: 'Verbs',
   },
   {
@@ -409,6 +458,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '行く [iku]',
     czech: 'Jít',
     portuguese: 'Ir',
+    spanish: 'Ir',
     category: 'Verbs',
   },
   {
@@ -417,6 +467,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '来る [kuru]',
     czech: 'Přijít',
     portuguese: 'Vir',
+    spanish: 'Venir',
     category: 'Verbs',
   },
   {
@@ -425,6 +476,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '欲しい [hoshii]',
     czech: 'Chtít',
     portuguese: 'Querer',
+    spanish: 'Querer',
     category: 'Verbs',
   },
   {
@@ -433,6 +485,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '食べる [taberu]',
     czech: 'Jíst',
     portuguese: 'Comer',
+    spanish: 'Comer',
     category: 'Verbs',
   },
   {
@@ -441,6 +494,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '飲む [nomu]',
     czech: 'Pít',
     portuguese: 'Beber',
+    spanish: 'Beber',
     category: 'Verbs',
   },
   {
@@ -449,6 +503,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '見る [miru]',
     czech: 'Vidět',
     portuguese: 'Ver',
+    spanish: 'Ver',
     category: 'Verbs',
   },
   {
@@ -457,6 +512,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '話す [hanasu]',
     czech: 'Mluvit',
     portuguese: 'Falar',
+    spanish: 'Hablar',
     category: 'Verbs',
   },
   {
@@ -465,6 +521,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '分かる [wakaru]',
     czech: 'Rozumět',
     portuguese: 'Entender',
+    spanish: 'Entender',
     category: 'Verbs',
   },
   {
@@ -473,6 +530,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '知る [shiru]',
     czech: 'Vědět',
     portuguese: 'Saber',
+    spanish: 'Saber',
     category: 'Verbs',
   },
   {
@@ -481,6 +539,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '思う [omou]',
     czech: 'Myslet',
     portuguese: 'Pensar',
+    spanish: 'Pensar',
     category: 'Verbs',
   },
   {
@@ -489,6 +548,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '働く [hataraku]',
     czech: 'Pracovat',
     portuguese: 'Trabalhar',
+    spanish: 'Trabajar',
     category: 'Verbs',
   },
   {
@@ -497,6 +557,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '寝る [neru]',
     czech: 'Spát',
     portuguese: 'Dormir',
+    spanish: 'Dormir',
     category: 'Verbs',
   },
   {
@@ -505,6 +566,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '住む [sumu]',
     czech: 'Žít',
     portuguese: 'Viver',
+    spanish: 'Vivir',
     category: 'Verbs',
   },
   {
@@ -513,6 +575,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '買う [kau]',
     czech: 'Kupovat',
     portuguese: 'Comprar',
+    spanish: 'Comprar',
     category: 'Verbs',
   },
   {
@@ -521,6 +584,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '売る [uru]',
     czech: 'Prodávat',
     portuguese: 'Vender',
+    spanish: 'Vender',
     category: 'Verbs',
   },
   {
@@ -529,6 +593,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '読む [yomu]',
     czech: 'Číst',
     portuguese: 'Ler',
+    spanish: 'Leer',
     category: 'Verbs',
   },
   {
@@ -537,6 +602,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '書く [kaku]',
     czech: 'Psát',
     portuguese: 'Escrever',
+    spanish: 'Escribir',
     category: 'Verbs',
   },
 
@@ -547,6 +613,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '何 [nani]',
     czech: 'Co',
     portuguese: 'O quê',
+    spanish: 'Qué',
     category: 'Questions',
   },
   {
@@ -555,6 +622,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'どこ [doko]',
     czech: 'Kde',
     portuguese: 'Onde',
+    spanish: 'Dónde',
     category: 'Questions',
   },
   {
@@ -563,6 +631,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'いつ [itsu]',
     czech: 'Kdy',
     portuguese: 'Quando',
+    spanish: 'Cuándo',
     category: 'Questions',
   },
   {
@@ -571,6 +640,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '誰 [dare]',
     czech: 'Kdo',
     portuguese: 'Quem',
+    spanish: 'Quién',
     category: 'Questions',
   },
   {
@@ -579,6 +649,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'なぜ [naze]',
     czech: 'Proč',
     portuguese: 'Por quê',
+    spanish: 'Por qué',
     category: 'Questions',
   },
   {
@@ -587,6 +658,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'どう [dou]',
     czech: 'Jak',
     portuguese: 'Como',
+    spanish: 'Cómo',
     category: 'Questions',
   },
   {
@@ -595,6 +667,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'いくら [ikura]',
     czech: 'Kolik',
     portuguese: 'Quanto',
+    spanish: 'Cuánto',
     category: 'Questions',
   },
   {
@@ -603,6 +676,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'どれ [dore]',
     czech: 'Který',
     portuguese: 'Qual',
+    spanish: 'Cuál',
     category: 'Questions',
   },
   {
@@ -611,6 +685,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'いくつ [ikutsu]',
     czech: 'Kolik',
     portuguese: 'Quantos',
+    spanish: 'Cuántos',
     category: 'Questions',
   },
 
@@ -621,6 +696,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '今日 [kyou]',
     czech: 'Dnes',
     portuguese: 'Hoje',
+    spanish: 'Hoy',
     category: 'Time',
   },
   {
@@ -629,6 +705,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '明日 [ashita]',
     czech: 'Zítra',
     portuguese: 'Amanhã',
+    spanish: 'Mañana',
     category: 'Time',
   },
   {
@@ -637,6 +714,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '昨日 [kinou]',
     czech: 'Včera',
     portuguese: 'Ontem',
+    spanish: 'Ayer',
     category: 'Time',
   },
   {
@@ -645,6 +723,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '今 [ima]',
     czech: 'Teď',
     portuguese: 'Agora',
+    spanish: 'Ahora',
     category: 'Time',
   },
   {
@@ -653,6 +732,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '後で [ato de]',
     czech: 'Později',
     portuguese: 'Mais tarde',
+    spanish: 'Después',
     category: 'Time',
   },
   {
@@ -661,6 +741,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '朝 [asa]',
     czech: 'Ráno',
     portuguese: 'Manhã',
+    spanish: 'Mañana',
     category: 'Time',
   },
   {
@@ -669,6 +750,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '午後 [gogo]',
     czech: 'Odpoledne',
     portuguese: 'Tarde',
+    spanish: 'Tarde',
     category: 'Time',
   },
   {
@@ -677,6 +759,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '夕方 [yuugata]',
     czech: 'večer',
     portuguese: 'Noite',
+    spanish: 'Noche',
     category: 'Time',
   },
   {
@@ -685,6 +768,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '夜 [yoru]',
     czech: 'Noc',
     portuguese: 'Noite',
+    spanish: 'Noche',
     category: 'Time',
   },
   {
@@ -693,6 +777,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '週 [shuu]',
     czech: 'Týden',
     portuguese: 'Semana',
+    spanish: 'Semana',
     category: 'Time',
   },
   {
@@ -701,6 +786,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '月 [tsuki/getsu]',
     czech: 'Měsíc',
     portuguese: 'Mês',
+    spanish: 'Mes',
     category: 'Time',
   },
   {
@@ -709,6 +795,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '年 [nen]',
     czech: 'Rok',
     portuguese: 'Ano',
+    spanish: 'Año',
     category: 'Time',
   },
   {
@@ -717,6 +804,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'いつも [itsumo]',
     czech: 'Vždycky',
     portuguese: 'Sempre',
+    spanish: 'Siempre',
     category: 'Time',
   },
   {
@@ -725,6 +813,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '決して [kesshite]',
     czech: 'Nikdy',
     portuguese: 'Nunca',
+    spanish: 'Nunca',
     category: 'Time',
   },
   {
@@ -733,6 +822,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '時々 [tokidoki]',
     czech: 'Někdy',
     portuguese: 'Às vezes',
+    spanish: 'A veces',
     category: 'Time',
   },
 
@@ -743,6 +833,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '母 [haha]',
     czech: 'Matka',
     portuguese: 'Mãe',
+    spanish: 'Madre',
     category: 'Family',
   },
   {
@@ -751,6 +842,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '父 [chichi]',
     czech: 'Otec',
     portuguese: 'Pai',
+    spanish: 'Padre',
     category: 'Family',
   },
   {
@@ -759,6 +851,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '両親 [ryoushin]',
     czech: 'Rodiče',
     portuguese: 'Pais',
+    spanish: 'Padres',
     category: 'Family',
   },
   {
@@ -767,6 +860,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '息子 [musuko]',
     czech: 'Syn',
     portuguese: 'Filho',
+    spanish: 'Hijo',
     category: 'Family',
   },
   {
@@ -775,6 +869,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '娘 [musume]',
     czech: 'Dcera',
     portuguese: 'Filha',
+    spanish: 'Hija',
     category: 'Family',
   },
   {
@@ -783,6 +878,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '兄弟 [kyoudai]',
     czech: 'Bratr',
     portuguese: 'Irmão',
+    spanish: 'Hermano',
     category: 'Family',
   },
   {
@@ -791,6 +887,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '姉妹 [shimai]',
     czech: 'Sestra',
     portuguese: 'Irmã',
+    spanish: 'Hermana',
     category: 'Family',
   },
   {
@@ -799,6 +896,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '祖父 [sofu]',
     czech: 'Dědeček',
     portuguese: 'Avô',
+    spanish: 'Abuelo',
     category: 'Family',
   },
   {
@@ -807,6 +905,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '祖母 [sobo]',
     czech: 'Babička',
     portuguese: 'Avó',
+    spanish: 'Abuela',
     category: 'Family',
   },
   {
@@ -815,6 +914,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '夫 [otto]',
     czech: 'Manžel',
     portuguese: 'Marido',
+    spanish: 'Esposo',
     category: 'Family',
   },
   {
@@ -823,6 +923,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '妻 [tsuma]',
     czech: 'Manželka',
     portuguese: 'Esposa',
+    spanish: 'Esposa',
     category: 'Family',
   },
   {
@@ -831,6 +932,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '子供 [kodomo]',
     czech: 'Dítě',
     portuguese: 'Criança',
+    spanish: 'Niño',
     category: 'Family',
   },
   {
@@ -839,6 +941,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '赤ちゃん [akachan]',
     czech: 'Mimino',
     portuguese: 'Bebê',
+    spanish: 'Bebé',
     category: 'Family',
   },
 
@@ -849,6 +952,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '赤 [aka]',
     czech: 'Červená',
     portuguese: 'Vermelho',
+    spanish: 'Rojo',
     category: 'Colors',
   },
   {
@@ -857,6 +961,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '青 [ao]',
     czech: 'Modrá',
     portuguese: 'Azul',
+    spanish: 'Azul',
     category: 'Colors',
   },
   {
@@ -865,6 +970,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '緑 [midori]',
     czech: 'Zelená',
     portuguese: 'Verde',
+    spanish: 'Verde',
     category: 'Colors',
   },
   {
@@ -873,6 +979,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '黄色 [kiiro]',
     czech: 'Žlutá',
     portuguese: 'Amarelo',
+    spanish: 'Amarillo',
     category: 'Colors',
   },
   {
@@ -881,6 +988,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '黒 [kuro]',
     czech: 'Černá',
     portuguese: 'Preto',
+    spanish: 'Negro',
     category: 'Colors',
   },
   {
@@ -889,6 +997,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '白 [shiro]',
     czech: 'Bílá',
     portuguese: 'Branco',
+    spanish: 'Blanco',
     category: 'Colors',
   },
   {
@@ -897,6 +1006,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'オレンジ [orenji]',
     czech: 'Oranžová',
     portuguese: 'Laranja',
+    spanish: 'Naranja',
     category: 'Colors',
   },
   {
@@ -905,6 +1015,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '紫 [murasaki]',
     czech: 'Fialová',
     portuguese: 'Roxo',
+    spanish: 'Morado',
     category: 'Colors',
   },
   {
@@ -913,6 +1024,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'ピンク [pinku]',
     czech: 'Růžová',
     portuguese: 'Rosa',
+    spanish: 'Rosa',
     category: 'Colors',
   },
   {
@@ -921,6 +1033,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '茶色 [chairo]',
     czech: 'Hnědá',
     portuguese: 'Marrom',
+    spanish: 'Marrón',
     category: 'Colors',
   },
   {
@@ -929,6 +1042,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '灰色 [haiiro]',
     czech: 'Šedá',
     portuguese: 'Cinza',
+    spanish: 'Gris',
     category: 'Colors',
   },
 
@@ -939,6 +1053,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '私 [watashi]',
     czech: 'Já',
     portuguese: 'Eu',
+    spanish: 'Yo',
     category: 'Grammar',
   },
   {
@@ -947,6 +1062,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'あなた [anata]',
     czech: 'Ty',
     portuguese: 'Você',
+    spanish: 'Tú',
     category: 'Grammar',
   },
   {
@@ -955,6 +1071,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '彼 [kare]',
     czech: 'On',
     portuguese: 'Ele',
+    spanish: 'Él',
     category: 'Grammar',
   },
   {
@@ -963,6 +1080,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '彼女 [kanojo]',
     czech: 'Ona',
     portuguese: 'Ela',
+    spanish: 'Ella',
     category: 'Grammar',
   },
   {
@@ -971,6 +1089,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '私たち [watashitachi]',
     czech: 'My',
     portuguese: 'Nós',
+    spanish: 'Nosotros',
     category: 'Grammar',
   },
   {
@@ -979,6 +1098,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '彼ら [karera]',
     czech: 'Oni',
     portuguese: 'Eles',
+    spanish: 'Ellos',
     category: 'Grammar',
   },
 
@@ -989,6 +1109,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '私の [watashi no]',
     czech: 'Můj/Má',
     portuguese: 'Meu/Minha',
+    spanish: 'Mi',
     category: 'Grammar',
   },
   {
@@ -997,6 +1118,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'あなたの [anata no]',
     czech: 'Tvůj/Tvá',
     portuguese: 'Seu/Sua',
+    spanish: 'Tu',
     category: 'Grammar',
   },
   {
@@ -1005,6 +1127,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '彼の [kare no]',
     czech: 'Jeho',
     portuguese: 'Dele',
+    spanish: 'Su',
     category: 'Grammar',
   },
   {
@@ -1013,6 +1136,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '彼女の [kanojo no]',
     czech: 'Její',
     portuguese: 'Dela',
+    spanish: 'Su',
     category: 'Grammar',
   },
   {
@@ -1021,6 +1145,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '私たちの [watashitachi no]',
     czech: 'Náš',
     portuguese: 'Nosso/Nossa',
+    spanish: 'Nuestro',
     category: 'Grammar',
   },
   {
@@ -1029,6 +1154,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '彼らの [karera no]',
     czech: 'Jejich',
     portuguese: 'Deles/Delas',
+    spanish: 'Su',
     category: 'Grammar',
   },
 
@@ -1039,6 +1165,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'その [sono]',
     czech: 'Ten/Ta/To',
     portuguese: 'O/A/Os/As',
+    spanish: 'El/La/Los/Las',
     category: 'Grammar',
   },
   {
@@ -1047,6 +1174,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '一つの [hitotsu no]',
     czech: 'Jeden/Jedna',
     portuguese: 'Um/Uma',
+    spanish: 'Un/Una',
     category: 'Grammar',
   },
   {
@@ -1055,6 +1183,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '中に [naka ni]',
     czech: 'V/Ve',
     portuguese: 'Em',
+    spanish: 'En',
     category: 'Grammar',
   },
   {
@@ -1063,6 +1192,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'で [de]',
     czech: 'Na',
     portuguese: 'Em',
+    spanish: 'En',
     category: 'Grammar',
   },
   {
@@ -1071,6 +1201,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '上に [ue ni]',
     czech: 'Na',
     portuguese: 'Em/Sobre',
+    spanish: 'En/Sobre',
     category: 'Grammar',
   },
   {
@@ -1079,6 +1210,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'に [ni]',
     czech: 'Do/K',
     portuguese: 'Para',
+    spanish: 'A/Para',
     category: 'Grammar',
   },
   {
@@ -1087,6 +1219,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'から [kara]',
     czech: 'Od/Z',
     portuguese: 'De',
+    spanish: 'De/Desde',
     category: 'Grammar',
   },
   {
@@ -1095,6 +1228,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'と [to]',
     czech: 'S/Se',
     portuguese: 'Com',
+    spanish: 'Con',
     category: 'Grammar',
   },
   {
@@ -1103,6 +1237,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'ために [tame ni]',
     czech: 'Pro',
     portuguese: 'Para',
+    spanish: 'Para/Por',
     category: 'Grammar',
   },
   {
@@ -1111,6 +1246,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'の [no]',
     czech: 'Z/Ze',
     portuguese: 'De',
+    spanish: 'De',
     category: 'Grammar',
   },
 
@@ -1121,6 +1257,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'と [to]',
     czech: 'A',
     portuguese: 'E',
+    spanish: 'Y',
     category: 'Grammar',
   },
   {
@@ -1129,6 +1266,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'でも [demo]',
     czech: 'Ale',
     portuguese: 'Mas',
+    spanish: 'Pero',
     category: 'Grammar',
   },
   {
@@ -1137,6 +1275,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'または [mata wa]',
     czech: 'Nebo',
     portuguese: 'Ou',
+    spanish: 'O',
     category: 'Grammar',
   },
   {
@@ -1145,6 +1284,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'できる [dekiru]',
     czech: 'Můžu',
     portuguese: 'Posso',
+    spanish: 'Puedo',
     category: 'Grammar',
   },
   {
@@ -1153,6 +1293,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'しなければならない [shinakereba naranai]',
     czech: 'Musím',
     portuguese: 'Devo',
+    spanish: 'Debo/Tengo que',
     category: 'Grammar',
   },
   {
@@ -1161,6 +1302,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '好き [suki]',
     czech: 'Líbí se',
     portuguese: 'Gostar',
+    spanish: 'Gustar',
     category: 'Grammar',
   },
   {
@@ -1169,6 +1311,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'とても [totemo]',
     czech: 'Velmi',
     portuguese: 'Muito',
+    spanish: 'Muy',
     category: 'Grammar',
   },
   {
@@ -1177,6 +1320,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'ない [nai]',
     czech: 'Ne',
     portuguese: 'Não',
+    spanish: 'No',
     category: 'Grammar',
   },
   {
@@ -1185,6 +1329,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'ここ [koko]',
     czech: 'Zde/Tady',
     portuguese: 'Aqui',
+    spanish: 'Aquí',
     category: 'Grammar',
   },
   {
@@ -1193,6 +1338,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'そこ [soko]',
     czech: 'Tam',
     portuguese: 'Lá',
+    spanish: 'Allí',
     category: 'Grammar',
   },
   {
@@ -1201,6 +1347,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'これ [kore]',
     czech: 'Toto/Tento',
     portuguese: 'Este/Esta',
+    spanish: 'Este/Esta',
     category: 'Grammar',
   },
   {
@@ -1209,6 +1356,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'それ [sore]',
     czech: 'To/Tamto',
     portuguese: 'Esse/Essa',
+    spanish: 'Ese/Esa',
     category: 'Grammar',
   },
   {
@@ -1217,6 +1365,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '全て [subete]',
     czech: 'Všechno',
     portuguese: 'Tudo',
+    spanish: 'Todo',
     category: 'Grammar',
   },
   {
@@ -1225,6 +1374,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'いくつか [ikutsuka]',
     czech: 'Některé',
     portuguese: 'Alguns',
+    spanish: 'Algunos',
     category: 'Grammar',
   },
   {
@@ -1233,6 +1383,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'たくさん [takusan]',
     czech: 'Mnoho',
     portuguese: 'Muitos',
+    spanish: 'Muchos',
     category: 'Grammar',
   },
 
@@ -1243,6 +1394,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '頭 [atama]',
     czech: 'Hlava',
     portuguese: 'Cabeça',
+    spanish: 'Cabeza',
     category: 'Body',
   },
   {
@@ -1251,6 +1403,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '髪 [kami]',
     czech: 'Vlasy',
     portuguese: 'Cabelo',
+    spanish: 'Cabello',
     category: 'Body',
   },
   {
@@ -1259,6 +1412,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '顔 [kao]',
     czech: 'Tvář',
     portuguese: 'Rosto',
+    spanish: 'Cara',
     category: 'Body',
   },
   {
@@ -1267,6 +1421,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '目 [me]',
     czech: 'Oči',
     portuguese: 'Olhos',
+    spanish: 'Ojos',
     category: 'Body',
   },
   {
@@ -1275,6 +1430,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '鼻 [hana]',
     czech: 'Nos',
     portuguese: 'Nariz',
+    spanish: 'Nariz',
     category: 'Body',
   },
   {
@@ -1283,6 +1439,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '口 [kuchi]',
     czech: 'Ústa',
     portuguese: 'Boca',
+    spanish: 'Boca',
     category: 'Body',
   },
   {
@@ -1291,6 +1448,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '歯 [ha]',
     czech: 'Zuby',
     portuguese: 'Dentes',
+    spanish: 'Dientes',
     category: 'Body',
   },
   {
@@ -1299,6 +1457,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '耳 [mimi]',
     czech: 'Ucho',
     portuguese: 'Orelha',
+    spanish: 'Oreja',
     category: 'Body',
   },
   {
@@ -1307,6 +1466,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '首 [kubi]',
     czech: 'Krk',
     portuguese: 'Pescoço',
+    spanish: 'Cuello',
     category: 'Body',
   },
   {
@@ -1315,6 +1475,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '肩 [kata]',
     czech: 'Rameno',
     portuguese: 'Ombro',
+    spanish: 'Hombro',
     category: 'Body',
   },
   {
@@ -1323,6 +1484,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '腕 [ude]',
     czech: 'Paže',
     portuguese: 'Braço',
+    spanish: 'Brazo',
     category: 'Body',
   },
   {
@@ -1331,6 +1493,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '手 [te]',
     czech: 'Ruka',
     portuguese: 'Mão',
+    spanish: 'Mano',
     category: 'Body',
   },
   {
@@ -1339,6 +1502,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '指 [yubi]',
     czech: 'Prst',
     portuguese: 'Dedo',
+    spanish: 'Dedo',
     category: 'Body',
   },
   {
@@ -1347,6 +1511,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '胸 [mune]',
     czech: 'Hrudík',
     portuguese: 'Peito',
+    spanish: 'Pecho',
     category: 'Body',
   },
   {
@@ -1355,6 +1520,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '背中 [senaka]',
     czech: 'Záda',
     portuguese: 'Costas',
+    spanish: 'Espalda',
     category: 'Body',
   },
   {
@@ -1363,6 +1529,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'お腹 [onaka]',
     czech: 'Břicho',
     portuguese: 'Barriga',
+    spanish: 'Estómago',
     category: 'Body',
   },
   {
@@ -1371,6 +1538,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '足 [ashi]',
     czech: 'Noha',
     portuguese: 'Perna',
+    spanish: 'Pierna',
     category: 'Body',
   },
   {
@@ -1379,6 +1547,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '膝 [hiza]',
     czech: 'Koleno',
     portuguese: 'Joelho',
+    spanish: 'Rodilla',
     category: 'Body',
   },
   {
@@ -1387,6 +1556,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '足 [ashi]',
     czech: 'Chodidlo',
     portuguese: 'Pé',
+    spanish: 'Pie',
     category: 'Body',
   },
 
@@ -1397,6 +1567,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '暑い [atsui]',
     czech: 'Horký',
     portuguese: 'Quente',
+    spanish: 'Caliente',
     category: 'Weather',
   },
   {
@@ -1405,6 +1576,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '寒い [samui]',
     czech: 'Studený',
     portuguese: 'Frio',
+    spanish: 'Frío',
     category: 'Weather',
   },
   {
@@ -1413,6 +1585,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '暖かい [atatakai]',
     czech: 'Teplý',
     portuguese: 'Morno',
+    spanish: 'Tibio',
     category: 'Weather',
   },
   {
@@ -1421,6 +1594,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '涼しい [suzushii]',
     czech: 'Chladný',
     portuguese: 'Fresco',
+    spanish: 'Fresco',
     category: 'Weather',
   },
   {
@@ -1429,6 +1603,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '晴れ [hare]',
     czech: 'Slunečný',
     portuguese: 'Ensolarado',
+    spanish: 'Soleado',
     category: 'Weather',
   },
   {
@@ -1437,6 +1612,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '雨 [ame]',
     czech: 'Deštivý',
     portuguese: 'Chuvoso',
+    spanish: 'Lluvioso',
     category: 'Weather',
   },
   {
@@ -1445,6 +1621,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '曇り [kumori]',
     czech: 'Zatažený',
     portuguese: 'Nublado',
+    spanish: 'Nublado',
     category: 'Weather',
   },
   {
@@ -1453,6 +1630,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '風が強い [kaze ga tsuyoi]',
     czech: 'Větrný',
     portuguese: 'Ventoso',
+    spanish: 'Ventoso',
     category: 'Weather',
   },
   {
@@ -1461,6 +1639,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '雪 [yuki]',
     czech: 'Sněžný',
     portuguese: 'Nevado',
+    spanish: 'Nevado',
     category: 'Weather',
   },
   {
@@ -1469,6 +1648,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '春 [haru]',
     czech: 'Jaro',
     portuguese: 'Primavera',
+    spanish: 'Primavera',
     category: 'Weather',
   },
   {
@@ -1477,6 +1657,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '夏 [natsu]',
     czech: 'Léto',
     portuguese: 'Verão',
+    spanish: 'Verano',
     category: 'Weather',
   },
   {
@@ -1485,6 +1666,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '秋 [aki]',
     czech: 'Podzim',
     portuguese: 'Outono',
+    spanish: 'Otoño',
     category: 'Weather',
   },
   {
@@ -1493,6 +1675,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '冬 [fuyu]',
     czech: 'Zima',
     portuguese: 'Inverno',
+    spanish: 'Invierno',
     category: 'Weather',
   },
 
@@ -1503,6 +1686,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '電話 [denwa]',
     czech: 'Telefon',
     portuguese: 'Telefone',
+    spanish: 'Teléfono',
     category: 'Technology',
   },
   {
@@ -1511,6 +1695,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'コンピューター [konpyuutaa]',
     czech: 'Počítač',
     portuguese: 'Computador',
+    spanish: 'Computadora',
     category: 'Technology',
   },
   {
@@ -1519,6 +1704,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'インターネット [intaanetto]',
     czech: 'Internet',
     portuguese: 'Internet',
+    spanish: 'Internet',
     category: 'Technology',
   },
   {
@@ -1527,6 +1713,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'WiFi [waifai]',
     czech: 'WiFi',
     portuguese: 'WiFi',
+    spanish: 'WiFi',
     category: 'Technology',
   },
   {
@@ -1535,6 +1722,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'メール [meeru]',
     czech: 'Email',
     portuguese: 'Email',
+    spanish: 'Email',
     category: 'Technology',
   },
   {
@@ -1543,6 +1731,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'パスワード [pasuwaado]',
     czech: 'Heslo',
     portuguese: 'Senha',
+    spanish: 'Contraseña',
     category: 'Technology',
   },
   {
@@ -1551,6 +1740,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '充電器 [juudenki]',
     czech: 'Nabíjačka',
     portuguese: 'Carregador',
+    spanish: 'Cargador',
     category: 'Technology',
   },
   {
@@ -1559,6 +1749,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'バッテリー [batterii]',
     czech: 'Baterie',
     portuguese: 'Bateria',
+    spanish: 'Batería',
     category: 'Technology',
   },
   {
@@ -1567,6 +1758,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'カメラ [kamera]',
     czech: 'Fotoaparát',
     portuguese: 'Câmera',
+    spanish: 'Cámara',
     category: 'Technology',
   },
 
@@ -1577,6 +1769,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '車 [kuruma]',
     czech: 'Auto',
     portuguese: 'Carro',
+    spanish: 'Coche',
     category: 'Transportation',
   },
   {
@@ -1585,6 +1778,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'バス [basu]',
     czech: 'Autobus',
     portuguese: 'Ônibus',
+    spanish: 'Autobús',
     category: 'Transportation',
   },
   {
@@ -1593,6 +1787,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'タクシー [takushii]',
     czech: 'Taxi',
     portuguese: 'Táxi',
+    spanish: 'Taxi',
     category: 'Transportation',
   },
   {
@@ -1601,6 +1796,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '電車 [densha]',
     czech: 'Vlak',
     portuguese: 'Trem',
+    spanish: 'Tren',
     category: 'Transportation',
   },
   {
@@ -1609,6 +1805,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '地下鉄 [chikatetsu]',
     czech: 'Metro',
     portuguese: 'Metrô',
+    spanish: 'Metro',
     category: 'Transportation',
   },
   {
@@ -1617,6 +1814,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '飛行機 [hikouki]',
     czech: 'Letadlo',
     portuguese: 'Avião',
+    spanish: 'Avión',
     category: 'Transportation',
   },
   {
@@ -1625,6 +1823,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '自転車 [jitensha]',
     czech: 'Kolo',
     portuguese: 'Bicicleta',
+    spanish: 'Bicicleta',
     category: 'Transportation',
   },
   {
@@ -1633,6 +1832,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'バイク [baiku]',
     czech: 'Motorka',
     portuguese: 'Motocicleta',
+    spanish: 'Motocicleta',
     category: 'Transportation',
   },
   {
@@ -1641,6 +1841,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '船 [fune]',
     czech: 'Loď',
     portuguese: 'Barco',
+    spanish: 'Barco',
     category: 'Transportation',
   },
   {
@@ -1649,6 +1850,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'バス停 [basu tei]',
     czech: 'Autobusová zastávka',
     portuguese: 'Ponto de ônibus',
+    spanish: 'Parada de autobús',
     category: 'Transportation',
   },
   {
@@ -1657,6 +1859,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '駅 [eki]',
     czech: 'Nádraží',
     portuguese: 'Estação de trem',
+    spanish: 'Estación de tren',
     category: 'Transportation',
   },
   {
@@ -1665,6 +1868,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '渋滞 [juutai]',
     czech: 'Dopravní zácpa',
     portuguese: 'Engarrafamento',
+    spanish: 'Embotellamiento',
     category: 'Transportation',
   },
 
@@ -1675,6 +1879,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'お金 [okane]',
     czech: 'Peníze',
     portuguese: 'Dinheiro',
+    spanish: 'Dinero',
     category: 'Money',
   },
   {
@@ -1683,6 +1888,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '現金 [genkin]',
     czech: 'Hotovost',
     portuguese: 'Dinheiro em espécie',
+    spanish: 'Efectivo',
     category: 'Money',
   },
   {
@@ -1691,6 +1897,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'クレジットカード [kurejitto kaado]',
     czech: 'Kreditní karta',
     portuguese: 'Cartão de crédito',
+    spanish: 'Tarjeta de crédito',
     category: 'Money',
   },
   {
@@ -1699,6 +1906,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '銀行 [ginkou]',
     czech: 'Banka',
     portuguese: 'Banco',
+    spanish: 'Banco',
     category: 'Money',
   },
   {
@@ -1707,6 +1915,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'ATM [eietiemu]',
     czech: 'Bankomat',
     portuguese: 'Caixa eletrônico',
+    spanish: 'Cajero automático',
     category: 'Money',
   },
   {
@@ -1715,6 +1924,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '両替 [ryougae]',
     czech: 'Směna',
     portuguese: 'Câmbio',
+    spanish: 'Cambio',
     category: 'Money',
   },
   {
@@ -1723,6 +1933,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'レシート [reshiito]',
     czech: 'Účtenka',
     portuguese: 'Recibo',
+    spanish: 'Recibo',
     category: 'Money',
   },
   {
@@ -1731,6 +1942,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'チップ [chippu]',
     czech: 'Sporopné',
     portuguese: 'Gorjeta',
+    spanish: 'Propina',
     category: 'Money',
   },
   {
@@ -1739,6 +1951,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '値段 [nedan]',
     czech: 'Cena',
     portuguese: 'Preço',
+    spanish: 'Precio',
     category: 'Money',
   },
 
@@ -1749,6 +1962,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '左 [hidari]',
     czech: 'Vlevo',
     portuguese: 'Esquerda',
+    spanish: 'Izquierda',
     category: 'Directions',
   },
   {
@@ -1757,6 +1971,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '右 [migi]',
     czech: 'Vpravo',
     portuguese: 'Direita',
+    spanish: 'Derecha',
     category: 'Directions',
   },
   {
@@ -1765,6 +1980,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'まっすぐ [massugu]',
     czech: 'Rovně',
     portuguese: 'Reto',
+    spanish: 'Recto',
     category: 'Directions',
   },
   {
@@ -1773,6 +1989,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '北 [kita]',
     czech: 'Sever',
     portuguese: 'Norte',
+    spanish: 'Norte',
     category: 'Directions',
   },
   {
@@ -1781,6 +1998,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '南 [minami]',
     czech: 'Jih',
     portuguese: 'Sul',
+    spanish: 'Sur',
     category: 'Directions',
   },
   {
@@ -1789,6 +2007,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '東 [higashi]',
     czech: 'Východ',
     portuguese: 'Leste',
+    spanish: 'Este',
     category: 'Directions',
   },
   {
@@ -1797,6 +2016,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '西 [nishi]',
     czech: 'Západ',
     portuguese: 'Oeste',
+    spanish: 'Oeste',
     category: 'Directions',
   },
   {
@@ -1805,6 +2025,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '地図 [chizu]',
     czech: 'Mapa',
     portuguese: 'Mapa',
+    spanish: 'Mapa',
     category: 'Directions',
   },
   {
@@ -1813,6 +2034,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'GPS [jiipiesu]',
     czech: 'GPS',
     portuguese: 'GPS',
+    spanish: 'GPS',
     category: 'Directions',
   },
 
@@ -1823,6 +2045,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '家 [ie/uchi]',
     czech: 'Domov',
     portuguese: 'Casa',
+    spanish: 'Casa',
     category: 'Places',
   },
   {
@@ -1831,6 +2054,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '学校 [gakkou]',
     czech: 'Škola',
     portuguese: 'Escola',
+    spanish: 'Escuela',
     category: 'Places',
   },
   {
@@ -1839,6 +2063,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '仕事 [shigoto]',
     czech: 'Práce',
     portuguese: 'Trabalho',
+    spanish: 'Trabajo',
     category: 'Places',
   },
   {
@@ -1847,6 +2072,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '店 [mise]',
     czech: 'Obchod',
     portuguese: 'Loja',
+    spanish: 'Tienda',
     category: 'Places',
   },
   {
@@ -1855,6 +2081,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'レストラン [resutoran]',
     czech: 'Restaurace',
     portuguese: 'Restaurante',
+    spanish: 'Restaurante',
     category: 'Places',
   },
   {
@@ -1863,6 +2090,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'ホテル [hoteru]',
     czech: 'Hotel',
     portuguese: 'Hotel',
+    spanish: 'Hotel',
     category: 'Places',
   },
   {
@@ -1871,6 +2099,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '病院 [byouin]',
     czech: 'Nemocnice',
     portuguese: 'Hospital',
+    spanish: 'Hospital',
     category: 'Places',
   },
   {
@@ -1879,6 +2108,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '駅 [eki]',
     czech: 'Stanice',
     portuguese: 'Estação',
+    spanish: 'Estación',
     category: 'Places',
   },
   {
@@ -1887,6 +2117,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '空港 [kuukou]',
     czech: 'Letiště',
     portuguese: 'Aeroporto',
+    spanish: 'Aeropuerto',
     category: 'Places',
   },
   {
@@ -1895,6 +2126,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '銀行 [ginkou]',
     czech: 'Banka',
     portuguese: 'Banco',
+    spanish: 'Banco',
     category: 'Places',
   },
   {
@@ -1903,6 +2135,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '郵便局 [yuubinkyoku]',
     czech: 'Pošta',
     portuguese: 'Correios',
+    spanish: 'Oficina de correos',
     category: 'Places',
   },
   {
@@ -1911,6 +2144,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'トイレ [toire]',
     czech: 'Koupelna',
     portuguese: 'Banheiro',
+    spanish: 'Baño',
     category: 'Places',
   },
 
@@ -1921,6 +2155,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '嬉しい [ureshii]',
     czech: 'Šťastný',
     portuguese: 'Feliz',
+    spanish: 'Feliz',
     category: 'Emotions',
   },
   {
@@ -1929,6 +2164,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '悲しい [kanashii]',
     czech: 'Smutný',
     portuguese: 'Triste',
+    spanish: 'Triste',
     category: 'Emotions',
   },
   {
@@ -1937,6 +2173,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '怒っている [okotte iru]',
     czech: 'Nasrálý',
     portuguese: 'Bravo',
+    spanish: 'Enojado',
     category: 'Emotions',
   },
   {
@@ -1945,6 +2182,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '疲れた [tsukareta]',
     czech: 'Unavoný',
     portuguese: 'Cansado',
+    spanish: 'Cansado',
     category: 'Emotions',
   },
   {
@@ -1953,6 +2191,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'お腹すいた [onaka suita]',
     czech: 'Hladný',
     portuguese: 'Com fome',
+    spanish: 'Hambriento',
     category: 'Emotions',
   },
   {
@@ -1961,6 +2200,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '喉が渇いた [nodo ga kawaita]',
     czech: 'Žíznivý',
     portuguese: 'Com sede',
+    spanish: 'Sediento',
     category: 'Emotions',
   },
   {
@@ -1969,6 +2209,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '病気 [byouki]',
     czech: 'Nemocný',
     portuguese: 'Doente',
+    spanish: 'Enfermo',
     category: 'Emotions',
   },
   {
@@ -1977,6 +2218,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '怖い [kowai]',
     czech: 'Vystrashený',
     portuguese: 'Assustado',
+    spanish: 'Asustado',
     category: 'Emotions',
   },
   {
@@ -1985,6 +2227,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: 'ワクワク [wakuwaku]',
     czech: 'Vzrušený',
     portuguese: 'Animado',
+    spanish: 'Emocionado',
     category: 'Emotions',
   },
   {
@@ -1993,6 +2236,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '退屈 [taikutsu]',
     czech: 'Znudaný',
     portuguese: 'Entediado',
+    spanish: 'Aburrido',
     category: 'Emotions',
   },
   {
@@ -2001,6 +2245,7 @@ export const vocabulary: VocabularyWord[] = [
     japanese: '驚いた [odoroita]',
     czech: 'Překvapený',
     portuguese: 'Surpreso',
+    spanish: 'Sorprendido',
     category: 'Emotions',
   },
 ];
