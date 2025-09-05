@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "build:gh-pages": "GITHUB_ACTIONS=true npm run build",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "preact": "^10.27.0"
