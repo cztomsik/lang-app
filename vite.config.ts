@@ -10,5 +10,7 @@ export default defineConfig(({ command }) => {
   return {
     base,
     plugins: [preact(), tailwindcss()],
+    // Ensure service worker is copied to output
+    publicDir: 'public',
   };
 });
