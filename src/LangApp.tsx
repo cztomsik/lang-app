@@ -199,27 +199,40 @@ export function LangApp() {
       const utterance = new SpeechSynthesisUtterance(text);
 
       // Set language codes
+      let langCode: string;
       switch (language) {
         case 'english':
-          utterance.lang = 'en-US';
+          langCode = 'en-US';
           break;
         case 'italian':
-          utterance.lang = 'it-IT';
+          langCode = 'it-IT';
           break;
         case 'japanese':
-          utterance.lang = 'ja-JP';
+          langCode = 'ja-JP';
           break;
         case 'czech':
-          utterance.lang = 'cs-CZ';
+          langCode = 'cs-CZ';
           break;
         case 'portuguese':
-          utterance.lang = 'pt-BR';
+          langCode = 'pt-BR';
           break;
         case 'spanish':
-          utterance.lang = 'es-ES';
+          langCode = 'es-ES';
           break;
         default:
-          utterance.lang = 'en-US';
+          langCode = 'en-US';
+      }
+      
+      utterance.lang = langCode;
+
+      // Safari fix: Try to find and set a voice that matches the language
+      const voices = window.speechSynthesis.getVoices();
+      const matchingVoice = voices.find(voice => 
+        voice.lang.startsWith(langCode.split('-')[0])
+      );
+      
+      if (matchingVoice) {
+        utterance.voice = matchingVoice;
       }
 
       speechSynthesis.speak(utterance);
