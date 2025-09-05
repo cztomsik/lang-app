@@ -6,7 +6,13 @@ interface InputProps {
   disabled?: boolean;
 }
 
-export function Input({ value, onChange, onKeyDown, placeholder, disabled }: InputProps) {
+export function Input({
+  value,
+  onChange,
+  onKeyDown,
+  placeholder,
+  disabled,
+}: InputProps) {
   return (
     <input
       type="text"

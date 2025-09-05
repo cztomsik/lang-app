@@ -3,20 +3,20 @@ import { vocabulary } from './vocabulary';
 import type { VocabularyWord } from './vocabulary';
 import { phrases } from './phrases';
 import type { Phrase } from './phrases';
-import { 
-  Button, 
-  Card, 
+import {
+  Button,
+  Card,
   WordDisplay,
-  Select, 
-  SegmentedControl, 
-  ControlGroup, 
+  Select,
+  SegmentedControl,
+  ControlGroup,
   ToggleButton,
   Input,
   Feedback,
-  ChoiceButton
+  ChoiceButton,
 } from './components';
 
-type LanguagePair = 'english-italian' | 'english-japanese';
+type LanguagePair = 'english-italian' | 'english-japanese'; // | 'czech-portuguese';
 type Direction = 'forward' | 'reverse';
 type ContentType = 'vocabulary' | 'phrases';
 type WordOrPhrase = VocabularyWord | Phrase;
@@ -24,36 +24,74 @@ type WordOrPhrase = VocabularyWord | Phrase;
 export function LangApp() {
   const [currentWord, setCurrentWord] = useState<WordOrPhrase | null>(null);
   const [, setShowAnswer] = useState(false);
-  const [languagePair, setLanguagePair] = useState<LanguagePair>('english-italian');
+  const [languagePair, setLanguagePair] =
+    useState<LanguagePair>('english-italian');
   const [direction, setDirection] = useState<Direction>('forward');
   const [contentType, setContentType] = useState<ContentType>('vocabulary');
   const [, setScore] = useState({ correct: 0, total: 0 });
   const [userInput, setUserInput] = useState('');
-  const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
-  const [practiceMode, setPracticeMode] = useState<'flashcard' | 'typing' | 'multiple-choice'>('multiple-choice');
+  const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(
+    null
+  );
+  const [practiceMode, setPracticeMode] = useState<
+    'flashcard' | 'typing' | 'multiple-choice'
+  >('multiple-choice');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [usedWords, setUsedWords] = useState<Set<number>>(new Set());
-  const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>([]);
+  const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>(
+    []
+  );
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const getCurrentData = () => {
     return contentType === 'vocabulary' ? vocabulary : phrases;
   };
 
-  const categories = ['all', ...Array.from(new Set(getCurrentData().map(w => w.category)))];
-  
+  const categories = [
+    'all',
+    ...Array.from(new Set(getCurrentData().map((w) => w.category))),
+  ];
+
   const getLanguages = () => {
     if (languagePair === 'english-italian') {
-      return direction === 'forward' 
-        ? { from: 'english', to: 'italian', fromLabel: 'English', toLabel: 'Italian', fromFlag: '🇬🇧', toFlag: '🇮🇹' }
-        : { from: 'italian', to: 'english', fromLabel: 'Italian', toLabel: 'English', fromFlag: '🇮🇹', toFlag: '🇬🇧' };
+      return direction === 'forward'
+        ? {
+            from: 'english',
+            to: 'italian',
+            fromLabel: 'English',
+            toLabel: 'Italian',
+            fromFlag: '🇬🇧',
+            toFlag: '🇮🇹',
+          }
+        : {
+            from: 'italian',
+            to: 'english',
+            fromLabel: 'Italian',
+            toLabel: 'English',
+            fromFlag: '🇮🇹',
+            toFlag: '🇬🇧',
+          };
     } else {
       return direction === 'forward'
-        ? { from: 'english', to: 'japanese', fromLabel: 'English', toLabel: 'Japanese', fromFlag: '🇬🇧', toFlag: '🇯🇵' }
-        : { from: 'japanese', to: 'english', fromLabel: 'Japanese', toLabel: 'English', fromFlag: '🇯🇵', toFlag: '🇬🇧' };
+        ? {
+            from: 'english',
+            to: 'japanese',
+            fromLabel: 'English',
+            toLabel: 'Japanese',
+            fromFlag: '🇬🇧',
+            toFlag: '🇯🇵',
+          }
+        : {
+            from: 'japanese',
+            to: 'english',
+            fromLabel: 'Japanese',
+            toLabel: 'English',
+            fromFlag: '🇯🇵',
+            toFlag: '🇬🇧',
+          };
     }
   };
-  
+
   const getWordText = (word: WordOrPhrase, language: string): string => {
     return word[language as keyof WordOrPhrase] as string;
   };
@@ -61,7 +99,7 @@ export function LangApp() {
   const getFilteredWords = () => {
     const data = getCurrentData();
     if (selectedCategory === 'all') return data;
-    return data.filter(w => w.category === selectedCategory);
+    return data.filter((w) => w.category === selectedCategory);
   };
 
   const getRandomWord = () => {
@@ -69,26 +107,29 @@ export function LangApp() {
     if (usedWords.size >= words.length) {
       setUsedWords(new Set());
     }
-    
+
     let randomIndex: number;
     do {
       randomIndex = Math.floor(Math.random() * words.length);
     } while (usedWords.has(randomIndex) && usedWords.size < words.length);
-    
-    setUsedWords(prev => new Set([...prev, randomIndex]));
+
+    setUsedWords((prev) => new Set([...prev, randomIndex]));
     return words[randomIndex];
   };
 
   const generateMultipleChoiceOptions = (correctWord: VocabularyWord) => {
     const langs = getLanguages();
     const correctAnswer = getWordText(correctWord, langs.to);
-    const allWords = getFilteredWords().filter(w => w !== correctWord);
-    
+    const allWords = getFilteredWords().filter((w) => w !== correctWord);
+
     // Get 3 random incorrect options
     const incorrectOptions: string[] = [];
     const usedIndices = new Set<number>();
-    
-    while (incorrectOptions.length < 3 && incorrectOptions.length < allWords.length) {
+
+    while (
+      incorrectOptions.length < 3 &&
+      incorrectOptions.length < allWords.length
+    ) {
       const randomIndex = Math.floor(Math.random() * allWords.length);
       if (!usedIndices.has(randomIndex)) {
         usedIndices.add(randomIndex);
@@ -98,14 +139,14 @@ export function LangApp() {
         }
       }
     }
-    
+
     // Combine correct answer with incorrect options and shuffle
     const allOptions = [correctAnswer, ...incorrectOptions];
     for (let i = allOptions.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [allOptions[i], allOptions[j]] = [allOptions[j], allOptions[i]];
     }
-    
+
     return allOptions;
   };
 
@@ -116,7 +157,7 @@ export function LangApp() {
     setUserInput('');
     setFeedback(null);
     setSelectedOption(null);
-    
+
     if (practiceMode === 'multiple-choice' && newWord) {
       setMultipleChoiceOptions(generateMultipleChoiceOptions(newWord));
     }
@@ -124,17 +165,18 @@ export function LangApp() {
 
   const checkAnswer = () => {
     if (!currentWord) return;
-    
+
     const langs = getLanguages();
     const expectedAnswer = getWordText(currentWord, langs.to);
-    const isCorrect = userInput.toLowerCase().trim() === expectedAnswer.toLowerCase();
-    
+    const isCorrect =
+      userInput.toLowerCase().trim() === expectedAnswer.toLowerCase();
+
     setFeedback(isCorrect ? 'correct' : 'incorrect');
-    setScore(prev => ({
+    setScore((prev) => ({
       correct: prev.correct + (isCorrect ? 1 : 0),
-      total: prev.total + 1
+      total: prev.total + 1,
     }));
-    
+
     if (!isCorrect) {
       setShowAnswer(true);
     }
@@ -142,18 +184,18 @@ export function LangApp() {
 
   const handleMultipleChoiceSelection = (option: string) => {
     if (feedback) return; // Already answered
-    
+
     setSelectedOption(option);
     const langs = getLanguages();
     const correctAnswer = getWordText(currentWord!, langs.to);
     const isCorrect = option === correctAnswer;
-    
+
     setFeedback(isCorrect ? 'correct' : 'incorrect');
-    setScore(prev => ({
+    setScore((prev) => ({
       correct: prev.correct + (isCorrect ? 1 : 0),
-      total: prev.total + 1
+      total: prev.total + 1,
     }));
-    
+
     if (!isCorrect) {
       setShowAnswer(true);
     }
@@ -166,7 +208,7 @@ export function LangApp() {
   const speakText = (text: string, language: string) => {
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(text);
-      
+
       // Set language codes
       switch (language) {
         case 'english':
@@ -178,14 +220,19 @@ export function LangApp() {
         case 'japanese':
           utterance.lang = 'ja-JP';
           break;
+        // case 'czech':
+        //   utterance.lang = 'cs-CZ';
+        //   break;
+        // case 'portuguese':
+        //   utterance.lang = 'pt-PT';
+        //   break;
         default:
           utterance.lang = 'en-US';
       }
-      
+
       speechSynthesis.speak(utterance);
     }
   };
-
 
   useEffect(() => {
     nextWord();
@@ -208,7 +255,7 @@ export function LangApp() {
           options={[
             { value: 'flashcard', label: 'Flashcard' },
             { value: 'multiple-choice', label: 'Choice' },
-            { value: 'typing', label: 'Typing' }
+            { value: 'typing', label: 'Typing' },
           ]}
         />
 
@@ -221,7 +268,7 @@ export function LangApp() {
           }}
           options={[
             { value: 'vocabulary', label: '📝 Vocabulary' },
-            { value: 'phrases', label: '💬 Phrases' }
+            { value: 'phrases', label: '💬 Phrases' },
           ]}
         />
 
@@ -229,9 +276,9 @@ export function LangApp() {
           label="Category"
           value={selectedCategory}
           onChange={setSelectedCategory}
-          options={categories.map(cat => ({
+          options={categories.map((cat) => ({
             value: cat,
-            label: cat.charAt(0).toUpperCase() + cat.slice(1)
+            label: cat.charAt(0).toUpperCase() + cat.slice(1),
           }))}
         />
 
@@ -241,12 +288,17 @@ export function LangApp() {
           onChange={(value) => setLanguagePair(value as LanguagePair)}
           options={[
             { value: 'english-italian', label: '🇬🇧 English - Italian 🇮🇹' },
-            { value: 'english-japanese', label: '🇬🇧 English - Japanese 🇯🇵' }
+            { value: 'english-japanese', label: '🇬🇧 English - Japanese 🇯🇵' },
+            // { value: 'czech-portuguese', label: '🇨🇿 Czech - Portuguese 🇵🇹' }
           ]}
         />
 
         <ControlGroup label="Direction">
-          <ToggleButton onClick={() => setDirection(direction === 'forward' ? 'reverse' : 'forward')}>
+          <ToggleButton
+            onClick={() =>
+              setDirection(direction === 'forward' ? 'reverse' : 'forward')
+            }
+          >
             {`${langs.fromFlag} → ${langs.toFlag}`}
           </ToggleButton>
         </ControlGroup>
@@ -256,7 +308,9 @@ export function LangApp() {
         <WordDisplay
           label={langs.fromLabel}
           word={getWordText(currentWord, langs.from)}
-          onSpeak={() => speakText(getWordText(currentWord, langs.from), langs.from)}
+          onSpeak={() =>
+            speakText(getWordText(currentWord, langs.from), langs.from)
+          }
         />
 
         {practiceMode === 'flashcard' ? (
@@ -264,14 +318,14 @@ export function LangApp() {
             <WordDisplay
               label={langs.toLabel}
               word={getWordText(currentWord, langs.to)}
-              onSpeak={() => speakText(getWordText(currentWord, langs.to), langs.to)}
+              onSpeak={() =>
+                speakText(getWordText(currentWord, langs.to), langs.to)
+              }
               color="primary"
             />
 
             <div className="flex justify-center">
-              <Button onClick={handleSkip}>
-                Next →
-              </Button>
+              <Button onClick={handleSkip}>Next →</Button>
             </div>
           </>
         ) : practiceMode === 'typing' ? (
@@ -280,7 +334,9 @@ export function LangApp() {
               <Input
                 value={userInput}
                 onChange={setUserInput}
-                onKeyDown={(e) => e.key === 'Enter' && (feedback ? nextWord() : checkAnswer())}
+                onKeyDown={(e) =>
+                  e.key === 'Enter' && (feedback ? nextWord() : checkAnswer())
+                }
                 placeholder={`Type the ${langs.toLabel} translation`}
                 disabled={feedback !== null}
               />
@@ -289,25 +345,30 @@ export function LangApp() {
             {feedback && (
               <Feedback
                 type={feedback}
-                correctAnswer={feedback === 'incorrect' ? getWordText(currentWord, langs.to) : undefined}
-                onSpeak={feedback === 'incorrect' ? () => speakText(getWordText(currentWord, langs.to), langs.to) : undefined}
+                correctAnswer={
+                  feedback === 'incorrect'
+                    ? getWordText(currentWord, langs.to)
+                    : undefined
+                }
+                onSpeak={
+                  feedback === 'incorrect'
+                    ? () =>
+                        speakText(getWordText(currentWord, langs.to), langs.to)
+                    : undefined
+                }
               />
             )}
 
             <div className="flex flex-wrap justify-center gap-4">
               {!feedback ? (
                 <>
-                  <Button onClick={checkAnswer}>
-                    Check Answer
-                  </Button>
+                  <Button onClick={checkAnswer}>Check Answer</Button>
                   <Button variant="skip" onClick={handleSkip}>
                     Next →
                   </Button>
                 </>
               ) : (
-                <Button onClick={nextWord}>
-                  Next word →
-                </Button>
+                <Button onClick={nextWord}>Next word →</Button>
               )}
             </div>
           </>
@@ -318,7 +379,7 @@ export function LangApp() {
                 const correctAnswer = getWordText(currentWord, langs.to);
                 const isCorrectOption = option === correctAnswer;
                 const isSelected = option === selectedOption;
-                
+
                 return (
                   <ChoiceButton
                     key={index}
@@ -344,9 +405,7 @@ export function LangApp() {
 
             {feedback && (
               <div className="flex justify-center">
-                <Button onClick={nextWord}>
-                  Next word →
-                </Button>
+                <Button onClick={nextWord}>Next word →</Button>
               </div>
             )}
           </>
