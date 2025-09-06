@@ -105,8 +105,7 @@ export const phrases: Phrase[] = [
   {
     english: 'Table for two, please',
     italian: 'Un tavolo per due, per favore',
-    japanese:
-      '二人用のテーブルをお願いします [futari you no teeburu wo onegaishimasu]',
+    japanese: '二人用のテーブルをお願いします [futari you no teeburu wo onegaishimasu]',
     czech: 'Stůl pro dva, prosím',
     portuguese: 'Mesa para dois, por favor',
     spanish: 'Mesa para dos, por favor',
@@ -608,8 +607,7 @@ export const phrases: Phrase[] = [
   {
     english: 'Can you break this bill?',
     italian: 'Può cambiare questa banconota?',
-    japanese:
-      'この札を崩してもらえますか [kono satsu wo kuzushite moraemasu ka]',
+    japanese: 'この札を崩してもらえますか [kono satsu wo kuzushite moraemasu ka]',
     czech: 'Můžete rozměnit tuto bankovku?',
     portuguese: 'Pode trocar esta nota?',
     spanish: '¿Puede cambiar este billete?',

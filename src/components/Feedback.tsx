@@ -10,9 +10,7 @@ export function Feedback({ type, correctAnswer, onSpeak }: FeedbackProps) {
   return (
     <div
       className={`my-5 p-4 rounded-lg text-lg font-medium border-2 ${
-        isCorrect
-          ? 'bg-green-50 text-green-800 border-green-300'
-          : 'bg-red-50 text-red-800 border-red-300'
+        isCorrect ? 'bg-green-50 text-green-800 border-green-300' : 'bg-red-50 text-red-800 border-red-300'
       }`}
     >
       {isCorrect ? '✓ Correct!' : '✗ Incorrect'}

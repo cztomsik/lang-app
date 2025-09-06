@@ -15,13 +15,7 @@ import {
   Header,
 } from './components';
 
-type Language =
-  | 'english'
-  | 'italian'
-  | 'japanese'
-  | 'czech'
-  | 'portuguese'
-  | 'spanish';
+type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
 type ContentType = 'vocabulary' | 'phrases';
 type WordOrPhrase = VocabularyWord | Phrase;
 
@@ -39,30 +33,21 @@ export function LangApp() {
   const [contentType, setContentType] = useState<ContentType>('vocabulary');
   const [score, setScore] = useState({ correct: 0, total: 0 });
   const [userInput, setUserInput] = useState('');
-  const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(
-    null
-  );
-  const [practiceMode, setPracticeMode] = useState<
-    'learn' | 'answer' | 'guess'
-  >(() => {
+  const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
+  const [practiceMode, setPracticeMode] = useState<'learn' | 'answer' | 'guess'>(() => {
     const saved = localStorage.getItem('practiceMode');
     return (saved as 'learn' | 'answer' | 'guess') || 'guess';
   });
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [usedWords, setUsedWords] = useState<Set<number>>(new Set());
-  const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>(
-    []
-  );
+  const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>([]);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const getCurrentData = () => {
     return contentType === 'vocabulary' ? vocabulary : phrases;
   };
 
-  const categories = [
-    'all',
-    ...Array.from(new Set(getCurrentData().map((w) => w.category))),
-  ];
+  const categories = ['all', ...Array.from(new Set(getCurrentData().map((w) => w.category)))];
 
   const getLanguageInfo = (language: Language) => {
     switch (language) {
@@ -129,10 +114,7 @@ export function LangApp() {
     const incorrectOptions: string[] = [];
     const usedIndices = new Set<number>();
 
-    while (
-      incorrectOptions.length < 3 &&
-      incorrectOptions.length < allWords.length
-    ) {
+    while (incorrectOptions.length < 3 && incorrectOptions.length < allWords.length) {
       const randomIndex = Math.floor(Math.random() * allWords.length);
       if (!usedIndices.has(randomIndex)) {
         usedIndices.add(randomIndex);
@@ -171,8 +153,7 @@ export function LangApp() {
 
     const langs = getLanguages();
     const expectedAnswer = getWordText(currentWord, langs.to);
-    const isCorrect =
-      userInput.toLowerCase().trim() === expectedAnswer.toLowerCase();
+    const isCorrect = userInput.toLowerCase().trim() === expectedAnswer.toLowerCase();
 
     setFeedback(isCorrect ? 'correct' : 'incorrect');
     setScore((prev) => ({
@@ -243,9 +224,7 @@ export function LangApp() {
 
       // Safari fix: Try to find and set a voice that matches the language
       const voices = window.speechSynthesis.getVoices();
-      const matchingVoice = voices.find((voice) =>
-        voice.lang.startsWith(langCode.split('-')[0])
-      );
+      const matchingVoice = voices.find((voice) => voice.lang.startsWith(langCode.split('-')[0]));
 
       if (matchingVoice) {
         utterance.voice = matchingVoice;
@@ -285,7 +264,7 @@ export function LangApp() {
         categories={categories}
       />
 
-      <div className="mt-2 bg-white max-md:h-full md:rounded-xl md:shadow-2xl max-w-4xl mx-auto">
+      <div className="mt-2 md:p-4 bg-white max-md:h-full md:rounded-xl md:shadow-2xl max-w-4xl mx-auto">
         <div className="flex flex-col gap-1">
           <SegmentedControl
             value={practiceMode}
@@ -352,9 +331,7 @@ export function LangApp() {
           <WordDisplay
             label={langs.fromLabel}
             word={getWordText(currentWord, langs.from)}
-            onSpeak={() =>
-              speakText(getWordText(currentWord, langs.from), langs.from)
-            }
+            onSpeak={() => speakText(getWordText(currentWord, langs.from), langs.from)}
           />
 
           {practiceMode === 'learn' ? (
@@ -362,9 +339,7 @@ export function LangApp() {
               <WordDisplay
                 label={langs.toLabel}
                 word={getWordText(currentWord, langs.to)}
-                onSpeak={() =>
-                  speakText(getWordText(currentWord, langs.to), langs.to)
-                }
+                onSpeak={() => speakText(getWordText(currentWord, langs.to), langs.to)}
                 color="primary"
               />
 
@@ -378,9 +353,7 @@ export function LangApp() {
                 <Input
                   value={userInput}
                   onChange={setUserInput}
-                  onKeyDown={(e) =>
-                    e.key === 'Enter' && (feedback ? nextWord() : checkAnswer())
-                  }
+                  onKeyDown={(e) => e.key === 'Enter' && (feedback ? nextWord() : checkAnswer())}
                   placeholder={`Type the ${langs.toLabel} translation`}
                   disabled={feedback !== null}
                 />
@@ -389,19 +362,9 @@ export function LangApp() {
               {feedback && (
                 <Feedback
                   type={feedback}
-                  correctAnswer={
-                    feedback === 'incorrect'
-                      ? getWordText(currentWord, langs.to)
-                      : undefined
-                  }
+                  correctAnswer={feedback === 'incorrect' ? getWordText(currentWord, langs.to) : undefined}
                   onSpeak={
-                    feedback === 'incorrect'
-                      ? () =>
-                          speakText(
-                            getWordText(currentWord, langs.to),
-                            langs.to
-                          )
-                      : undefined
+                    feedback === 'incorrect' ? () => speakText(getWordText(currentWord, langs.to), langs.to) : undefined
                   }
                 />
               )}

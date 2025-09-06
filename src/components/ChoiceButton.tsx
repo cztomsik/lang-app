@@ -18,15 +18,15 @@ export function ChoiceButton({
   disabled,
 }: ChoiceButtonProps) {
   let buttonClass =
-    'relative px-5 pr-12 py-5 text-lg font-medium border-2 border-gray-300 rounded-lg bg-white cursor-pointer transition-all duration-300 text-left min-h-20 flex items-center justify-start w-full hover:border-violet-500 hover:bg-violet-50 hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed';
+    'relative px-4 pr-12 py-3 md:text-lg font-medium border-2 border-gray-300 rounded-lg bg-white cursor-pointer transition-all duration-300 text-left min-h-20 flex items-center justify-start w-full hover:border-violet-500 hover:bg-violet-50 hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed';
 
   if (showFeedback) {
     if (isCorrect) {
       buttonClass =
-        'relative px-5 pr-12 py-5 text-lg font-medium border-2 rounded-lg cursor-not-allowed text-left min-h-20 flex items-center justify-start w-full bg-gradient-to-br from-green-400 to-cyan-400 border-cyan-400 text-white font-bold animate-pulse';
+        'relative px-4 pr-12 py-3 text-lg font-medium border-2 rounded-lg cursor-not-allowed text-left min-h-20 flex items-center justify-start w-full bg-gradient-to-br from-green-400 to-cyan-400 border-cyan-400 text-white font-bold animate-pulse';
     } else if (isSelected && !isCorrect) {
       buttonClass =
-        'relative px-5 pr-12 py-5 text-lg font-medium border-2 rounded-lg cursor-not-allowed text-left min-h-20 flex items-center justify-start w-full bg-gradient-to-br from-pink-400 to-red-500 border-red-500 text-white animate-shake';
+        'relative px-4 pr-12 py-3 text-lg font-medium border-2 rounded-lg cursor-not-allowed text-left min-h-20 flex items-center justify-start w-full bg-gradient-to-br from-pink-400 to-red-500 border-red-500 text-white animate-shake';
     }
   }
 

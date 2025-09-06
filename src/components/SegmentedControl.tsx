@@ -4,11 +4,7 @@ interface SegmentedControlProps {
   onChange: (value: string) => void;
 }
 
-export function SegmentedControl({
-  options,
-  value,
-  onChange,
-}: SegmentedControlProps) {
+export function SegmentedControl({ options, value, onChange }: SegmentedControlProps) {
   return (
     <div className="flex bg-gray-300 rounded-lg p-0.5 flex-1 mb-2">
       {options.map((option) => (

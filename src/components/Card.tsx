@@ -22,19 +22,12 @@ interface WordDisplayProps {
   color?: 'default' | 'primary';
 }
 
-export function WordDisplay({
-  label,
-  word,
-  onSpeak,
-  color = 'default',
-}: WordDisplayProps) {
+export function WordDisplay({ label, word, onSpeak, color = 'default' }: WordDisplayProps) {
   const wordColor = color === 'primary' ? 'text-violet-500' : 'text-gray-800';
 
   return (
     <div className="mb-8">
-      <span className="block text-sm text-gray-600 uppercase tracking-wider mb-2">
-        {label}:
-      </span>
+      <span className="block text-sm text-gray-600 uppercase tracking-wider mb-2">{label}:</span>
       <div className="flex items-center gap-4 justify-center">
         <h2 className={`text-4xl font-bold m-0 ${wordColor}`}>{word}</h2>
         {onSpeak && (
