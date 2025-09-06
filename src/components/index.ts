@@ -7,3 +7,4 @@ export { ToggleButton } from './ToggleButton';
 export { Input } from './Input';
 export { Feedback } from './Feedback';
 export { ChoiceButton } from './ChoiceButton';
+export { Header } from './Header';

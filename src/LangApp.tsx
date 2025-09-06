@@ -14,6 +14,7 @@ import {
   Input,
   Feedback,
   ChoiceButton,
+  Header,
 } from './components';
 
 type Language =
@@ -278,9 +279,11 @@ export function LangApp() {
 
   return (
     <div className="bg-white max-md:h-full md:rounded-2xl p-4 shadow-2xl max-w-4xl mx-auto">
-      <header className="text-center mb-4">
-        <h1 className="text-3xl font-bold text-gray-800">minilingoo</h1>
-      </header>
+      <Header
+        contentType={contentType}
+        onContentTypeChange={setContentType}
+        onCategoryReset={() => setSelectedCategory('all')}
+      />
 
       <div className="flex flex-col gap-1">
         <SegmentedControl
@@ -290,19 +293,6 @@ export function LangApp() {
             { value: 'learn', label: 'Learn' },
             { value: 'guess', label: 'Guess' },
             { value: 'answer', label: 'Answer' },
-          ]}
-        />
-
-        <Select
-          label="Content"
-          value={contentType}
-          onChange={(value) => {
-            setContentType(value as ContentType);
-            setSelectedCategory('all');
-          }}
-          options={[
-            { value: 'vocabulary', label: '📝 Vocabulary' },
-            { value: 'phrases', label: '💬 Phrases' },
           ]}
         />
 

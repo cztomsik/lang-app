@@ -12,7 +12,9 @@ interface SelectProps {
 
 export function Select({ value, onChange, options, label }: SelectProps) {
   return (
-    <div className="grid grid-cols-2 justify-between items-center gap-2 py-1">
+    <div
+      className={`grid ${label && 'grid-cols-2'} justify-between items-center gap-2 py-1`}
+    >
       {label && (
         <label className="text-sm text-gray-600 font-medium">{label}:</label>
       )}
