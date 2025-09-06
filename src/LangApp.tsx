@@ -32,14 +32,14 @@ export function LangApp() {
   const [fromLanguage, setFromLanguage] = useState<Language>('english');
   const [toLanguage, setToLanguage] = useState<Language>('italian');
   const [contentType, setContentType] = useState<ContentType>('vocabulary');
-  const [, setScore] = useState({ correct: 0, total: 0 });
+  const [score, setScore] = useState({ correct: 0, total: 0 });
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(
     null
   );
   const [practiceMode, setPracticeMode] = useState<
-    'flashcard' | 'typing' | 'multiple-choice'
-  >('multiple-choice');
+    'learn' | 'answer' | 'guess'
+  >('guess');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [usedWords, setUsedWords] = useState<Set<number>>(new Set());
   const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>(
@@ -153,7 +153,7 @@ export function LangApp() {
     setFeedback(null);
     setSelectedOption(null);
 
-    if (practiceMode === 'multiple-choice' && newWord) {
+    if (practiceMode === 'guess' && newWord) {
       setMultipleChoiceOptions(generateMultipleChoiceOptions(newWord));
     }
   };
@@ -266,9 +266,9 @@ export function LangApp() {
           value={practiceMode}
           onChange={(value) => setPracticeMode(value as any)}
           options={[
-            { value: 'flashcard', label: 'Flashcard' },
-            { value: 'multiple-choice', label: 'Choice' },
-            { value: 'typing', label: 'Typing' },
+            { value: 'learn', label: 'Learn' },
+            { value: 'guess', label: 'Guess' },
+            { value: 'answer', label: 'Answer' },
           ]}
         />
 
@@ -337,6 +337,12 @@ export function LangApp() {
       </div>
 
       <Card className="mt-2">
+        {(practiceMode === 'guess' || practiceMode === 'answer') && (
+          <div className="text-center mb-4">
+            <span className="text-sm text-gray-600">Score: {score.correct}/{score.total}</span>
+          </div>
+        )}
+        
         <WordDisplay
           label={langs.fromLabel}
           word={getWordText(currentWord, langs.from)}
@@ -345,7 +351,7 @@ export function LangApp() {
           }
         />
 
-        {practiceMode === 'flashcard' ? (
+        {practiceMode === 'learn' ? (
           <>
             <WordDisplay
               label={langs.toLabel}
@@ -360,7 +366,7 @@ export function LangApp() {
               <Button onClick={handleSkip}>Next →</Button>
             </div>
           </>
-        ) : practiceMode === 'typing' ? (
+        ) : practiceMode === 'answer' ? (
           <>
             <div className="mb-6">
               <Input
