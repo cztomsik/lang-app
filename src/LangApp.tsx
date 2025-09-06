@@ -16,7 +16,13 @@ import {
   ChoiceButton,
 } from './components';
 
-type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
+type Language =
+  | 'english'
+  | 'italian'
+  | 'japanese'
+  | 'czech'
+  | 'portuguese'
+  | 'spanish';
 type ContentType = 'vocabulary' | 'phrases';
 type WordOrPhrase = VocabularyWord | Phrase;
 
@@ -70,7 +76,7 @@ export function LangApp() {
   const getLanguages = () => {
     const fromInfo = getLanguageInfo(fromLanguage);
     const toInfo = getLanguageInfo(toLanguage);
-    
+
     return {
       from: fromLanguage,
       to: toLanguage,
@@ -195,6 +201,8 @@ export function LangApp() {
   };
 
   const speakText = (text: string, language: string) => {
+    text = text.replace(/\[[^\]]+\]/, '');
+
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(text);
 
@@ -222,15 +230,15 @@ export function LangApp() {
         default:
           langCode = 'en-US';
       }
-      
+
       utterance.lang = langCode;
 
       // Safari fix: Try to find and set a voice that matches the language
       const voices = window.speechSynthesis.getVoices();
-      const matchingVoice = voices.find(voice => 
+      const matchingVoice = voices.find((voice) =>
         voice.lang.startsWith(langCode.split('-')[0])
       );
-      
+
       if (matchingVoice) {
         utterance.voice = matchingVoice;
       }
@@ -297,7 +305,7 @@ export function LangApp() {
             { value: 'japanese', label: '🇯🇵 Japanese' },
             { value: 'czech', label: '🇨🇿 Czech' },
             { value: 'portuguese', label: '🇵🇹 Portuguese' },
-            { value: 'spanish', label: '🇪🇸 Spanish' }
+            { value: 'spanish', label: '🇪🇸 Spanish' },
           ]}
         />
 
@@ -311,7 +319,7 @@ export function LangApp() {
             { value: 'japanese', label: '🇯🇵 Japanese' },
             { value: 'czech', label: '🇨🇿 Czech' },
             { value: 'portuguese', label: '🇵🇹 Portuguese' },
-            { value: 'spanish', label: '🇪🇸 Spanish' }
+            { value: 'spanish', label: '🇪🇸 Spanish' },
           ]}
         />
 
