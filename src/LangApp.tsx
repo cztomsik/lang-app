@@ -29,8 +29,14 @@ type WordOrPhrase = VocabularyWord | Phrase;
 export function LangApp() {
   const [currentWord, setCurrentWord] = useState<WordOrPhrase | null>(null);
   const [, setShowAnswer] = useState(false);
-  const [fromLanguage, setFromLanguage] = useState<Language>('english');
-  const [toLanguage, setToLanguage] = useState<Language>('italian');
+  const [fromLanguage, setFromLanguage] = useState<Language>(() => {
+    const saved = localStorage.getItem('fromLanguage');
+    return (saved as Language) || 'english';
+  });
+  const [toLanguage, setToLanguage] = useState<Language>(() => {
+    const saved = localStorage.getItem('toLanguage');
+    return (saved as Language) || 'italian';
+  });
   const [contentType, setContentType] = useState<ContentType>('vocabulary');
   const [score, setScore] = useState({ correct: 0, total: 0 });
   const [userInput, setUserInput] = useState('');
@@ -39,7 +45,10 @@ export function LangApp() {
   );
   const [practiceMode, setPracticeMode] = useState<
     'learn' | 'answer' | 'guess'
-  >('guess');
+  >(() => {
+    const saved = localStorage.getItem('practiceMode');
+    return (saved as 'learn' | 'answer' | 'guess') || 'guess';
+  });
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [usedWords, setUsedWords] = useState<Set<number>>(new Set());
   const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>(
@@ -250,6 +259,18 @@ export function LangApp() {
   useEffect(() => {
     nextWord();
   }, [selectedCategory, fromLanguage, toLanguage, practiceMode, contentType]);
+
+  useEffect(() => {
+    localStorage.setItem('fromLanguage', fromLanguage);
+  }, [fromLanguage]);
+
+  useEffect(() => {
+    localStorage.setItem('toLanguage', toLanguage);
+  }, [toLanguage]);
+
+  useEffect(() => {
+    localStorage.setItem('practiceMode', practiceMode);
+  }, [practiceMode]);
 
   if (!currentWord) return null;
 
