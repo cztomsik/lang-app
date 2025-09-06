@@ -1,5 +1,48 @@
 @import 'tailwindcss';
 
+/* Language selector labels */
+.from-language-select {
+  position: relative;
+}
+
+.to-language-select {
+  position: relative;
+}
+
+.from-language-select select {
+  padding-left: 3.5rem;
+}
+
+.to-language-select select {
+  padding-left: 2.75rem;
+}
+
+.from-language-select::before {
+  content: 'From:';
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.to-language-select::before {
+  content: 'To:';
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Custom animations */
 @keyframes pulse {
   0%,

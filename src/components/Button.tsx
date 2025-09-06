@@ -6,7 +6,8 @@ type ButtonVariant =
   | 'danger'
   | 'skip'
   | 'reset'
-  | 'speak';
+  | 'speak'
+  | 'icon';
 
 interface ButtonProps {
   variant?: ButtonVariant;
@@ -30,6 +31,8 @@ const variantStyles: Record<ButtonVariant, string> = {
     'bg-transparent text-gray-600 border-2 border-gray-300 hover:border-violet-500 hover:text-violet-500',
   speak:
     'bg-transparent hover:bg-gray-100 active:opacity-50 rounded-full p-2 min-w-10 h-10 flex items-center justify-center opacity-70 hover:opacity-100',
+  icon:
+    'px-3 py-2 border-2 border-gray-300 rounded-lg text-sm bg-white hover:border-violet-500 focus:border-violet-500 focus:outline-none transition-colors duration-300 font-medium',
 };
 
 export function Button({
@@ -44,6 +47,8 @@ export function Button({
   const baseStyles =
     variant === 'speak'
       ? variantStyles.speak
+      : variant === 'icon'
+      ? ''
       : 'px-8 py-3 text-base font-medium rounded-lg transition-all duration-300 uppercase tracking-wider';
 
   const styles = `${baseStyles} ${variantStyles[variant]} ${className}`;
