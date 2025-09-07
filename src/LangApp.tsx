@@ -230,7 +230,6 @@ export function LangApp() {
     nextWord();
   }, [selectedCategory, fromLanguage, toLanguage, practiceMode, contentType]);
 
-
   if (!currentWord) return null;
 
   const langs = getLanguages();
@@ -301,14 +300,6 @@ export function LangApp() {
         </div>
 
         <Card className="mt-2">
-          {(practiceMode === 'guess' || practiceMode === 'answer') && (
-            <div className="text-center mb-4">
-              <span className="text-sm text-gray-600">
-                Score: {score.correct}/{score.total}
-              </span>
-            </div>
-          )}
-
           <WordDisplay
             label={langs.fromLabel}
             word={getWordText(currentWord, langs.from)}
@@ -365,7 +356,7 @@ export function LangApp() {
             </>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 mb-8">
                 {multipleChoiceOptions.map((option, index) => {
                   const correctAnswer = getWordText(currentWord, langs.to);
                   const isCorrectOption = option === correctAnswer;
@@ -397,6 +388,14 @@ export function LangApp() {
               {feedback && (
                 <div className="flex justify-center">
                   <Button onClick={nextWord}>Next word →</Button>
+                </div>
+              )}
+
+              {(practiceMode === 'guess' || practiceMode === 'answer') && (
+                <div className="text-center mt-4">
+                  <span className="text-sm text-gray-600">
+                    Score: {score.correct}/{score.total}
+                  </span>
                 </div>
               )}
             </>

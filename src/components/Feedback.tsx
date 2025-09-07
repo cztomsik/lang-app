@@ -20,12 +20,7 @@ export function Feedback({ type, correctAnswer, onSpeak }: FeedbackProps) {
         <div className="mt-2 text-base font-normal flex items-center justify-center flex-wrap">
           <span>The answer is: {correctAnswer}</span>
           {onSpeak && (
-            <Button
-              variant="speak"
-              className="ml-2 rounded-full min-w-7 h-7 text-base"
-              onClick={onSpeak}
-              title="Speak"
-            >
+            <Button variant="speak" className="ml-2 rounded-full min-w-7 h-7 text-base" onClick={onSpeak} title="Speak">
               🔊
             </Button>
           )}

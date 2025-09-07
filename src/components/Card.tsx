@@ -27,17 +27,12 @@ export function WordDisplay({ label, word, onSpeak, color = 'default' }: WordDis
   const wordColor = color === 'primary' ? 'text-violet-500' : 'text-gray-800';
 
   return (
-    <div className="mb-8">
-      <span className="block text-sm text-gray-600 uppercase tracking-wider mb-2">{label}:</span>
+    <div className="mb-4 md:mb-8">
+      <span className="block text-xs text-gray-600 uppercase tracking-wider mb-1">{label}:</span>
       <div className="flex items-center gap-4 justify-center">
-        <h2 className={`text-4xl font-bold m-0 ${wordColor}`}>{word}</h2>
+        <h2 className={`text-2xl md:text-4xl font-bold m-0 ${wordColor}`}>{word}</h2>
         {onSpeak && (
-          <Button
-            variant="speak"
-            className="text-xl"
-            onClick={onSpeak}
-            title="Speak"
-          >
+          <Button variant="speak" className="text-xl" onClick={onSpeak} title="Speak">
             🔊
           </Button>
         )}

@@ -6,7 +6,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T)
     try {
       const item = window.localStorage.getItem(key);
       if (!item) return initialValue;
-      
+
       // Try to parse as JSON first
       try {
         return JSON.parse(item);
