@@ -49,6 +49,7 @@ This is a **Preact + Vite + TypeScript** language learning application with Tail
 The vocabulary and phrases data has been refactored into modular category-based files for better maintainability:
 
 **Vocabulary Categories** (`src/data/vocabulary/`):
+
 - `greetings.ts` - Basic greetings and politeness
 - `numbers.ts` - Numbers 1-10
 - `food.ts` - Food and drinks
@@ -70,6 +71,7 @@ The vocabulary and phrases data has been refactored into modular category-based 
 - `emotions.ts` - Feelings and emotions
 
 **Phrase Categories** (`src/data/phrases/`):
+
 - `basic.ts` - Basic common phrases
 - `restaurant.ts` - Dining and food service
 - `travel.ts` - Travel and booking
