@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'preact/hooks';
+import { useLocalStorage } from './hooks/useLocalStorage';
 import { vocabulary } from './vocabulary';
 import type { VocabularyWord } from './vocabulary';
 import { phrases } from './phrases';
@@ -22,22 +23,13 @@ type WordOrPhrase = VocabularyWord | Phrase;
 export function LangApp() {
   const [currentWord, setCurrentWord] = useState<WordOrPhrase | null>(null);
   const [, setShowAnswer] = useState(false);
-  const [fromLanguage, setFromLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('fromLanguage');
-    return (saved as Language) || 'english';
-  });
-  const [toLanguage, setToLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('toLanguage');
-    return (saved as Language) || 'italian';
-  });
+  const [fromLanguage, setFromLanguage] = useLocalStorage<Language>('fromLanguage', 'english');
+  const [toLanguage, setToLanguage] = useLocalStorage<Language>('toLanguage', 'italian');
   const [contentType, setContentType] = useState<ContentType>('vocabulary');
   const [score, setScore] = useState({ correct: 0, total: 0 });
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
-  const [practiceMode, setPracticeMode] = useState<'learn' | 'answer' | 'guess'>(() => {
-    const saved = localStorage.getItem('practiceMode');
-    return (saved as 'learn' | 'answer' | 'guess') || 'guess';
-  });
+  const [practiceMode, setPracticeMode] = useLocalStorage<'learn' | 'answer' | 'guess'>('practiceMode', 'guess');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [usedWords, setUsedWords] = useState<Set<number>>(new Set());
   const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>([]);
@@ -238,17 +230,6 @@ export function LangApp() {
     nextWord();
   }, [selectedCategory, fromLanguage, toLanguage, practiceMode, contentType]);
 
-  useEffect(() => {
-    localStorage.setItem('fromLanguage', fromLanguage);
-  }, [fromLanguage]);
-
-  useEffect(() => {
-    localStorage.setItem('toLanguage', toLanguage);
-  }, [toLanguage]);
-
-  useEffect(() => {
-    localStorage.setItem('practiceMode', practiceMode);
-  }, [practiceMode]);
 
   if (!currentWord) return null;
 
