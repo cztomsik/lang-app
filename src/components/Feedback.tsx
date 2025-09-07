@@ -1,3 +1,5 @@
+import { Button } from './Button';
+
 interface FeedbackProps {
   type: 'correct' | 'incorrect';
   correctAnswer?: string;
@@ -18,13 +20,14 @@ export function Feedback({ type, correctAnswer, onSpeak }: FeedbackProps) {
         <div className="mt-2 text-base font-normal flex items-center justify-center flex-wrap">
           <span>The answer is: {correctAnswer}</span>
           {onSpeak && (
-            <button
-              className="ml-2 bg-transparent hover:bg-white/50 active:opacity-50 rounded-full p-1 min-w-7 h-7 flex items-center justify-center opacity-70 hover:opacity-100 text-base"
+            <Button
+              variant="speak"
+              className="ml-2 rounded-full min-w-7 h-7 text-base"
               onClick={onSpeak}
               title="Speak"
             >
               🔊
-            </button>
+            </Button>
           )}
         </div>
       )}

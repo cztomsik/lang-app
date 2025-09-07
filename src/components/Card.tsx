@@ -1,4 +1,5 @@
 import type { ComponentChildren } from 'preact';
+import { Button } from './Button';
 
 interface CardProps {
   children: ComponentChildren;
@@ -31,13 +32,14 @@ export function WordDisplay({ label, word, onSpeak, color = 'default' }: WordDis
       <div className="flex items-center gap-4 justify-center">
         <h2 className={`text-4xl font-bold m-0 ${wordColor}`}>{word}</h2>
         {onSpeak && (
-          <button
-            className="bg-transparent hover:bg-gray-100 active:opacity-50 rounded-full p-2 min-w-10 h-10 flex items-center justify-center opacity-70 hover:opacity-100 text-xl"
+          <Button
+            variant="speak"
+            className="text-xl"
             onClick={onSpeak}
             title="Speak"
           >
             🔊
-          </button>
+          </Button>
         )}
       </div>
     </div>

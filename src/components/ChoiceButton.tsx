@@ -1,3 +1,5 @@
+import { Button } from './Button';
+
 interface ChoiceButtonProps {
   option: string;
   isCorrect: boolean;
@@ -32,19 +34,27 @@ export function ChoiceButton({
 
   return (
     <div className="relative">
-      <button className={buttonClass} onClick={onClick} disabled={disabled}>
-        {option}
-      </button>
-      <button
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border border-gray-200 rounded-full p-1 min-w-6 h-6 flex items-center justify-center text-sm opacity-70 hover:opacity-100"
-        onClick={(e) => {
-          e.stopPropagation();
-          onSpeak();
-        }}
-        title="Speak"
+      <Button
+        variant="unstyled"
+        className={buttonClass}
+        onClick={onClick}
+        disabled={disabled}
       >
-        🔊
-      </button>
+        {option}
+      </Button>
+      <div
+        className="absolute right-2 top-1/2 -translate-y-1/2"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Button
+          variant="speak"
+          className="bg-white/90 hover:bg-white border border-gray-200 min-w-6 h-6 text-sm"
+          onClick={onSpeak}
+          title="Speak"
+        >
+          🔊
+        </Button>
+      </div>
     </div>
   );
 }
