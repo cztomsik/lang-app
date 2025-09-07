@@ -1,0 +1,58 @@
+import type { Phrase } from '../../phrases.ts';
+
+export const directionsPhrases: Phrase[] = [
+  {
+    english: 'Turn left',
+    italian: 'Gira a sinistra',
+    japanese: '左に曲がって [hidari ni magatte]',
+    czech: 'Zahniťte doleva',
+    portuguese: 'Vire à esquerda',
+    spanish: 'Gire a la izquierda',
+    category: 'Directions',
+  },
+  {
+    english: 'Turn right',
+    italian: 'Gira a destra',
+    japanese: '右に曲がって [migi ni magatte]',
+    czech: 'Zahniťte doprava',
+    portuguese: 'Vire à direita',
+    spanish: 'Gire a la derecha',
+    category: 'Directions',
+  },
+  {
+    english: 'Go straight',
+    italian: 'Va dritto',
+    japanese: 'まっすぐ行って [massugu itte]',
+    czech: 'Jděte rovně',
+    portuguese: 'Siga em frente',
+    spanish: 'Siga derecho',
+    category: 'Directions',
+  },
+  {
+    english: "It's on the right",
+    italian: 'È sulla destra',
+    japanese: '右側にあります [migigawa ni arimasu]',
+    czech: 'Je to vpravo',
+    portuguese: 'Está à direita',
+    spanish: 'Está a la derecha',
+    category: 'Directions',
+  },
+  {
+    english: "I'm looking for...",
+    italian: 'Sto cercando...',
+    japanese: '...を探しています [...wo sagashite imasu]',
+    czech: 'Hledám...',
+    portuguese: 'Estou procurando...',
+    spanish: 'Estoy buscando...',
+    category: 'Directions',
+  },
+  {
+    english: 'Can you show me on the map?',
+    italian: 'Puoi mostrarmi sulla mappa?',
+    japanese: '地図で教えてもらえますか [chizu de oshiete moraemasu ka]',
+    czech: 'Můžete mi to ukázat na mapě?',
+    portuguese: 'Você pode me mostrar no mapa?',
+    spanish: '¿Puede enseñarme en el mapa?',
+    category: 'Directions',
+  },
+];
