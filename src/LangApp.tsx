@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'preact/hooks';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import { useSpacedRepetition } from './hooks/useSpacedRepetition';
 import { vocabulary } from './vocabulary';
 import type { VocabularyWord } from './vocabulary';
 import { phrases } from './phrases';
@@ -8,12 +9,12 @@ import {
   Button,
   Card,
   WordDisplay,
-  Select,
-  SegmentedControl,
   Input,
   Feedback,
   ChoiceButton,
   Header,
+  ReviewFeedback,
+  SettingsPanel,
 } from './components';
 
 type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
@@ -34,6 +35,18 @@ export function LangApp() {
   const [usedWords, setUsedWords] = useState<Set<number>>(new Set());
   const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>([]);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [showReviewFeedback, setShowReviewFeedback] = useState(false);
+  const [showStats, setShowStats] = useLocalStorage<boolean>('showStats', true);
+  
+  // Spaced repetition hook - always enabled
+  const {
+    dueWords,
+    stats,
+    isReviewMode,
+    recordReview,
+    setCurrentReview,
+    getWordProgress
+  } = useSpacedRepetition(contentType, fromLanguage, toLanguage);
 
   const getCurrentData = () => {
     return contentType === 'vocabulary' ? vocabulary : phrases;
@@ -127,16 +140,42 @@ export function LangApp() {
     return allOptions;
   };
 
+  const getWordById = (wordId: string): WordOrPhrase | undefined => {
+    const data = getCurrentData();
+    return data.find(w => {
+      // Create a unique ID for the word
+      const id = `${getWordText(w, fromLanguage)}_${w.category}`;
+      return id === wordId;
+    });
+  };
+
   const nextWord = () => {
-    const newWord = getRandomWord();
+    let newWord: WordOrPhrase;
+    
+    // If in review mode and there are due words, get the next review
+    if (isReviewMode && dueWords.length > 0) {
+      const nextReview = dueWords[0];
+      const word = getWordById(nextReview.wordId);
+      if (word) {
+        newWord = word;
+        setCurrentReview(nextReview);
+      } else {
+        // Fallback to random if word not found
+        newWord = getRandomWord();
+      }
+    } else {
+      newWord = getRandomWord();
+    }
+    
     setCurrentWord(newWord);
     setShowAnswer(false);
     setUserInput('');
     setFeedback(null);
     setSelectedOption(null);
+    setShowReviewFeedback(false);
 
     if (practiceMode === 'guess' && newWord) {
-      setMultipleChoiceOptions(generateMultipleChoiceOptions(newWord));
+      setMultipleChoiceOptions(generateMultipleChoiceOptions(newWord as VocabularyWord));
     }
   };
 
@@ -155,6 +194,16 @@ export function LangApp() {
 
     if (!isCorrect) {
       setShowAnswer(true);
+    }
+    
+    // If in review mode, show quality feedback
+    if (isReviewMode) {
+      setShowReviewFeedback(true);
+    } else {
+      // Track progress for regular practice
+      const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
+      const quality = isCorrect ? 4 : 1;
+      recordReview(wordId, quality, currentWord.category);
     }
   };
 
@@ -175,6 +224,24 @@ export function LangApp() {
     if (!isCorrect) {
       setShowAnswer(true);
     }
+    
+    // If in review mode, show quality feedback
+    if (isReviewMode) {
+      setShowReviewFeedback(true);
+    } else {
+      // Track progress for regular practice
+      const wordId = `${getWordText(currentWord!, fromLanguage)}_${currentWord!.category}`;
+      const quality = isCorrect ? 4 : 1;
+      recordReview(wordId, quality, currentWord!.category);
+    }
+  };
+  
+  const handleReviewQuality = (quality: number) => {
+    if (!currentWord) return;
+    
+    const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
+    recordReview(wordId, quality, currentWord.category);
+    nextWord();
   };
 
   const handleSkip = () => {
@@ -242,62 +309,37 @@ export function LangApp() {
         selectedCategory={selectedCategory}
         onCategoryChange={setSelectedCategory}
         categories={categories}
+        showStats={showStats}
+        onToggleStats={() => setShowStats(!showStats)}
+        masteryPercentage={stats.masteryPercentage}
+        dueCount={stats.dueNow}
       />
+      
+      {showStats && (
+        <SettingsPanel
+          stats={stats}
+          isReviewMode={isReviewMode}
+          onToggleReviewMode={() => {
+            if (isReviewMode) {
+              setCurrentReview(null);
+            }
+            nextWord();
+          }}
+          practiceMode={practiceMode}
+          onPracticeModeChange={(value) => setPracticeMode(value)}
+          fromLanguage={fromLanguage}
+          toLanguage={toLanguage}
+          onFromLanguageChange={setFromLanguage}
+          onToLanguageChange={setToLanguage}
+          onSwapLanguages={() => {
+            const temp = fromLanguage;
+            setFromLanguage(toLanguage);
+            setToLanguage(temp);
+          }}
+        />
+      )}
 
       <div className="mt-2 md:p-4 bg-white max-md:h-full md:rounded-xl md:shadow-2xl max-w-4xl mx-auto">
-        <div className="flex flex-col gap-1">
-          <SegmentedControl
-            value={practiceMode}
-            onChange={(value) => setPracticeMode(value as any)}
-            options={[
-              { value: 'learn', label: 'Learn' },
-              { value: 'guess', label: 'Guess' },
-              { value: 'answer', label: 'Answer' },
-            ]}
-          />
-
-          <div className="flex gap-2">
-            <Select
-              value={fromLanguage}
-              onChange={(value) => setFromLanguage(value as Language)}
-              className="from-language-select flex-1"
-              options={[
-                { value: 'english', label: '🇬🇧 English' },
-                { value: 'italian', label: '🇮🇹 Italian' },
-                { value: 'japanese', label: '🇯🇵 Japanese' },
-                { value: 'czech', label: '🇨🇿 Czech' },
-                { value: 'portuguese', label: '🇵🇹 Portuguese' },
-                { value: 'spanish', label: '🇪🇸 Spanish' },
-              ]}
-            />
-
-            <Button
-              variant="icon"
-              onClick={() => {
-                const temp = fromLanguage;
-                setFromLanguage(toLanguage);
-                setToLanguage(temp);
-              }}
-              title="Swap languages"
-            >
-              ⇄
-            </Button>
-
-            <Select
-              value={toLanguage}
-              onChange={(value) => setToLanguage(value as Language)}
-              className="to-language-select flex-1"
-              options={[
-                { value: 'english', label: '🇬🇧 English' },
-                { value: 'italian', label: '🇮🇹 Italian' },
-                { value: 'japanese', label: '🇯🇵 Japanese' },
-                { value: 'czech', label: '🇨🇿 Czech' },
-                { value: 'portuguese', label: '🇵🇹 Portuguese' },
-                { value: 'spanish', label: '🇪🇸 Spanish' },
-              ]}
-            />
-          </div>
-        </div>
 
         <Card className="mt-2">
           <WordDisplay
@@ -306,7 +348,13 @@ export function LangApp() {
             onSpeak={() => speakText(getWordText(currentWord, langs.from), langs.from)}
           />
 
-          {practiceMode === 'learn' ? (
+          {showReviewFeedback && isReviewMode ? (
+            <ReviewFeedback
+              onQualitySelect={handleReviewQuality}
+              showAnswer={true}
+              correctAnswer={getWordText(currentWord, langs.to)}
+            />
+          ) : practiceMode === 'learn' ? (
             <>
               <WordDisplay
                 label={langs.toLabel}
@@ -316,7 +364,12 @@ export function LangApp() {
               />
 
               <div className="flex justify-center">
-                <Button onClick={handleSkip}>Next →</Button>
+                <Button onClick={() => {
+                  // In learn mode, mark as seen (quality 3 = just learned)
+                  const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
+                  recordReview(wordId, 3, currentWord.category);
+                  handleSkip();
+                }}>Next →</Button>
               </div>
             </>
           ) : practiceMode === 'answer' ? (
@@ -392,10 +445,19 @@ export function LangApp() {
               )}
 
               {(practiceMode === 'guess' || practiceMode === 'answer') && (
-                <div className="text-center mt-4">
+                <div className="text-center mt-4 space-y-2">
                   <span className="text-sm text-gray-600">
                     Score: {score.correct}/{score.total}
                   </span>
+                  {currentWord && (() => {
+                    const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
+                    const progress = getWordProgress(wordId);
+                    return progress && progress.repetitions > 0 ? (
+                      <div className="text-xs text-gray-500">
+                        Repetitions: {progress.repetitions} | Strength: {Math.round((progress.easeFactor - 1.3) / 1.2 * 100)}%
+                      </div>
+                    ) : null;
+                  })()}
                 </div>
               )}
             </>

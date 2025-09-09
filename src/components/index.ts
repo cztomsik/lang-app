@@ -8,3 +8,6 @@ export { Input } from './Input';
 export { Feedback } from './Feedback';
 export { ChoiceButton } from './ChoiceButton';
 export { Header } from './Header';
+export { ProgressDisplay } from './ProgressDisplay';
+export { ReviewFeedback } from './ReviewFeedback';
+export { SettingsPanel } from './SettingsPanel';
