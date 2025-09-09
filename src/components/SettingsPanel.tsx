@@ -24,6 +24,11 @@ interface SettingsPanelProps {
   onFromLanguageChange: (language: Language) => void;
   onToLanguageChange: (language: Language) => void;
   onSwapLanguages: () => void;
+  contentType: 'vocabulary' | 'phrases';
+  onContentTypeChange: (type: 'vocabulary' | 'phrases') => void;
+  selectedCategory: string;
+  onCategoryChange: (category: string) => void;
+  categories: string[];
 }
 
 export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
@@ -37,6 +42,11 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
   onFromLanguageChange,
   onToLanguageChange,
   onSwapLanguages,
+  contentType,
+  onContentTypeChange,
+  selectedCategory,
+  onCategoryChange,
+  categories,
 }) => {
   return (
     <div className="space-y-4">
@@ -48,6 +58,32 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
       
       <div className="bg-white rounded-lg p-4 shadow-sm">
         <div className="flex flex-col gap-3">
+          <div>
+            <label className="text-sm font-medium text-gray-700 mb-2 block">Content & Category</label>
+            <div className="flex gap-2">
+              <Select
+                value={contentType}
+                onChange={(value) => {
+                  onContentTypeChange(value as 'vocabulary' | 'phrases');
+                  onCategoryChange('all');
+                }}
+                options={[
+                  { value: 'vocabulary', label: 'Vocabulary' },
+                  { value: 'phrases', label: 'Phrases' },
+                ]}
+              />
+              <Select
+                value={selectedCategory}
+                onChange={onCategoryChange}
+                className="flex-1"
+                options={categories.map((cat, i) => ({
+                  value: cat,
+                  label: i ? cat.charAt(0).toUpperCase() + cat.slice(1) : 'Everything',
+                }))}
+              />
+            </div>
+          </div>
+          
           <div>
             <label className="text-sm font-medium text-gray-700 mb-2 block">Practice Mode</label>
             <SegmentedControl

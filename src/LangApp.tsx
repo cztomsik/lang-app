@@ -304,11 +304,6 @@ export function LangApp() {
   return (
     <div className="max-md:bg-white p-4">
       <Header
-        contentType={contentType}
-        onContentTypeChange={setContentType}
-        selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
-        categories={categories}
         showStats={showStats}
         onToggleStats={() => setShowStats(!showStats)}
         masteryPercentage={stats.masteryPercentage}
@@ -336,6 +331,11 @@ export function LangApp() {
             setFromLanguage(toLanguage);
             setToLanguage(temp);
           }}
+          contentType={contentType}
+          onContentTypeChange={setContentType}
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
+          categories={categories}
         />
       )}
 
