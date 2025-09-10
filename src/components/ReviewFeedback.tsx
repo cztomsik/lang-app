@@ -9,13 +9,13 @@ interface ReviewFeedbackProps {
 export const ReviewFeedback: FunctionComponent<ReviewFeedbackProps> = ({
   onQualitySelect,
   showAnswer,
-  correctAnswer
+  correctAnswer,
 }) => {
   const qualityButtons = [
     { quality: 0, label: 'Forgot', color: 'bg-red-500 hover:bg-red-600' },
     { quality: 3, label: 'Hard', color: 'bg-orange-500 hover:bg-orange-600' },
     { quality: 4, label: 'Good', color: 'bg-blue-500 hover:bg-blue-600' },
-    { quality: 5, label: 'Easy', color: 'bg-green-500 hover:bg-green-600' }
+    { quality: 5, label: 'Easy', color: 'bg-green-500 hover:bg-green-600' },
   ];
 
   return (
@@ -26,7 +26,7 @@ export const ReviewFeedback: FunctionComponent<ReviewFeedbackProps> = ({
           <p className="text-lg font-semibold text-blue-700">{correctAnswer}</p>
         </div>
       )}
-      
+
       <div className="bg-gray-50 rounded-lg p-4">
         <p className="text-sm text-gray-600 mb-3">How well did you know this?</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">

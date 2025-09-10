@@ -50,17 +50,13 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
 }) => {
   return (
     <div className="space-y-4">
-      <ProgressDisplay
-        stats={stats}
-        isReviewMode={isReviewMode}
-        onToggleReviewMode={onToggleReviewMode}
-      />
-      
+      <ProgressDisplay stats={stats} isReviewMode={isReviewMode} onToggleReviewMode={onToggleReviewMode} />
+
       <div className="bg-white rounded-lg p-4 shadow-sm">
         <div className="flex flex-col gap-3">
           <div>
             <label className="text-sm font-medium text-gray-700 mb-2 block">Content & Category</label>
-            <div className="flex gap-2">
+            <div className="grid grid-cols-2 gap-2">
               <Select
                 value={contentType}
                 onChange={(value) => {
@@ -75,7 +71,6 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
               <Select
                 value={selectedCategory}
                 onChange={onCategoryChange}
-                className="flex-1"
                 options={categories.map((cat, i) => ({
                   value: cat,
                   label: i ? cat.charAt(0).toUpperCase() + cat.slice(1) : 'Everything',
@@ -83,7 +78,7 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
               />
             </div>
           </div>
-          
+
           <div>
             <label className="text-sm font-medium text-gray-700 mb-2 block">Practice Mode</label>
             <SegmentedControl
@@ -96,7 +91,7 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
               ]}
             />
           </div>
-          
+
           <div>
             <label className="text-sm font-medium text-gray-700 mb-2 block">Languages</label>
             <div className="flex gap-2">
@@ -114,11 +109,7 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
                 ]}
               />
 
-              <Button
-                variant="icon"
-                onClick={onSwapLanguages}
-                title="Swap languages"
-              >
+              <Button variant="icon" onClick={onSwapLanguages} title="Swap languages">
                 ⇄
               </Button>
 

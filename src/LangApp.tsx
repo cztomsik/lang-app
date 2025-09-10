@@ -37,16 +37,13 @@ export function LangApp() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [showReviewFeedback, setShowReviewFeedback] = useState(false);
   const [showStats, setShowStats] = useLocalStorage<boolean>('showStats', true);
-  
+
   // Spaced repetition hook - always enabled
-  const {
-    dueWords,
-    stats,
-    isReviewMode,
-    recordReview,
-    setCurrentReview,
-    getWordProgress
-  } = useSpacedRepetition(contentType, fromLanguage, toLanguage);
+  const { dueWords, stats, isReviewMode, recordReview, setCurrentReview, getWordProgress } = useSpacedRepetition(
+    contentType,
+    fromLanguage,
+    toLanguage
+  );
 
   const getCurrentData = () => {
     return contentType === 'vocabulary' ? vocabulary : phrases;
@@ -142,7 +139,7 @@ export function LangApp() {
 
   const getWordById = (wordId: string): WordOrPhrase | undefined => {
     const data = getCurrentData();
-    return data.find(w => {
+    return data.find((w) => {
       // Create a unique ID for the word
       const id = `${getWordText(w, fromLanguage)}_${w.category}`;
       return id === wordId;
@@ -151,7 +148,7 @@ export function LangApp() {
 
   const nextWord = () => {
     let newWord: WordOrPhrase;
-    
+
     // If in review mode and there are due words, get the next review
     if (isReviewMode && dueWords.length > 0) {
       const nextReview = dueWords[0];
@@ -166,7 +163,7 @@ export function LangApp() {
     } else {
       newWord = getRandomWord();
     }
-    
+
     setCurrentWord(newWord);
     setShowAnswer(false);
     setUserInput('');
@@ -195,7 +192,7 @@ export function LangApp() {
     if (!isCorrect) {
       setShowAnswer(true);
     }
-    
+
     // If in review mode, show quality feedback
     if (isReviewMode) {
       setShowReviewFeedback(true);
@@ -224,7 +221,7 @@ export function LangApp() {
     if (!isCorrect) {
       setShowAnswer(true);
     }
-    
+
     // If in review mode, show quality feedback
     if (isReviewMode) {
       setShowReviewFeedback(true);
@@ -235,10 +232,10 @@ export function LangApp() {
       recordReview(wordId, quality, currentWord!.category);
     }
   };
-  
+
   const handleReviewQuality = (quality: number) => {
     if (!currentWord) return;
-    
+
     const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
     recordReview(wordId, quality, currentWord.category);
     nextWord();
@@ -309,7 +306,7 @@ export function LangApp() {
         masteryPercentage={stats.masteryPercentage}
         dueCount={stats.dueNow}
       />
-      
+
       {showStats && (
         <SettingsPanel
           stats={stats}
@@ -340,7 +337,6 @@ export function LangApp() {
       )}
 
       <div className="mt-2 md:p-4 bg-white max-md:h-full md:rounded-xl md:shadow-2xl max-w-4xl mx-auto">
-
         <Card className="mt-2">
           <WordDisplay
             label={langs.fromLabel}
@@ -364,12 +360,16 @@ export function LangApp() {
               />
 
               <div className="flex justify-center">
-                <Button onClick={() => {
-                  // In learn mode, mark as seen (quality 3 = just learned)
-                  const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
-                  recordReview(wordId, 3, currentWord.category);
-                  handleSkip();
-                }}>Next →</Button>
+                <Button
+                  onClick={() => {
+                    // In learn mode, mark as seen (quality 3 = just learned)
+                    const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
+                    recordReview(wordId, 3, currentWord.category);
+                    handleSkip();
+                  }}
+                >
+                  Next →
+                </Button>
               </div>
             </>
           ) : practiceMode === 'answer' ? (
@@ -449,15 +449,17 @@ export function LangApp() {
                   <span className="text-sm text-gray-600">
                     Score: {score.correct}/{score.total}
                   </span>
-                  {currentWord && (() => {
-                    const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
-                    const progress = getWordProgress(wordId);
-                    return progress && progress.repetitions > 0 ? (
-                      <div className="text-xs text-gray-500">
-                        Repetitions: {progress.repetitions} | Strength: {Math.round((progress.easeFactor - 1.3) / 1.2 * 100)}%
-                      </div>
-                    ) : null;
-                  })()}
+                  {currentWord &&
+                    (() => {
+                      const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
+                      const progress = getWordProgress(wordId);
+                      return progress && progress.repetitions > 0 ? (
+                        <div className="text-xs text-gray-500">
+                          Repetitions: {progress.repetitions} | Strength:{' '}
+                          {Math.round(((progress.easeFactor - 1.3) / 1.2) * 100)}%
+                        </div>
+                      ) : null;
+                    })()}
                 </div>
               )}
             </>

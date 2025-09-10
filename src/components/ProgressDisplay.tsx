@@ -16,7 +16,7 @@ interface ProgressDisplayProps {
 export const ProgressDisplay: FunctionComponent<ProgressDisplayProps> = ({
   stats,
   isReviewMode,
-  onToggleReviewMode
+  onToggleReviewMode,
 }) => {
   return (
     <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 mb-4">
@@ -35,34 +35,34 @@ export const ProgressDisplay: FunctionComponent<ProgressDisplayProps> = ({
           </button>
         )}
       </div>
-      
+
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
         <div className="bg-white rounded-lg p-3 shadow-sm">
           <div className="text-2xl font-bold text-gray-800">{stats.total}</div>
           <div className="text-xs text-gray-600">Total Words</div>
         </div>
-        
+
         <div className="bg-white rounded-lg p-3 shadow-sm">
           <div className="text-2xl font-bold text-green-600">{stats.learned}</div>
           <div className="text-xs text-gray-600">Mastered</div>
         </div>
-        
+
         <div className="bg-white rounded-lg p-3 shadow-sm">
           <div className="text-2xl font-bold text-yellow-600">{stats.learning}</div>
           <div className="text-xs text-gray-600">Learning</div>
         </div>
-        
+
         <div className="bg-white rounded-lg p-3 shadow-sm">
           <div className="text-2xl font-bold text-blue-600">{stats.newWords}</div>
           <div className="text-xs text-gray-600">New</div>
         </div>
-        
+
         <div className="bg-white rounded-lg p-3 shadow-sm">
           <div className="text-2xl font-bold text-purple-600">{stats.dueNow}</div>
           <div className="text-xs text-gray-600">Due Now</div>
         </div>
       </div>
-      
+
       <div className="mt-3">
         <div className="flex justify-between text-sm text-gray-600 mb-1">
           <span>Mastery</span>

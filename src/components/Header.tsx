@@ -5,12 +5,7 @@ interface HeaderProps {
   dueCount: number;
 }
 
-export function Header({
-  showStats,
-  onToggleStats,
-  masteryPercentage,
-  dueCount,
-}: HeaderProps) {
+export function Header({ showStats, onToggleStats, masteryPercentage, dueCount }: HeaderProps) {
   return (
     <header className="flex gap-2 items-center">
       <h1 className="text-2xl font-light text-gray-800">minilingo</h1>
@@ -21,10 +16,7 @@ export function Header({
           title={showStats ? 'Hide stats' : 'Show stats'}
         >
           <span className="text-sm font-medium">
-            {masteryPercentage}%
-            {dueCount > 0 && (
-              <span className="ml-1 text-purple-600">({dueCount} due)</span>
-            )}
+            {masteryPercentage}%{dueCount > 0 && <span className="ml-1 text-purple-600">({dueCount} due)</span>}
           </span>
           <svg
             className="w-4 h-4 transition-transform"
@@ -33,12 +25,7 @@ export function Header({
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </button>
       </div>
