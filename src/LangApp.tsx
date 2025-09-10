@@ -299,7 +299,7 @@ export function LangApp() {
   const langs = getLanguages();
 
   return (
-    <div className="max-md:bg-white p-4">
+    <div class="max-md:bg-white p-4">
       <Header
         showStats={showStats}
         onToggleStats={() => setShowStats(!showStats)}
@@ -336,8 +336,8 @@ export function LangApp() {
         />
       )}
 
-      <div className="mt-2 md:p-4 bg-white max-md:h-full md:rounded-xl md:shadow-2xl max-w-4xl mx-auto">
-        <Card className="mt-2">
+      <div class="mt-2 md:p-4 bg-white max-md:h-full md:rounded-xl md:shadow-2xl max-w-4xl mx-auto">
+        <Card class="mt-2">
           <WordDisplay
             label={langs.fromLabel}
             word={getWordText(currentWord, langs.from)}
@@ -359,7 +359,7 @@ export function LangApp() {
                 color="primary"
               />
 
-              <div className="flex justify-center">
+              <div class="flex justify-center">
                 <Button
                   onClick={() => {
                     // In learn mode, mark as seen (quality 3 = just learned)
@@ -374,7 +374,7 @@ export function LangApp() {
             </>
           ) : practiceMode === 'answer' ? (
             <>
-              <div className="mb-6">
+              <div class="mb-6">
                 <Input
                   value={userInput}
                   onChange={setUserInput}
@@ -394,7 +394,7 @@ export function LangApp() {
                 />
               )}
 
-              <div className="flex flex-wrap justify-center gap-4">
+              <div class="flex flex-wrap justify-center gap-4">
                 {!feedback ? (
                   <>
                     <Button onClick={checkAnswer}>Check Answer</Button>
@@ -409,7 +409,7 @@ export function LangApp() {
             </>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 mb-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 mb-8">
                 {multipleChoiceOptions.map((option, index) => {
                   const correctAnswer = getWordText(currentWord, langs.to);
                   const isCorrectOption = option === correctAnswer;
@@ -431,7 +431,7 @@ export function LangApp() {
               </div>
 
               {!feedback && (
-                <div className="flex justify-center">
+                <div class="flex justify-center">
                   <Button variant="skip" onClick={handleSkip}>
                     Next →
                   </Button>
@@ -439,14 +439,14 @@ export function LangApp() {
               )}
 
               {feedback && (
-                <div className="flex justify-center">
+                <div class="flex justify-center">
                   <Button onClick={nextWord}>Next word →</Button>
                 </div>
               )}
 
               {(practiceMode === 'guess' || practiceMode === 'answer') && (
-                <div className="text-center mt-4 space-y-2">
-                  <span className="text-sm text-gray-600">
+                <div class="text-center mt-4 space-y-2">
+                  <span class="text-sm text-gray-600">
                     Score: {score.correct}/{score.total}
                   </span>
                   {currentWord &&
@@ -454,7 +454,7 @@ export function LangApp() {
                       const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
                       const progress = getWordProgress(wordId);
                       return progress && progress.repetitions > 0 ? (
-                        <div className="text-xs text-gray-500">
+                        <div class="text-xs text-gray-500">
                           Repetitions: {progress.repetitions} | Strength:{' '}
                           {Math.round(((progress.easeFactor - 1.3) / 1.2) * 100)}%
                         </div>

@@ -49,14 +49,14 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
   categories,
 }) => {
   return (
-    <div className="space-y-4">
+    <div class="space-y-4">
       <ProgressDisplay stats={stats} isReviewMode={isReviewMode} onToggleReviewMode={onToggleReviewMode} />
 
-      <div className="bg-white rounded-lg p-4 shadow-sm">
-        <div className="flex flex-col gap-3">
+      <div class="bg-white rounded-lg p-4 shadow-sm">
+        <div class="flex flex-col gap-3">
           <div>
-            <label className="text-sm font-medium text-gray-700 mb-2 block">Content & Category</label>
-            <div className="grid grid-cols-2 gap-2">
+            <label class="text-sm font-medium text-gray-700 mb-2 block">Content & Category</label>
+            <div class="grid grid-cols-2 gap-2">
               <Select
                 value={contentType}
                 onChange={(value) => {
@@ -80,7 +80,7 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
           </div>
 
           <div>
-            <label className="text-sm font-medium text-gray-700 mb-2 block">Practice Mode</label>
+            <label class="text-sm font-medium text-gray-700 mb-2 block">Practice Mode</label>
             <SegmentedControl
               value={practiceMode}
               onChange={(value) => onPracticeModeChange(value as 'learn' | 'answer' | 'guess')}
@@ -93,12 +93,12 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
           </div>
 
           <div>
-            <label className="text-sm font-medium text-gray-700 mb-2 block">Languages</label>
-            <div className="flex gap-2">
+            <label class="text-sm font-medium text-gray-700 mb-2 block">Languages</label>
+            <div class="flex gap-2">
               <Select
                 value={fromLanguage}
                 onChange={(value) => onFromLanguageChange(value as Language)}
-                className="from-language-select flex-1"
+                class="from-language-select flex-1"
                 options={[
                   { value: 'english', label: '🇬🇧 English' },
                   { value: 'italian', label: '🇮🇹 Italian' },
@@ -116,7 +116,7 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
               <Select
                 value={toLanguage}
                 onChange={(value) => onToLanguageChange(value as Language)}
-                className="to-language-select flex-1"
+                class="to-language-select flex-1"
                 options={[
                   { value: 'english', label: '🇬🇧 English' },
                   { value: 'italian', label: '🇮🇹 Italian' },

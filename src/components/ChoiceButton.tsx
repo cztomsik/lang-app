@@ -39,14 +39,14 @@ export function ChoiceButton({
   }
 
   return (
-    <div className="relative">
-      <Button variant="unstyled" className={buttonClass} onClick={onClick} disabled={disabled}>
+    <div class="relative">
+      <Button variant="unstyled" class={buttonClass} onClick={onClick} disabled={disabled}>
         {option}
       </Button>
-      <div className="absolute right-2 top-1/2 -translate-y-1/2" onClick={(e) => e.stopPropagation()}>
+      <div class="absolute right-2 top-1/2 -translate-y-1/2" onClick={(e) => e.stopPropagation()}>
         <Button
           variant="speak"
-          className="bg-white/90 hover:bg-white border border-gray-200 min-w-6 h-6 text-sm"
+          class="bg-white/90 hover:bg-white border border-gray-200 min-w-6 h-6 text-sm"
           onClick={onSpeak}
           title="Speak"
         >

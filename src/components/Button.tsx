@@ -7,7 +7,7 @@ interface ButtonProps {
   children: ComponentChildren;
   onClick?: () => void;
   disabled?: boolean;
-  className?: string;
+  class?: string;
   title?: string;
   type?: 'button' | 'submit' | 'reset';
 }
@@ -29,7 +29,7 @@ export function Button({
   children,
   onClick,
   disabled,
-  className = '',
+  class: className = '',
   title,
   type = 'button',
 }: ButtonProps) {
@@ -45,7 +45,7 @@ export function Button({
   const styles = variant === 'unstyled' ? className : `${baseStyles} ${variantStyles[variant]} ${className}`;
 
   return (
-    <button type={type} className={styles} onClick={onClick} disabled={disabled} title={title}>
+    <button type={type} class={styles} onClick={onClick} disabled={disabled} title={title}>
       {children}
     </button>
   );

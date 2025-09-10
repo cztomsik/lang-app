@@ -11,16 +11,16 @@ export function Feedback({ type, correctAnswer, onSpeak }: FeedbackProps) {
 
   return (
     <div
-      className={`my-5 p-4 rounded-lg text-lg font-medium border-2 ${
+      class={`my-5 p-4 rounded-lg text-lg font-medium border-2 ${
         isCorrect ? 'bg-green-50 text-green-800 border-green-300' : 'bg-red-50 text-red-800 border-red-300'
       }`}
     >
       {isCorrect ? '✓ Correct!' : '✗ Incorrect'}
       {!isCorrect && correctAnswer && (
-        <div className="mt-2 text-base font-normal flex items-center justify-center flex-wrap">
+        <div class="mt-2 text-base font-normal flex items-center justify-center flex-wrap">
           <span>The answer is: {correctAnswer}</span>
           {onSpeak && (
-            <Button variant="speak" className="ml-2 rounded-full min-w-7 h-7 text-base" onClick={onSpeak} title="Speak">
+            <Button variant="speak" class="ml-2 rounded-full min-w-7 h-7 text-base" onClick={onSpeak} title="Speak">
               🔊
             </Button>
           )}

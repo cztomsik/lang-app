@@ -7,19 +7,19 @@ interface HeaderProps {
 
 export function Header({ showStats, onToggleStats, masteryPercentage, dueCount }: HeaderProps) {
   return (
-    <header className="flex gap-2 items-center">
-      <h1 className="text-2xl font-light text-gray-800">minilingo</h1>
-      <div className="ml-auto">
+    <header class="flex gap-2 items-center">
+      <h1 class="text-2xl font-light text-gray-800">minilingo</h1>
+      <div class="ml-auto">
         <button
           onClick={onToggleStats}
-          className="flex items-center gap-1 text-gray-500 hover:text-gray-700 transition-colors px-2 py-1 rounded hover:bg-gray-100"
+          class="flex items-center gap-1 text-gray-500 hover:text-gray-700 transition-colors px-2 py-1 rounded hover:bg-gray-100"
           title={showStats ? 'Hide stats' : 'Show stats'}
         >
-          <span className="text-sm font-medium">
-            {masteryPercentage}%{dueCount > 0 && <span className="ml-1 text-purple-600">({dueCount} due)</span>}
+          <span class="text-sm font-medium">
+            {masteryPercentage}%{dueCount > 0 && <span class="ml-1 text-purple-600">({dueCount} due)</span>}
           </span>
           <svg
-            className="w-4 h-4 transition-transform"
+            class="w-4 h-4 transition-transform"
             style={{ transform: showStats ? 'rotate(180deg)' : 'rotate(0deg)' }}
             fill="none"
             stroke="currentColor"

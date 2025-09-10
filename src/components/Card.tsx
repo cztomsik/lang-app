@@ -3,15 +3,15 @@ import { Button } from './Button';
 
 interface CardProps {
   children: ComponentChildren;
-  className?: string;
+  class?: string;
 }
 
-export function Card({ children, className = '' }: CardProps) {
+export function Card({ children, class: className = '' }: CardProps) {
   return (
     <div
-      className={`bg-gradient-to-br from-gray-100 to-blue-100 rounded-xl p-4 mb-4 min-h-[300px] flex items-center justify-center ${className}`}
+      class={`bg-gradient-to-br from-gray-100 to-blue-100 rounded-xl p-4 mb-4 min-h-[300px] flex items-center justify-center ${className}`}
     >
-      <div className="text-center w-full">{children}</div>
+      <div class="text-center w-full">{children}</div>
     </div>
   );
 }
@@ -27,12 +27,12 @@ export function WordDisplay({ label, word, onSpeak, color = 'default' }: WordDis
   const wordColor = color === 'primary' ? 'text-violet-500' : 'text-gray-800';
 
   return (
-    <div className="mb-4 md:mb-8">
-      <span className="block text-xs text-gray-600 uppercase tracking-wider mb-1">{label}:</span>
-      <div className="flex items-center gap-4 justify-center">
-        <h2 className={`text-2xl md:text-4xl font-bold m-0 ${wordColor}`}>{word}</h2>
+    <div class="mb-4 md:mb-8">
+      <span class="block text-xs text-gray-600 uppercase tracking-wider mb-1">{label}:</span>
+      <div class="flex items-center gap-4 justify-center">
+        <h2 class={`text-2xl md:text-4xl font-bold m-0 ${wordColor}`}>{word}</h2>
         {onSpeak && (
-          <Button variant="speak" className="text-xl" onClick={onSpeak} title="Speak">
+          <Button variant="speak" class="text-xl" onClick={onSpeak} title="Speak">
             🔊
           </Button>
         )}
