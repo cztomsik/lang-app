@@ -89,6 +89,8 @@ All category files maintain full backward compatibility through the main `vocabu
 ### Development Notes
 
 - The app uses Preact (lightweight React alternative) with hooks
+- **Uses Preact's native `class` prop instead of React's `className`** - all components use `class` for CSS classes
+- **Always use arrow functions in JSX event handlers** - use `onClick={() => handleClick()}` instead of `onClick={handleClick}`
 - Styling combines Tailwind CSS v4 utilities with custom CSS in `src/index.css`
 - No test framework configured yet
 - Prettier configured for code formatting
