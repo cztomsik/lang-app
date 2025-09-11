@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'preact/hooks';
-import { useLocalStorage } from './hooks/useLocalStorage';
+import { useAppState } from './hooks/useAppState';
 import { useSpacedRepetition } from './hooks/useSpacedRepetition';
-import { vocabulary } from './vocabulary';
 import type { VocabularyWord } from './vocabulary';
-import { phrases } from './phrases';
 import type { Phrase } from './phrases';
 import {
   Button,
@@ -13,30 +11,31 @@ import {
   Feedback,
   ChoiceButton,
   Header,
-  ReviewFeedback,
   SettingsPanel,
 } from './components';
 
-type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
-type ContentType = 'vocabulary' | 'phrases';
 type WordOrPhrase = VocabularyWord | Phrase;
 
 export function LangApp() {
-  const [currentWord, setCurrentWord] = useState<WordOrPhrase | null>(null);
-  const [, setShowAnswer] = useState(false);
-  const [fromLanguage, setFromLanguage] = useLocalStorage<Language>('fromLanguage', 'english');
-  const [toLanguage, setToLanguage] = useLocalStorage<Language>('toLanguage', 'italian');
-  const [contentType, setContentType] = useState<ContentType>('vocabulary');
-  const [score, setScore] = useState({ correct: 0, total: 0 });
-  const [userInput, setUserInput] = useState('');
-  const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
-  const [practiceMode, setPracticeMode] = useLocalStorage<'learn' | 'answer' | 'guess'>('practiceMode', 'guess');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [usedWords, setUsedWords] = useState<Set<number>>(new Set());
-  const [multipleChoiceOptions, setMultipleChoiceOptions] = useState<string[]>([]);
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [showReviewFeedback, setShowReviewFeedback] = useState(false);
-  const [showStats, setShowStats] = useLocalStorage<boolean>('showStats', true);
+  const appState = useAppState();
+  
+  const {
+    // Extract what we need from appState
+    fromLanguage, toLanguage, swapLanguages,
+    contentType, setContentType,
+    selectedCategory, handleCategoryChange, categories,
+    practiceMode, setPracticeMode,
+    showStats, setShowStats,
+    currentWord, setCurrentWord,
+    showAnswer, setShowAnswer,
+    score, setScore,
+    userInput, setUserInput,
+    feedback, setFeedback,
+    usedWords, setUsedWords,
+    multipleChoiceOptions, setMultipleChoiceOptions,
+    selectedOption, setSelectedOption,
+    getCurrentData, getFilteredWords
+  } = appState;
 
   // Spaced repetition hook - always enabled
   const { dueWords, stats, isReviewMode, recordReview, setCurrentReview, getWordProgress } = useSpacedRepetition(
@@ -45,13 +44,8 @@ export function LangApp() {
     toLanguage
   );
 
-  const getCurrentData = () => {
-    return contentType === 'vocabulary' ? vocabulary : phrases;
-  };
 
-  const categories = ['all', ...Array.from(new Set(getCurrentData().map((w) => w.category)))];
-
-  const getLanguageInfo = (language: Language) => {
+  const getLanguageInfo = (language: string) => {
     switch (language) {
       case 'english':
         return { label: 'English', flag: '🇬🇧' };
@@ -86,11 +80,6 @@ export function LangApp() {
     return word[language as keyof WordOrPhrase] as string;
   };
 
-  const getFilteredWords = () => {
-    const data = getCurrentData();
-    if (selectedCategory === 'all') return data;
-    return data.filter((w) => w.category === selectedCategory);
-  };
 
   const getRandomWord = () => {
     const words = getFilteredWords();
@@ -169,7 +158,6 @@ export function LangApp() {
     setUserInput('');
     setFeedback(null);
     setSelectedOption(null);
-    setShowReviewFeedback(false);
 
     if (practiceMode === 'guess' && newWord) {
       setMultipleChoiceOptions(generateMultipleChoiceOptions(newWord as VocabularyWord));
@@ -195,7 +183,6 @@ export function LangApp() {
 
     // If in review mode, show quality feedback
     if (isReviewMode) {
-      setShowReviewFeedback(true);
     } else {
       // Track progress for regular practice
       const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
@@ -224,7 +211,6 @@ export function LangApp() {
 
     // If in review mode, show quality feedback
     if (isReviewMode) {
-      setShowReviewFeedback(true);
     } else {
       // Track progress for regular practice
       const wordId = `${getWordText(currentWord!, fromLanguage)}_${currentWord!.category}`;
@@ -233,13 +219,6 @@ export function LangApp() {
     }
   };
 
-  const handleReviewQuality = (quality: number) => {
-    if (!currentWord) return;
-
-    const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
-    recordReview(wordId, quality, currentWord.category);
-    nextWord();
-  };
 
   const handleSkip = () => {
     nextWord();
@@ -321,17 +300,13 @@ export function LangApp() {
           onPracticeModeChange={(value) => setPracticeMode(value)}
           fromLanguage={fromLanguage}
           toLanguage={toLanguage}
-          onFromLanguageChange={setFromLanguage}
-          onToLanguageChange={setToLanguage}
-          onSwapLanguages={() => {
-            const temp = fromLanguage;
-            setFromLanguage(toLanguage);
-            setToLanguage(temp);
-          }}
+          onFromLanguageChange={appState.setFromLanguage}
+          onToLanguageChange={appState.setToLanguage}
+          onSwapLanguages={swapLanguages}
           contentType={contentType}
-          onContentTypeChange={setContentType}
+          onContentTypeChange={(value) => setContentType(value)}
           selectedCategory={selectedCategory}
-          onCategoryChange={setSelectedCategory}
+          onCategoryChange={(category) => handleCategoryChange(category)}
           categories={categories}
         />
       )}
@@ -344,13 +319,7 @@ export function LangApp() {
             onSpeak={() => speakText(getWordText(currentWord, langs.from), langs.from)}
           />
 
-          {showReviewFeedback && isReviewMode ? (
-            <ReviewFeedback
-              onQualitySelect={handleReviewQuality}
-              showAnswer={true}
-              correctAnswer={getWordText(currentWord, langs.to)}
-            />
-          ) : practiceMode === 'learn' ? (
+          {practiceMode === 'learn' ? (
             <>
               <WordDisplay
                 label={langs.toLabel}
@@ -377,7 +346,7 @@ export function LangApp() {
               <div class="mb-6">
                 <Input
                   value={userInput}
-                  onChange={setUserInput}
+                  onChange={(value) => setUserInput(value)}
                   onKeyDown={(e) => e.key === 'Enter' && (feedback ? nextWord() : checkAnswer())}
                   placeholder={`Type the ${langs.toLabel} translation`}
                   disabled={feedback !== null}
@@ -397,13 +366,13 @@ export function LangApp() {
               <div class="flex flex-wrap justify-center gap-4">
                 {!feedback ? (
                   <>
-                    <Button onClick={checkAnswer}>Check Answer</Button>
-                    <Button variant="skip" onClick={handleSkip}>
+                    <Button onClick={() => checkAnswer()}>Check Answer</Button>
+                    <Button variant="skip" onClick={() => handleSkip()}>
                       Next →
                     </Button>
                   </>
                 ) : (
-                  <Button onClick={nextWord}>Next word →</Button>
+                  <Button onClick={() => nextWord()}>Next word →</Button>
                 )}
               </div>
             </>
@@ -432,7 +401,7 @@ export function LangApp() {
 
               {!feedback && (
                 <div class="flex justify-center">
-                  <Button variant="skip" onClick={handleSkip}>
+                  <Button variant="skip" onClick={() => handleSkip()}>
                     Next →
                   </Button>
                 </div>
@@ -440,7 +409,7 @@ export function LangApp() {
 
               {feedback && (
                 <div class="flex justify-center">
-                  <Button onClick={nextWord}>Next word →</Button>
+                  <Button onClick={() => nextWord()}>Next word →</Button>
                 </div>
               )}
 
