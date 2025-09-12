@@ -11,8 +11,8 @@ type WordOrPhrase = VocabularyWord | Phrase;
 
 export function useAppState() {
   // Persistent state
-  const [fromLanguage, setFromLanguage] = useLocalStorage<Language>('fromLanguage', 'english');
-  const [toLanguage, setToLanguage] = useLocalStorage<Language>('toLanguage', 'italian');
+  const [fromLanguage, setFromLanguage] = useLocalStorage<Language>('fromLanguage', 'italian');
+  const [toLanguage, setToLanguage] = useLocalStorage<Language>('toLanguage', 'english');
   const [practiceMode, setPracticeMode] = useLocalStorage<'learn' | 'answer' | 'guess'>('practiceMode', 'guess');
   const [showStats, setShowStats] = useLocalStorage<boolean>('showStats', true);
 
@@ -20,7 +20,6 @@ export function useAppState() {
   const [contentType, setContentType] = useState<ContentType>('vocabulary');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [currentWord, setCurrentWord] = useState<WordOrPhrase | null>(null);
-  const [showAnswer, setShowAnswer] = useState(false);
   const [score, setScore] = useState({ correct: 0, total: 0 });
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
@@ -63,25 +62,23 @@ export function useAppState() {
     setFromLanguage,
     setToLanguage,
     swapLanguages,
-    
+
     // Content settings
     contentType,
     setContentType,
     selectedCategory,
     handleCategoryChange,
     categories,
-    
+
     // Practice settings
     practiceMode,
     setPracticeMode,
     showStats,
     setShowStats,
-    
+
     // Game state
     currentWord,
     setCurrentWord,
-    showAnswer,
-    setShowAnswer,
     score,
     setScore,
     userInput,
@@ -94,7 +91,7 @@ export function useAppState() {
     setMultipleChoiceOptions,
     selectedOption,
     setSelectedOption,
-    
+
     // Utilities
     getCurrentData,
     getFilteredWords,

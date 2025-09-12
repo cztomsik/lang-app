@@ -1,40 +1,48 @@
-import { useState, useEffect } from 'preact/hooks';
+import { useEffect } from 'preact/hooks';
 import { useAppState } from './hooks/useAppState';
 import { useSpacedRepetition } from './hooks/useSpacedRepetition';
 import type { VocabularyWord } from './vocabulary';
 import type { Phrase } from './phrases';
-import {
-  Button,
-  Card,
-  WordDisplay,
-  Input,
-  Feedback,
-  ChoiceButton,
-  Header,
-  SettingsPanel,
-} from './components';
+
+type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
+
+import { Button, Card, WordDisplay, Input, Feedback, ChoiceButton, Header, SettingsPanel } from './components';
 
 type WordOrPhrase = VocabularyWord | Phrase;
 
 export function LangApp() {
   const appState = useAppState();
-  
+
   const {
     // Extract what we need from appState
-    fromLanguage, toLanguage, swapLanguages,
-    contentType, setContentType,
-    selectedCategory, handleCategoryChange, categories,
-    practiceMode, setPracticeMode,
-    showStats, setShowStats,
-    currentWord, setCurrentWord,
-    showAnswer, setShowAnswer,
-    score, setScore,
-    userInput, setUserInput,
-    feedback, setFeedback,
-    usedWords, setUsedWords,
-    multipleChoiceOptions, setMultipleChoiceOptions,
-    selectedOption, setSelectedOption,
-    getCurrentData, getFilteredWords
+    fromLanguage,
+    toLanguage,
+    swapLanguages,
+    contentType,
+    setContentType,
+    selectedCategory,
+    handleCategoryChange,
+    categories,
+    practiceMode,
+    setPracticeMode,
+    showStats,
+    setShowStats,
+    currentWord,
+    setCurrentWord,
+    score,
+    setScore,
+    userInput,
+    setUserInput,
+    feedback,
+    setFeedback,
+    usedWords,
+    setUsedWords,
+    multipleChoiceOptions,
+    setMultipleChoiceOptions,
+    selectedOption,
+    setSelectedOption,
+    getCurrentData,
+    getFilteredWords,
   } = appState;
 
   // Spaced repetition hook - always enabled
@@ -44,8 +52,7 @@ export function LangApp() {
     toLanguage
   );
 
-
-  const getLanguageInfo = (language: string) => {
+  const getLanguageInfo = (language: Language) => {
     switch (language) {
       case 'english':
         return { label: 'English', flag: '🇬🇧' };
@@ -79,7 +86,6 @@ export function LangApp() {
   const getWordText = (word: WordOrPhrase, language: string): string => {
     return word[language as keyof WordOrPhrase] as string;
   };
-
 
   const getRandomWord = () => {
     const words = getFilteredWords();
@@ -154,7 +160,6 @@ export function LangApp() {
     }
 
     setCurrentWord(newWord);
-    setShowAnswer(false);
     setUserInput('');
     setFeedback(null);
     setSelectedOption(null);
@@ -177,13 +182,8 @@ export function LangApp() {
       total: prev.total + 1,
     }));
 
-    if (!isCorrect) {
-      setShowAnswer(true);
-    }
-
     // If in review mode, show quality feedback
-    if (isReviewMode) {
-    } else {
+    if (!isReviewMode) {
       // Track progress for regular practice
       const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
       const quality = isCorrect ? 4 : 1;
@@ -205,20 +205,14 @@ export function LangApp() {
       total: prev.total + 1,
     }));
 
-    if (!isCorrect) {
-      setShowAnswer(true);
-    }
-
     // If in review mode, show quality feedback
-    if (isReviewMode) {
-    } else {
+    if (!isReviewMode) {
       // Track progress for regular practice
       const wordId = `${getWordText(currentWord!, fromLanguage)}_${currentWord!.category}`;
       const quality = isCorrect ? 4 : 1;
       recordReview(wordId, quality, currentWord!.category);
     }
   };
-
 
   const handleSkip = () => {
     nextWord();
