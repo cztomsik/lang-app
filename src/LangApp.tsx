@@ -147,12 +147,13 @@ export function LangApp() {
     // If in review mode and there are due words, try to find a due word from current category
     if (isReviewMode && dueWords.length > 0) {
       // Filter due words to only include those from the current category (if not 'all')
-      const filteredDueWords = selectedCategory === 'all' 
-        ? dueWords 
-        : dueWords.filter(review => {
-            const word = getWordById(review.wordId);
-            return word && word.category === selectedCategory;
-          });
+      const filteredDueWords =
+        selectedCategory === 'all'
+          ? dueWords
+          : dueWords.filter((review) => {
+              const word = getWordById(review.wordId);
+              return word && word.category === selectedCategory;
+            });
 
       if (filteredDueWords.length > 0) {
         const nextReview = filteredDueWords[0];
