@@ -1,14 +1,11 @@
-import { useState, useEffect, useCallback } from 'preact/hooks';
+import { useCallback } from 'preact/hooks';
 import { useLocalStorage } from './useLocalStorage';
 import type { WordProgress } from '../spacedRepetition';
-import { calculateNextReview, getDueWords, initializeWordProgress, getLearningStats } from '../spacedRepetition';
+import { updateWordProgress, initializeWordProgress, getLearningStats } from '../spacedRepetition';
 
 export interface SpacedRepetitionState {
   progressData: WordProgress[];
-  dueWords: WordProgress[];
   stats: ReturnType<typeof getLearningStats>;
-  currentReview: WordProgress | null;
-  isReviewMode: boolean;
 }
 
 export function useSpacedRepetition(contentType: 'vocabulary' | 'phrases', fromLanguage: string, toLanguage: string) {
@@ -16,17 +13,8 @@ export function useSpacedRepetition(contentType: 'vocabulary' | 'phrases', fromL
   const storageKey = `sr_progress_${contentType}_${fromLanguage}_${toLanguage}`;
   const [progressData, setProgressData] = useLocalStorage<WordProgress[]>(storageKey, []);
 
-  // Current review item
-  const [currentReview, setCurrentReview] = useState<WordProgress | null>(null);
-
-  // Calculate due words
-  const dueWords = getDueWords(progressData);
-
   // Calculate statistics
   const stats = getLearningStats(progressData);
-
-  // Check if we're in review mode (have due words)
-  const isReviewMode = dueWords.length > 0;
 
   /**
    * Get or create progress for a word
@@ -53,9 +41,9 @@ export function useSpacedRepetition(contentType: 'vocabulary' | 'phrases', fromL
   );
 
   /**
-   * Record a review result
+   * Record a practice result
    */
-  const recordReview = useCallback(
+  const recordProgress = useCallback(
     (wordId: string, quality: number, category: string) => {
       setProgressData((prev: WordProgress[]) => {
         // Check if progress exists
@@ -66,14 +54,14 @@ export function useSpacedRepetition(contentType: 'vocabulary' | 'phrases', fromL
         // If it doesn't exist, create it first
         if (!exists) {
           const newProgress = initializeWordProgress(wordId, category, fromLanguage, toLanguage);
-          // Add the new progress and immediately update it with the review
-          return [...prev, calculateNextReview(newProgress, quality)];
+          // Add the new progress and immediately update it with the practice result
+          return [...prev, updateWordProgress(newProgress, quality)];
         }
 
         // If it exists, just update it
         return prev.map((p: WordProgress) => {
           if (p.wordId === wordId && p.fromLanguage === fromLanguage && p.toLanguage === toLanguage) {
-            return calculateNextReview(p, quality);
+            return updateWordProgress(p, quality);
           }
           return p;
         });
@@ -82,16 +70,6 @@ export function useSpacedRepetition(contentType: 'vocabulary' | 'phrases', fromL
     [fromLanguage, toLanguage, setProgressData]
   );
 
-  /**
-   * Get the next word for review
-   */
-  const getNextReview = useCallback((): WordProgress | null => {
-    const due = getDueWords(progressData);
-    if (due.length > 0) {
-      return due[0];
-    }
-    return null;
-  }, [progressData]);
 
   /**
    * Mark a word as seen (for learn mode)
@@ -158,30 +136,17 @@ export function useSpacedRepetition(contentType: 'vocabulary' | 'phrases', fromL
     return progressData.filter((p) => p.repetitions >= 3);
   }, [progressData]);
 
-  // Update current review when due words change
-  useEffect(() => {
-    if (isReviewMode && !currentReview && dueWords.length > 0) {
-      setCurrentReview(dueWords[0]);
-    } else if (!isReviewMode) {
-      setCurrentReview(null);
-    }
-  }, [isReviewMode, dueWords, currentReview]);
 
   return {
     // State
     progressData,
-    dueWords,
     stats,
-    currentReview,
-    isReviewMode,
 
     // Actions
-    recordReview,
+    recordProgress,
     getOrCreateProgress,
     markAsSeen,
     resetProgress,
-    getNextReview,
-    setCurrentReview,
 
     // Queries
     getWordProgress,

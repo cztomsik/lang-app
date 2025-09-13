@@ -6,7 +6,6 @@ interface ProgressDisplayProps {
     learned: number;
     learning: number;
     newWords: number;
-    dueNow: number;
     masteryPercentage: number;
   };
   isReviewMode: boolean;
@@ -15,28 +14,14 @@ interface ProgressDisplayProps {
 
 export const ProgressDisplay: FunctionComponent<ProgressDisplayProps> = ({
   stats,
-  isReviewMode,
-  onToggleReviewMode,
 }) => {
   return (
     <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 mb-4">
       <div class="flex items-center justify-between mb-3">
         <h3 class="text-lg font-semibold text-gray-800">Your Progress</h3>
-        {stats.dueNow > 0 && onToggleReviewMode && (
-          <button
-            onClick={onToggleReviewMode}
-            class={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              isReviewMode
-                ? 'bg-purple-600 text-white hover:bg-purple-700'
-                : 'bg-white text-purple-600 border-2 border-purple-600 hover:bg-purple-50'
-            }`}
-          >
-            {isReviewMode ? 'Exit Review' : `Review ${stats.dueNow} Due`}
-          </button>
-        )}
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
         <div class="bg-white rounded-lg p-3 shadow-sm">
           <div class="text-2xl font-bold text-gray-800">{stats.total}</div>
           <div class="text-xs text-gray-600">Total Words</div>
@@ -55,11 +40,6 @@ export const ProgressDisplay: FunctionComponent<ProgressDisplayProps> = ({
         <div class="bg-white rounded-lg p-3 shadow-sm">
           <div class="text-2xl font-bold text-blue-600">{stats.newWords}</div>
           <div class="text-xs text-gray-600">New</div>
-        </div>
-
-        <div class="bg-white rounded-lg p-3 shadow-sm">
-          <div class="text-2xl font-bold text-purple-600">{stats.dueNow}</div>
-          <div class="text-xs text-gray-600">Due Now</div>
         </div>
       </div>
 

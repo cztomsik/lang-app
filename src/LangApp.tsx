@@ -41,12 +41,11 @@ export function LangApp() {
     setMultipleChoiceOptions,
     selectedOption,
     setSelectedOption,
-    getCurrentData,
     getFilteredWords,
   } = appState;
 
   // Spaced repetition hook - always enabled
-  const { dueWords, stats, isReviewMode, recordReview, setCurrentReview, getWordProgress } = useSpacedRepetition(
+  const { stats, recordProgress, getWordProgress } = useSpacedRepetition(
     contentType,
     fromLanguage,
     toLanguage
@@ -132,46 +131,9 @@ export function LangApp() {
     return allOptions;
   };
 
-  const getWordById = (wordId: string): WordOrPhrase | undefined => {
-    const data = getCurrentData();
-    return data.find((w) => {
-      // Create a unique ID for the word
-      const id = `${getWordText(w, fromLanguage)}_${w.category}`;
-      return id === wordId;
-    });
-  };
 
   const nextWord = () => {
-    let newWord: WordOrPhrase;
-
-    // If in review mode and there are due words, try to find a due word from current category
-    if (isReviewMode && dueWords.length > 0) {
-      // Filter due words to only include those from the current category (if not 'all')
-      const filteredDueWords =
-        selectedCategory === 'all'
-          ? dueWords
-          : dueWords.filter((review) => {
-              const word = getWordById(review.wordId);
-              return word && word.category === selectedCategory;
-            });
-
-      if (filteredDueWords.length > 0) {
-        const nextReview = filteredDueWords[0];
-        const word = getWordById(nextReview.wordId);
-        if (word) {
-          newWord = word;
-          setCurrentReview(nextReview);
-        } else {
-          // Fallback to random if word not found
-          newWord = getRandomWord();
-        }
-      } else {
-        // No due words in current category, use random word
-        newWord = getRandomWord();
-      }
-    } else {
-      newWord = getRandomWord();
-    }
+    const newWord = getRandomWord();
 
     setCurrentWord(newWord);
     setUserInput('');
@@ -196,13 +158,10 @@ export function LangApp() {
       total: prev.total + 1,
     }));
 
-    // If in review mode, show quality feedback
-    if (!isReviewMode) {
-      // Track progress for regular practice
-      const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
-      const quality = isCorrect ? 4 : 1;
-      recordReview(wordId, quality, currentWord.category);
-    }
+    // Track progress for practice
+    const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
+    const quality = isCorrect ? 4 : 1;
+    recordProgress(wordId, quality, currentWord.category);
   };
 
   const handleMultipleChoiceSelection = (option: string) => {
@@ -219,13 +178,10 @@ export function LangApp() {
       total: prev.total + 1,
     }));
 
-    // If in review mode, show quality feedback
-    if (!isReviewMode) {
-      // Track progress for regular practice
-      const wordId = `${getWordText(currentWord!, fromLanguage)}_${currentWord!.category}`;
-      const quality = isCorrect ? 4 : 1;
-      recordReview(wordId, quality, currentWord!.category);
-    }
+    // Track progress for practice
+    const wordId = `${getWordText(currentWord!, fromLanguage)}_${currentWord!.category}`;
+    const quality = isCorrect ? 4 : 1;
+    recordProgress(wordId, quality, currentWord!.category);
   };
 
   const handleSkip = () => {
@@ -291,19 +247,14 @@ export function LangApp() {
         showStats={showStats}
         onToggleStats={() => setShowStats(!showStats)}
         masteryPercentage={stats.masteryPercentage}
-        dueCount={stats.dueNow}
+        dueCount={0}
       />
 
       {showStats && (
         <SettingsPanel
           stats={stats}
-          isReviewMode={isReviewMode}
-          onToggleReviewMode={() => {
-            if (isReviewMode) {
-              setCurrentReview(null);
-            }
-            nextWord();
-          }}
+          isReviewMode={false}
+          onToggleReviewMode={() => {}}
           practiceMode={practiceMode}
           onPracticeModeChange={(value) => setPracticeMode(value)}
           fromLanguage={fromLanguage}
@@ -316,7 +267,6 @@ export function LangApp() {
           selectedCategory={selectedCategory}
           onCategoryChange={(category) => {
             handleCategoryChange(category);
-            setCurrentReview(null); // Clear current review when changing categories
           }}
           categories={categories}
         />
@@ -344,7 +294,7 @@ export function LangApp() {
                   onClick={() => {
                     // In learn mode, mark as seen (quality 3 = just learned)
                     const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
-                    recordReview(wordId, 3, currentWord.category);
+                    recordProgress(wordId, 3, currentWord.category);
                     handleSkip();
                   }}
                 >

@@ -12,7 +12,6 @@ interface SettingsPanelProps {
     learned: number;
     learning: number;
     newWords: number;
-    dueNow: number;
     masteryPercentage: number;
   };
   isReviewMode: boolean;
