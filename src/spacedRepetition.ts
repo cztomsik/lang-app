@@ -47,7 +47,6 @@ export function updateWordProgress(progress: WordProgress, quality: number): Wor
   };
 }
 
-
 /**
  * Initialize progress for a new word
  */
@@ -89,3 +88,48 @@ export function getLearningStats(progressData: WordProgress[]) {
   };
 }
 
+/**
+ * Get statistics for a specific category
+ */
+export function getCategoryStats(progressData: WordProgress[], category: string) {
+  const categoryData = progressData.filter((p) => p.category === category);
+
+  if (categoryData.length === 0) {
+    return {
+      total: 0,
+      learned: 0,
+      learning: 0,
+      newWords: 0,
+      avgEaseFactor: 2.5,
+      avgStrength: 50,
+      masteryPercentage: 0,
+    };
+  }
+
+  const total = categoryData.length;
+  const learned = categoryData.filter((p) => p.repetitions >= 3).length;
+  const learning = categoryData.filter((p) => p.repetitions > 0 && p.repetitions < 3).length;
+  const newWords = categoryData.filter((p) => p.repetitions === 0).length;
+
+  const avgEaseFactor = categoryData.reduce((sum, p) => sum + p.easeFactor, 0) / total;
+  const avgStrength = Math.round(((avgEaseFactor - 1.3) / 1.2) * 100);
+
+  return {
+    total,
+    learned,
+    learning,
+    newWords,
+    avgEaseFactor,
+    avgStrength: Math.max(0, Math.min(100, avgStrength)),
+    masteryPercentage: Math.round((learned / total) * 100),
+  };
+}
+
+/**
+ * Calculate word strength percentage from easeFactor (0-100%)
+ */
+export function calculateWordStrength(easeFactor: number): number {
+  // Map easeFactor (1.3 to 2.5+) to strength (0% to 100%)
+  const strength = Math.round(((easeFactor - 1.3) / 1.2) * 100);
+  return Math.max(0, Math.min(100, strength));
+}

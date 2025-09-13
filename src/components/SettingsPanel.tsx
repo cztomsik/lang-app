@@ -28,6 +28,7 @@ interface SettingsPanelProps {
   selectedCategory: string;
   onCategoryChange: (category: string) => void;
   categories: string[];
+  getCategoryStats?: (category: string) => any;
 }
 
 export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
@@ -46,10 +47,19 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
   selectedCategory,
   onCategoryChange,
   categories,
+  getCategoryStats,
 }) => {
+  // Use category-specific stats if available and category is selected
+  const displayStats = selectedCategory !== 'all' && getCategoryStats ? getCategoryStats(selectedCategory) : stats;
+
   return (
     <div class="space-y-4">
-      <ProgressDisplay stats={stats} isReviewMode={isReviewMode} onToggleReviewMode={onToggleReviewMode} />
+      <ProgressDisplay
+        stats={displayStats}
+        isReviewMode={isReviewMode}
+        onToggleReviewMode={onToggleReviewMode}
+        categoryName={selectedCategory !== 'all' ? selectedCategory : undefined}
+      />
 
       <div class="bg-white rounded-lg p-4 shadow-sm">
         <div class="flex flex-col gap-3">

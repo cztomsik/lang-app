@@ -7,21 +7,31 @@ interface ProgressDisplayProps {
     learning: number;
     newWords: number;
     masteryPercentage: number;
+    avgStrength?: number;
   };
   isReviewMode: boolean;
   onToggleReviewMode?: () => void;
+  categoryName?: string;
 }
 
-export const ProgressDisplay: FunctionComponent<ProgressDisplayProps> = ({
-  stats,
-}) => {
+export const ProgressDisplay: FunctionComponent<ProgressDisplayProps> = ({ stats, categoryName }) => {
+  const getStrengthColor = (strength: number) => {
+    if (strength < 30) return 'text-red-600';
+    if (strength < 70) return 'text-yellow-600';
+    return 'text-green-600';
+  };
+
   return (
     <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 mb-4">
       <div class="flex items-center justify-between mb-3">
-        <h3 class="text-lg font-semibold text-gray-800">Your Progress</h3>
+        <h3 class="text-lg font-semibold text-gray-800">
+          {categoryName ? `${categoryName.charAt(0).toUpperCase() + categoryName.slice(1)} Progress` : 'Your Progress'}
+        </h3>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div
+        class={`grid gap-3 ${stats.avgStrength !== undefined ? 'grid-cols-2 md:grid-cols-5' : 'grid-cols-2 md:grid-cols-4'}`}
+      >
         <div class="bg-white rounded-lg p-3 shadow-sm">
           <div class="text-2xl font-bold text-gray-800">{stats.total}</div>
           <div class="text-xs text-gray-600">Total Words</div>
@@ -41,6 +51,13 @@ export const ProgressDisplay: FunctionComponent<ProgressDisplayProps> = ({
           <div class="text-2xl font-bold text-blue-600">{stats.newWords}</div>
           <div class="text-xs text-gray-600">New</div>
         </div>
+
+        {stats.avgStrength !== undefined && (
+          <div class="bg-white rounded-lg p-3 shadow-sm">
+            <div class={`text-2xl font-bold ${getStrengthColor(stats.avgStrength)}`}>{stats.avgStrength}%</div>
+            <div class="text-xs text-gray-600">Avg Strength</div>
+          </div>
+        )}
       </div>
 
       <div class="mt-3">

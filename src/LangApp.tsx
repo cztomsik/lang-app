@@ -45,7 +45,7 @@ export function LangApp() {
   } = appState;
 
   // Spaced repetition hook - always enabled
-  const { stats, recordProgress, getWordProgress } = useSpacedRepetition(
+  const { stats, recordProgress, getWordProgress, getCategoryStats, calculateWordStrength } = useSpacedRepetition(
     contentType,
     fromLanguage,
     toLanguage
@@ -92,13 +92,53 @@ export function LangApp() {
       setUsedWords(new Set());
     }
 
-    let randomIndex: number;
-    do {
-      randomIndex = Math.floor(Math.random() * words.length);
-    } while (usedWords.has(randomIndex) && usedWords.size < words.length);
+    // Create array of available words (not used yet)
+    const availableWords = words.filter((_, index) => !usedWords.has(index));
 
-    setUsedWords((prev) => new Set([...prev, randomIndex]));
-    return words[randomIndex];
+    if (availableWords.length === 0) {
+      // Fallback to regular selection if all used
+      const randomIndex = Math.floor(Math.random() * words.length);
+      setUsedWords((prev) => new Set([...prev, randomIndex]));
+      return words[randomIndex];
+    }
+
+    // Calculate weights based on difficulty (lower easeFactor = higher weight)
+    const weights = availableWords.map((word) => {
+      const wordId = `${getWordText(word, fromLanguage)}_${word.category}`;
+      const progress = getWordProgress(wordId);
+
+      if (!progress) {
+        return 1; // New words get normal weight
+      }
+
+      // Invert easeFactor so harder words (lower easeFactor) get higher weight
+      // Map easeFactor 1.3-2.5 to weight 2.5-1.3 (inverted)
+      const invertedWeight = 3.8 - progress.easeFactor;
+      return Math.max(0.5, invertedWeight); // Minimum weight of 0.5
+    });
+
+    // Weighted random selection
+    const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+    const randomValue = Math.random() * totalWeight;
+
+    let currentWeight = 0;
+    let selectedIndex = 0;
+
+    for (let i = 0; i < weights.length; i++) {
+      currentWeight += weights[i];
+      if (randomValue <= currentWeight) {
+        selectedIndex = i;
+        break;
+      }
+    }
+
+    const selectedWord = availableWords[selectedIndex];
+
+    // Mark as used
+    const originalIndex = words.indexOf(selectedWord);
+    setUsedWords((prev) => new Set([...prev, originalIndex]));
+
+    return selectedWord;
   };
 
   const generateMultipleChoiceOptions = (correctWord: VocabularyWord) => {
@@ -130,7 +170,6 @@ export function LangApp() {
 
     return allOptions;
   };
-
 
   const nextWord = () => {
     const newWord = getRandomWord();
@@ -269,6 +308,7 @@ export function LangApp() {
             handleCategoryChange(category);
           }}
           categories={categories}
+          getCategoryStats={getCategoryStats}
         />
       )}
 
@@ -383,12 +423,41 @@ export function LangApp() {
                     (() => {
                       const wordId = `${getWordText(currentWord, fromLanguage)}_${currentWord.category}`;
                       const progress = getWordProgress(wordId);
-                      return progress && progress.repetitions > 0 ? (
-                        <div class="text-xs text-gray-500">
-                          Repetitions: {progress.repetitions} | Strength:{' '}
-                          {Math.round(((progress.easeFactor - 1.3) / 1.2) * 100)}%
+                      if (!progress || progress.repetitions === 0) return null;
+
+                      const strength = calculateWordStrength(progress.easeFactor);
+                      const getStrengthColor = (strength: number) => {
+                        if (strength < 30) return 'text-red-600 bg-red-50';
+                        if (strength < 70) return 'text-yellow-600 bg-yellow-50';
+                        return 'text-green-600 bg-green-50';
+                      };
+
+                      return (
+                        <div class="flex items-center justify-center gap-3 text-xs">
+                          <div class="flex items-center gap-1">
+                            <span class="text-gray-500">Repetitions:</span>
+                            <span class="font-medium text-blue-600">{progress.repetitions}</span>
+                          </div>
+                          <div class="flex items-center gap-1">
+                            <span class="text-gray-500">Strength:</span>
+                            <div class={`px-2 py-1 rounded-full font-medium ${getStrengthColor(strength)}`}>
+                              {strength}%
+                            </div>
+                          </div>
+                          <div class="w-16 bg-gray-200 rounded-full h-2">
+                            <div
+                              class={`h-2 rounded-full transition-all duration-300 ${
+                                strength < 30
+                                  ? 'bg-gradient-to-r from-red-400 to-red-500'
+                                  : strength < 70
+                                    ? 'bg-gradient-to-r from-yellow-400 to-yellow-500'
+                                    : 'bg-gradient-to-r from-green-400 to-green-500'
+                              }`}
+                              style={{ width: `${strength}%` }}
+                            />
+                          </div>
                         </div>
-                      ) : null;
+                      );
                     })()}
                 </div>
               )}

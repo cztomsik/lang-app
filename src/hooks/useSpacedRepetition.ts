@@ -1,7 +1,13 @@
 import { useCallback } from 'preact/hooks';
 import { useLocalStorage } from './useLocalStorage';
 import type { WordProgress } from '../spacedRepetition';
-import { updateWordProgress, initializeWordProgress, getLearningStats } from '../spacedRepetition';
+import {
+  updateWordProgress,
+  initializeWordProgress,
+  getLearningStats,
+  getCategoryStats,
+  calculateWordStrength,
+} from '../spacedRepetition';
 
 export interface SpacedRepetitionState {
   progressData: WordProgress[];
@@ -70,7 +76,6 @@ export function useSpacedRepetition(contentType: 'vocabulary' | 'phrases', fromL
     [fromLanguage, toLanguage, setProgressData]
   );
 
-
   /**
    * Mark a word as seen (for learn mode)
    */
@@ -136,7 +141,6 @@ export function useSpacedRepetition(contentType: 'vocabulary' | 'phrases', fromL
     return progressData.filter((p) => p.repetitions >= 3);
   }, [progressData]);
 
-
   return {
     // State
     progressData,
@@ -152,5 +156,7 @@ export function useSpacedRepetition(contentType: 'vocabulary' | 'phrases', fromL
     getWordProgress,
     getLearningWords,
     getMasteredWords,
+    getCategoryStats: useCallback((category: string) => getCategoryStats(progressData, category), [progressData]),
+    calculateWordStrength,
   };
 }
