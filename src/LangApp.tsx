@@ -144,15 +144,28 @@ export function LangApp() {
   const nextWord = () => {
     let newWord: WordOrPhrase;
 
-    // If in review mode and there are due words, get the next review
+    // If in review mode and there are due words, try to find a due word from current category
     if (isReviewMode && dueWords.length > 0) {
-      const nextReview = dueWords[0];
-      const word = getWordById(nextReview.wordId);
-      if (word) {
-        newWord = word;
-        setCurrentReview(nextReview);
+      // Filter due words to only include those from the current category (if not 'all')
+      const filteredDueWords = selectedCategory === 'all' 
+        ? dueWords 
+        : dueWords.filter(review => {
+            const word = getWordById(review.wordId);
+            return word && word.category === selectedCategory;
+          });
+
+      if (filteredDueWords.length > 0) {
+        const nextReview = filteredDueWords[0];
+        const word = getWordById(nextReview.wordId);
+        if (word) {
+          newWord = word;
+          setCurrentReview(nextReview);
+        } else {
+          // Fallback to random if word not found
+          newWord = getRandomWord();
+        }
       } else {
-        // Fallback to random if word not found
+        // No due words in current category, use random word
         newWord = getRandomWord();
       }
     } else {
@@ -300,7 +313,10 @@ export function LangApp() {
           contentType={contentType}
           onContentTypeChange={(value) => setContentType(value)}
           selectedCategory={selectedCategory}
-          onCategoryChange={(category) => handleCategoryChange(category)}
+          onCategoryChange={(category) => {
+            handleCategoryChange(category);
+            setCurrentReview(null); // Clear current review when changing categories
+          }}
           categories={categories}
         />
       )}
