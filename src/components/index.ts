@@ -9,4 +9,5 @@ export { Feedback } from './Feedback';
 export { ChoiceButton } from './ChoiceButton';
 export { Header } from './Header';
 export { ProgressDisplay } from './ProgressDisplay';
+export { ProgressPanel } from './ProgressPanel';
 export { SettingsPanel } from './SettingsPanel';

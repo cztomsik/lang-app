@@ -1,5 +1,4 @@
 import type { FunctionComponent } from 'preact';
-import { ProgressDisplay } from './ProgressDisplay';
 import { SegmentedControl } from './SegmentedControl';
 import { Select } from './Select';
 import { Button } from './Button';
@@ -7,15 +6,6 @@ import { Button } from './Button';
 type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
 
 interface SettingsPanelProps {
-  stats: {
-    total: number;
-    learned: number;
-    learning: number;
-    newWords: number;
-    masteryPercentage: number;
-  };
-  isReviewMode: boolean;
-  onToggleReviewMode: () => void;
   practiceMode: 'learn' | 'answer' | 'guess';
   onPracticeModeChange: (mode: 'learn' | 'answer' | 'guess') => void;
   fromLanguage: Language;
@@ -28,13 +18,9 @@ interface SettingsPanelProps {
   selectedCategory: string;
   onCategoryChange: (category: string) => void;
   categories: string[];
-  getCategoryStats?: (category: string) => any;
 }
 
 export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
-  stats,
-  isReviewMode,
-  onToggleReviewMode,
   practiceMode,
   onPracticeModeChange,
   fromLanguage,
@@ -47,21 +33,9 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
   selectedCategory,
   onCategoryChange,
   categories,
-  getCategoryStats,
 }) => {
-  // Use category-specific stats if available and category is selected
-  const displayStats = selectedCategory !== 'all' && getCategoryStats ? getCategoryStats(selectedCategory) : stats;
-
   return (
-    <div class="space-y-4">
-      <ProgressDisplay
-        stats={displayStats}
-        isReviewMode={isReviewMode}
-        onToggleReviewMode={onToggleReviewMode}
-        categoryName={selectedCategory !== 'all' ? selectedCategory : undefined}
-      />
-
-      <div class="bg-white rounded-lg p-4 shadow-sm">
+    <div class="bg-white rounded-lg p-4 shadow-sm">
         <div class="flex flex-col gap-3">
           <div>
             <label class="text-sm font-medium text-gray-700 mb-2 block">Content & Category</label>
@@ -138,7 +112,6 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };

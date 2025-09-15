@@ -9,6 +9,14 @@ type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 's
 type ContentType = 'vocabulary' | 'phrases';
 type WordOrPhrase = VocabularyWord | Phrase;
 
+export interface Stats {
+  total: number;
+  learned: number;
+  learning: number;
+  newWords: number;
+  masteryPercentage: number;
+}
+
 export function useAppState() {
   // Persistent state
   const [fromLanguage, setFromLanguage] = useLocalStorage<Language>('fromLanguage', 'italian');
