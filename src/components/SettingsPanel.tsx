@@ -38,6 +38,43 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
     <div class="bg-white rounded-lg p-4 shadow-sm">
         <div class="flex flex-col gap-3">
           <div>
+            <label class="text-sm font-medium text-gray-700 mb-2 block">Languages</label>
+            <div class="flex gap-2">
+              <Select
+                value={fromLanguage}
+                onChange={(value) => onFromLanguageChange(value as Language)}
+                class="from-language-select flex-1"
+                options={[
+                  { value: 'english', label: '🇬🇧 English' },
+                  { value: 'italian', label: '🇮🇹 Italian' },
+                  { value: 'japanese', label: '🇯🇵 Japanese' },
+                  { value: 'czech', label: '🇨🇿 Czech' },
+                  { value: 'portuguese', label: '🇵🇹 Portuguese' },
+                  { value: 'spanish', label: '🇪🇸 Spanish' },
+                ]}
+              />
+
+              <Button variant="icon" onClick={onSwapLanguages} title="Swap languages">
+                ⇄
+              </Button>
+
+              <Select
+                value={toLanguage}
+                onChange={(value) => onToLanguageChange(value as Language)}
+                class="to-language-select flex-1"
+                options={[
+                  { value: 'english', label: '🇬🇧 English' },
+                  { value: 'italian', label: '🇮🇹 Italian' },
+                  { value: 'japanese', label: '🇯🇵 Japanese' },
+                  { value: 'czech', label: '🇨🇿 Czech' },
+                  { value: 'portuguese', label: '🇵🇹 Portuguese' },
+                  { value: 'spanish', label: '🇪🇸 Spanish' },
+                ]}
+              />
+            </div>
+          </div>
+
+          <div>
             <label class="text-sm font-medium text-gray-700 mb-2 block">Content & Category</label>
             <div class="grid grid-cols-2 gap-2">
               <Select
@@ -73,43 +110,6 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
                 { value: 'answer', label: 'Answer' },
               ]}
             />
-          </div>
-
-          <div>
-            <label class="text-sm font-medium text-gray-700 mb-2 block">Languages</label>
-            <div class="flex gap-2">
-              <Select
-                value={fromLanguage}
-                onChange={(value) => onFromLanguageChange(value as Language)}
-                class="from-language-select flex-1"
-                options={[
-                  { value: 'english', label: '🇬🇧 English' },
-                  { value: 'italian', label: '🇮🇹 Italian' },
-                  { value: 'japanese', label: '🇯🇵 Japanese' },
-                  { value: 'czech', label: '🇨🇿 Czech' },
-                  { value: 'portuguese', label: '🇵🇹 Portuguese' },
-                  { value: 'spanish', label: '🇪🇸 Spanish' },
-                ]}
-              />
-
-              <Button variant="icon" onClick={onSwapLanguages} title="Swap languages">
-                ⇄
-              </Button>
-
-              <Select
-                value={toLanguage}
-                onChange={(value) => onToLanguageChange(value as Language)}
-                class="to-language-select flex-1"
-                options={[
-                  { value: 'english', label: '🇬🇧 English' },
-                  { value: 'italian', label: '🇮🇹 Italian' },
-                  { value: 'japanese', label: '🇯🇵 Japanese' },
-                  { value: 'czech', label: '🇨🇿 Czech' },
-                  { value: 'portuguese', label: '🇵🇹 Portuguese' },
-                  { value: 'spanish', label: '🇪🇸 Spanish' },
-                ]}
-              />
-            </div>
           </div>
         </div>
     </div>

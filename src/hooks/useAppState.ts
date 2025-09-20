@@ -22,7 +22,8 @@ export function useAppState() {
   const [fromLanguage, setFromLanguage] = useLocalStorage<Language>('fromLanguage', 'italian');
   const [toLanguage, setToLanguage] = useLocalStorage<Language>('toLanguage', 'english');
   const [practiceMode, setPracticeMode] = useLocalStorage<'learn' | 'answer' | 'guess'>('practiceMode', 'guess');
-  const [showStats, setShowStats] = useLocalStorage<boolean>('showStats', true);
+  const [showProgress, setShowProgress] = useLocalStorage<boolean>('showProgress', false);
+  const [showSettings, setShowSettings] = useLocalStorage<boolean>('showSettings', false);
 
   // Session state
   const [contentType, setContentType] = useState<ContentType>('vocabulary');
@@ -81,8 +82,10 @@ export function useAppState() {
     // Practice settings
     practiceMode,
     setPracticeMode,
-    showStats,
-    setShowStats,
+    showProgress,
+    setShowProgress,
+    showSettings,
+    setShowSettings,
 
     // Game state
     currentWord,

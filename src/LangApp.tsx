@@ -6,7 +6,7 @@ import type { Phrase } from './phrases';
 
 type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
 
-import { Button, Card, WordDisplay, Input, Feedback, ChoiceButton, Header, SettingsPanel } from './components';
+import { Button, Card, WordDisplay, Input, Feedback, ChoiceButton, Header, SettingsPanel, ProgressPanel } from './components';
 
 type WordOrPhrase = VocabularyWord | Phrase;
 
@@ -25,8 +25,10 @@ export function LangApp() {
     categories,
     practiceMode,
     setPracticeMode,
-    showStats,
-    setShowStats,
+    showProgress,
+    setShowProgress,
+    showSettings,
+    setShowSettings,
     currentWord,
     setCurrentWord,
     score,
@@ -283,17 +285,26 @@ export function LangApp() {
   return (
     <div class="max-md:bg-white p-4">
       <Header
-        showStats={showStats}
-        onToggleStats={() => setShowStats(!showStats)}
+        showProgress={showProgress}
+        onToggleProgress={() => setShowProgress(!showProgress)}
+        showSettings={showSettings}
+        onToggleSettings={() => setShowSettings(!showSettings)}
         masteryPercentage={stats.masteryPercentage}
         dueCount={0}
       />
 
-      {showStats && (
-        <SettingsPanel
+      {showProgress && (
+        <ProgressPanel
           stats={stats}
           isReviewMode={false}
           onToggleReviewMode={() => {}}
+          selectedCategory={selectedCategory}
+          getCategoryStats={getCategoryStats}
+        />
+      )}
+
+      {showSettings && (
+        <SettingsPanel
           practiceMode={practiceMode}
           onPracticeModeChange={(value) => setPracticeMode(value)}
           fromLanguage={fromLanguage}
@@ -308,7 +319,6 @@ export function LangApp() {
             handleCategoryChange(category);
           }}
           categories={categories}
-          getCategoryStats={getCategoryStats}
         />
       )}
 
