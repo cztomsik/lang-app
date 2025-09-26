@@ -5,7 +5,7 @@ import type { VocabularyWord } from '../vocabulary';
 import { phrases } from '../phrases';
 import type { Phrase } from '../phrases';
 
-type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
+type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish' | 'german';
 type ContentType = 'vocabulary' | 'phrases';
 type WordOrPhrase = VocabularyWord | Phrase;
 

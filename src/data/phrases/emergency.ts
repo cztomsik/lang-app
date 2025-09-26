@@ -8,6 +8,7 @@ export const emergencyPhrases: Phrase[] = [
     czech: 'Zavolejte policii',
     portuguese: 'Chame a polícia',
     spanish: 'Llame a la policía',
+    german: 'Rufen Sie die Polizei',
     category: 'Emergency',
   },
   {
@@ -17,6 +18,7 @@ export const emergencyPhrases: Phrase[] = [
     czech: 'Potřebuji lékaře',
     portuguese: 'Preciso de um médico',
     spanish: 'Necesito un médico',
+    german: 'Ich brauche einen Arzt',
     category: 'Emergency',
   },
   {
@@ -26,6 +28,7 @@ export const emergencyPhrases: Phrase[] = [
     czech: 'Zavolejte záchrannáře',
     portuguese: 'Chame uma ambulância',
     spanish: 'Llame una ambulancia',
+    german: 'Rufen Sie einen Krankenwagen',
     category: 'Emergency',
   },
   {
@@ -35,6 +38,7 @@ export const emergencyPhrases: Phrase[] = [
     czech: 'Hoří!',
     portuguese: 'Fogo!',
     spanish: '¡Fuego!',
+    german: 'Feuer!',
     category: 'Emergency',
   },
   {
@@ -44,6 +48,7 @@ export const emergencyPhrases: Phrase[] = [
     czech: 'Ztratil jsem se',
     portuguese: 'Estou perdido',
     spanish: 'Estoy perdido',
+    german: 'Ich habe mich verirrt',
     category: 'Emergency',
   },
   {
@@ -53,6 +58,7 @@ export const emergencyPhrases: Phrase[] = [
     czech: 'Ukradli mi telefon',
     portuguese: 'Roubaram meu telefone',
     spanish: 'Me robaron el teléfono',
+    german: 'Mir wurde das Handy gestohlen',
     category: 'Emergency',
   },
   {
@@ -62,6 +68,7 @@ export const emergencyPhrases: Phrase[] = [
     czech: 'Potřebuji velvyslanectví',
     portuguese: 'Preciso da embaixada',
     spanish: 'Necesito la embajada',
+    german: 'Ich brauche die Botschaft',
     category: 'Emergency',
   },
   {
@@ -71,6 +78,7 @@ export const emergencyPhrases: Phrase[] = [
     czech: 'Cítím se špatně',
     portuguese: 'Sinto-me mal',
     spanish: 'Me siento mal',
+    german: 'Mir ist schlecht',
     category: 'Emergency',
   },
 ];

@@ -25,6 +25,7 @@ export type VocabularyWord = {
   czech: string;
   portuguese: string;
   spanish: string;
+  german: string;
   category: string;
 };
 

@@ -3,7 +3,7 @@ import { SegmentedControl } from './SegmentedControl';
 import { Select } from './Select';
 import { Button } from './Button';
 
-type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
+type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish' | 'german';
 
 interface SettingsPanelProps {
   practiceMode: 'learn' | 'answer' | 'guess';
@@ -51,6 +51,7 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
                   { value: 'czech', label: '🇨🇿 Czech' },
                   { value: 'portuguese', label: '🇵🇹 Portuguese' },
                   { value: 'spanish', label: '🇪🇸 Spanish' },
+                  { value: 'german', label: '🇩🇪 German' },
                 ]}
               />
 
@@ -69,6 +70,7 @@ export const SettingsPanel: FunctionComponent<SettingsPanelProps> = ({
                   { value: 'czech', label: '🇨🇿 Czech' },
                   { value: 'portuguese', label: '🇵🇹 Portuguese' },
                   { value: 'spanish', label: '🇪🇸 Spanish' },
+                  { value: 'german', label: '🇩🇪 German' },
                 ]}
               />
             </div>

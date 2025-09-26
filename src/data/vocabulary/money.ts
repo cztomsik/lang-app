@@ -8,6 +8,7 @@ export const moneyWords: VocabularyWord[] = [
     czech: 'Peníze',
     portuguese: 'Dinheiro',
     spanish: 'Dinero',
+    german: 'Geld',
     category: 'Money',
   },
   {
@@ -17,6 +18,7 @@ export const moneyWords: VocabularyWord[] = [
     czech: 'Hotovost',
     portuguese: 'Dinheiro em espécie',
     spanish: 'Efectivo',
+    german: 'Bargeld',
     category: 'Money',
   },
   {
@@ -26,6 +28,7 @@ export const moneyWords: VocabularyWord[] = [
     czech: 'Kreditní karta',
     portuguese: 'Cartão de crédito',
     spanish: 'Tarjeta de crédito',
+    german: 'Kreditkarte',
     category: 'Money',
   },
   {
@@ -35,6 +38,7 @@ export const moneyWords: VocabularyWord[] = [
     czech: 'Banka',
     portuguese: 'Banco',
     spanish: 'Banco',
+    german: 'Bank',
     category: 'Money',
   },
   {
@@ -44,6 +48,7 @@ export const moneyWords: VocabularyWord[] = [
     czech: 'Bankomat',
     portuguese: 'Caixa eletrônico',
     spanish: 'Cajero automático',
+    german: 'Geldautomat',
     category: 'Money',
   },
   {
@@ -53,6 +58,7 @@ export const moneyWords: VocabularyWord[] = [
     czech: 'Směna',
     portuguese: 'Câmbio',
     spanish: 'Cambio',
+    german: 'Wechsel',
     category: 'Money',
   },
   {
@@ -62,6 +68,7 @@ export const moneyWords: VocabularyWord[] = [
     czech: 'Účtenka',
     portuguese: 'Recibo',
     spanish: 'Recibo',
+    german: 'Quittung',
     category: 'Money',
   },
   {
@@ -71,6 +78,7 @@ export const moneyWords: VocabularyWord[] = [
     czech: 'Sporopné',
     portuguese: 'Gorjeta',
     spanish: 'Propina',
+    german: 'Trinkgeld',
     category: 'Money',
   },
   {
@@ -80,6 +88,7 @@ export const moneyWords: VocabularyWord[] = [
     czech: 'Cena',
     portuguese: 'Preço',
     spanish: 'Precio',
+    german: 'Preis',
     category: 'Money',
   },
 ];

@@ -8,6 +8,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Auto',
     portuguese: 'Carro',
     spanish: 'Coche',
+    german: 'Auto',
     category: 'Transportation',
   },
   {
@@ -17,6 +18,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Autobus',
     portuguese: 'Ônibus',
     spanish: 'Autobús',
+    german: 'Bus',
     category: 'Transportation',
   },
   {
@@ -26,6 +28,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Taxi',
     portuguese: 'Táxi',
     spanish: 'Taxi',
+    german: 'Taxi',
     category: 'Transportation',
   },
   {
@@ -35,6 +38,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Vlak',
     portuguese: 'Trem',
     spanish: 'Tren',
+    german: 'Zug',
     category: 'Transportation',
   },
   {
@@ -44,6 +48,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Metro',
     portuguese: 'Metrô',
     spanish: 'Metro',
+    german: 'U-Bahn',
     category: 'Transportation',
   },
   {
@@ -53,6 +58,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Letadlo',
     portuguese: 'Avião',
     spanish: 'Avión',
+    german: 'Flugzeug',
     category: 'Transportation',
   },
   {
@@ -62,6 +68,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Kolo',
     portuguese: 'Bicicleta',
     spanish: 'Bicicleta',
+    german: 'Fahrrad',
     category: 'Transportation',
   },
   {
@@ -71,6 +78,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Motorka',
     portuguese: 'Motocicleta',
     spanish: 'Motocicleta',
+    german: 'Motorrad',
     category: 'Transportation',
   },
   {
@@ -80,6 +88,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Loď',
     portuguese: 'Barco',
     spanish: 'Barco',
+    german: 'Boot',
     category: 'Transportation',
   },
   {
@@ -89,6 +98,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Autobusová zastávka',
     portuguese: 'Ponto de ônibus',
     spanish: 'Parada de autobús',
+    german: 'Bushaltestelle',
     category: 'Transportation',
   },
   {
@@ -98,6 +108,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Nádraží',
     portuguese: 'Estação de trem',
     spanish: 'Estación de tren',
+    german: 'Bahnhof',
     category: 'Transportation',
   },
   {
@@ -107,6 +118,7 @@ export const transportationWords: VocabularyWord[] = [
     czech: 'Dopravní zácpa',
     portuguese: 'Engarrafamento',
     spanish: 'Embotellamiento',
+    german: 'Stau',
     category: 'Transportation',
   },
 ];

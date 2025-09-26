@@ -8,6 +8,7 @@ export const greetingsWords: VocabularyWord[] = [
     czech: 'Ahoj',
     portuguese: 'Olá',
     spanish: 'Hola',
+    german: 'Hallo',
     category: 'Greetings',
   },
   {
@@ -17,6 +18,7 @@ export const greetingsWords: VocabularyWord[] = [
     czech: 'Dobré ráno',
     portuguese: 'Bom dia',
     spanish: 'Buenos días',
+    german: 'Guten Morgen',
     category: 'Greetings',
   },
   {
@@ -26,6 +28,7 @@ export const greetingsWords: VocabularyWord[] = [
     czech: 'Dobrý večer',
     portuguese: 'Boa noite',
     spanish: 'Buenas tardes',
+    german: 'Guten Abend',
     category: 'Greetings',
   },
   {
@@ -35,6 +38,7 @@ export const greetingsWords: VocabularyWord[] = [
     czech: 'Sbohem',
     portuguese: 'Tchau',
     spanish: 'Adiós',
+    german: 'Auf Wiedersehen',
     category: 'Greetings',
   },
   {
@@ -44,6 +48,7 @@ export const greetingsWords: VocabularyWord[] = [
     czech: 'Prosím',
     portuguese: 'Por favor',
     spanish: 'Por favor',
+    german: 'Bitte',
     category: 'Greetings',
   },
   {
@@ -53,6 +58,7 @@ export const greetingsWords: VocabularyWord[] = [
     czech: 'Děkuji',
     portuguese: 'Obrigado',
     spanish: 'Gracias',
+    german: 'Danke',
     category: 'Greetings',
   },
   {
@@ -62,6 +68,7 @@ export const greetingsWords: VocabularyWord[] = [
     czech: 'Prosím',
     portuguese: 'De nada',
     spanish: 'De nada',
+    german: 'Bitte schön',
     category: 'Greetings',
   },
 ];

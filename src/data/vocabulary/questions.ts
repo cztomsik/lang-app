@@ -8,6 +8,7 @@ export const questionsWords: VocabularyWord[] = [
     czech: 'Co',
     portuguese: 'O quê',
     spanish: 'Qué',
+    german: 'Was',
     category: 'Questions',
   },
   {
@@ -17,6 +18,7 @@ export const questionsWords: VocabularyWord[] = [
     czech: 'Kde',
     portuguese: 'Onde',
     spanish: 'Dónde',
+    german: 'Wo',
     category: 'Questions',
   },
   {
@@ -26,6 +28,7 @@ export const questionsWords: VocabularyWord[] = [
     czech: 'Kdy',
     portuguese: 'Quando',
     spanish: 'Cuándo',
+    german: 'Wann',
     category: 'Questions',
   },
   {
@@ -35,6 +38,7 @@ export const questionsWords: VocabularyWord[] = [
     czech: 'Kdo',
     portuguese: 'Quem',
     spanish: 'Quién',
+    german: 'Wer',
     category: 'Questions',
   },
   {
@@ -44,6 +48,7 @@ export const questionsWords: VocabularyWord[] = [
     czech: 'Proč',
     portuguese: 'Por quê',
     spanish: 'Por qué',
+    german: 'Warum',
     category: 'Questions',
   },
   {
@@ -53,6 +58,7 @@ export const questionsWords: VocabularyWord[] = [
     czech: 'Jak',
     portuguese: 'Como',
     spanish: 'Cómo',
+    german: 'Wie',
     category: 'Questions',
   },
   {
@@ -62,6 +68,7 @@ export const questionsWords: VocabularyWord[] = [
     czech: 'Kolik',
     portuguese: 'Quanto',
     spanish: 'Cuánto',
+    german: 'Wie viel',
     category: 'Questions',
   },
   {
@@ -71,6 +78,7 @@ export const questionsWords: VocabularyWord[] = [
     czech: 'Který',
     portuguese: 'Qual',
     spanish: 'Cuál',
+    german: 'Welche',
     category: 'Questions',
   },
   {
@@ -80,6 +88,7 @@ export const questionsWords: VocabularyWord[] = [
     czech: 'Kolik',
     portuguese: 'Quantos',
     spanish: 'Cuántos',
+    german: 'Wie viele',
     category: 'Questions',
   },
 ];

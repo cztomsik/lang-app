@@ -8,6 +8,7 @@ export const technologyWords: VocabularyWord[] = [
     czech: 'Telefon',
     portuguese: 'Telefone',
     spanish: 'Teléfono',
+    german: 'Telefon',
     category: 'Technology',
   },
   {
@@ -17,6 +18,7 @@ export const technologyWords: VocabularyWord[] = [
     czech: 'Počítač',
     portuguese: 'Computador',
     spanish: 'Computadora',
+    german: 'Computer',
     category: 'Technology',
   },
   {
@@ -26,6 +28,7 @@ export const technologyWords: VocabularyWord[] = [
     czech: 'Internet',
     portuguese: 'Internet',
     spanish: 'Internet',
+    german: 'Internet',
     category: 'Technology',
   },
   {
@@ -35,6 +38,7 @@ export const technologyWords: VocabularyWord[] = [
     czech: 'WiFi',
     portuguese: 'WiFi',
     spanish: 'WiFi',
+    german: 'WiFi',
     category: 'Technology',
   },
   {
@@ -44,6 +48,7 @@ export const technologyWords: VocabularyWord[] = [
     czech: 'Email',
     portuguese: 'Email',
     spanish: 'Email',
+    german: 'E-Mail',
     category: 'Technology',
   },
   {
@@ -53,6 +58,7 @@ export const technologyWords: VocabularyWord[] = [
     czech: 'Heslo',
     portuguese: 'Senha',
     spanish: 'Contraseña',
+    german: 'Passwort',
     category: 'Technology',
   },
   {
@@ -62,6 +68,7 @@ export const technologyWords: VocabularyWord[] = [
     czech: 'Nabíjačka',
     portuguese: 'Carregador',
     spanish: 'Cargador',
+    german: 'Ladegerät',
     category: 'Technology',
   },
   {
@@ -71,6 +78,7 @@ export const technologyWords: VocabularyWord[] = [
     czech: 'Baterie',
     portuguese: 'Bateria',
     spanish: 'Batería',
+    german: 'Batterie',
     category: 'Technology',
   },
   {
@@ -80,6 +88,7 @@ export const technologyWords: VocabularyWord[] = [
     czech: 'Fotoaparát',
     portuguese: 'Câmera',
     spanish: 'Cámara',
+    german: 'Kamera',
     category: 'Technology',
   },
 ];

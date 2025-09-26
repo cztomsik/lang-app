@@ -8,6 +8,7 @@ export const directionsWords: VocabularyWord[] = [
     czech: 'Vlevo',
     portuguese: 'Esquerda',
     spanish: 'Izquierda',
+    german: 'Links',
     category: 'Directions',
   },
   {
@@ -17,6 +18,7 @@ export const directionsWords: VocabularyWord[] = [
     czech: 'Vpravo',
     portuguese: 'Direita',
     spanish: 'Derecha',
+    german: 'Rechts',
     category: 'Directions',
   },
   {
@@ -26,6 +28,7 @@ export const directionsWords: VocabularyWord[] = [
     czech: 'Rovně',
     portuguese: 'Reto',
     spanish: 'Recto',
+    german: 'Geradeaus',
     category: 'Directions',
   },
   {
@@ -35,6 +38,7 @@ export const directionsWords: VocabularyWord[] = [
     czech: 'Sever',
     portuguese: 'Norte',
     spanish: 'Norte',
+    german: 'Norden',
     category: 'Directions',
   },
   {
@@ -44,6 +48,7 @@ export const directionsWords: VocabularyWord[] = [
     czech: 'Jih',
     portuguese: 'Sul',
     spanish: 'Sur',
+    german: 'Süden',
     category: 'Directions',
   },
   {
@@ -53,6 +58,7 @@ export const directionsWords: VocabularyWord[] = [
     czech: 'Východ',
     portuguese: 'Leste',
     spanish: 'Este',
+    german: 'Osten',
     category: 'Directions',
   },
   {
@@ -62,6 +68,7 @@ export const directionsWords: VocabularyWord[] = [
     czech: 'Západ',
     portuguese: 'Oeste',
     spanish: 'Oeste',
+    german: 'Westen',
     category: 'Directions',
   },
   {
@@ -71,6 +78,7 @@ export const directionsWords: VocabularyWord[] = [
     czech: 'Mapa',
     portuguese: 'Mapa',
     spanish: 'Mapa',
+    german: 'Karte',
     category: 'Directions',
   },
   {
@@ -80,6 +88,7 @@ export const directionsWords: VocabularyWord[] = [
     czech: 'GPS',
     portuguese: 'GPS',
     spanish: 'GPS',
+    german: 'GPS',
     category: 'Directions',
   },
 ];

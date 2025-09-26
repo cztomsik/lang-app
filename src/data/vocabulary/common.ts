@@ -8,6 +8,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Ano',
     portuguese: 'Sim',
     spanish: 'Sí',
+    german: 'Ja',
     category: 'Common',
   },
   {
@@ -17,6 +18,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Ne',
     portuguese: 'Não',
     spanish: 'No',
+    german: 'Nein',
     category: 'Common',
   },
   {
@@ -26,6 +28,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Dům',
     portuguese: 'Casa',
     spanish: 'Casa',
+    german: 'Haus',
     category: 'Common',
   },
   {
@@ -35,6 +38,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Rodina',
     portuguese: 'Família',
     spanish: 'Familia',
+    german: 'Familie',
     category: 'Common',
   },
   {
@@ -44,6 +48,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Přítel',
     portuguese: 'Amigo',
     spanish: 'Amigo',
+    german: 'Freund',
     category: 'Common',
   },
   {
@@ -53,6 +58,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Láska',
     portuguese: 'Amor',
     spanish: 'Amor',
+    german: 'Liebe',
     category: 'Common',
   },
   {
@@ -62,6 +68,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Krásný',
     portuguese: 'Bonito',
     spanish: 'Hermoso',
+    german: 'Schön',
     category: 'Common',
   },
   {
@@ -71,6 +78,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Dobrý',
     portuguese: 'Bom',
     spanish: 'Bueno',
+    german: 'Gut',
     category: 'Common',
   },
   {
@@ -80,6 +88,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Špatný',
     portuguese: 'Mau',
     spanish: 'Malo',
+    german: 'Schlecht',
     category: 'Common',
   },
   {
@@ -89,6 +98,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Velký',
     portuguese: 'Grande',
     spanish: 'Grande',
+    german: 'Groß',
     category: 'Common',
   },
   {
@@ -98,6 +108,7 @@ export const commonWords: VocabularyWord[] = [
     czech: 'Malý',
     portuguese: 'Pequeno',
     spanish: 'Pequeño',
+    german: 'Klein',
     category: 'Common',
   },
 ];

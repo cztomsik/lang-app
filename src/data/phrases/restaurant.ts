@@ -8,6 +8,7 @@ export const restaurantPhrases: Phrase[] = [
     czech: 'Stůl pro dva, prosím',
     portuguese: 'Mesa para dois, por favor',
     spanish: 'Mesa para dos, por favor',
+    german: 'Einen Tisch für zwei, bitte',
     category: 'Restaurant',
   },
   {
@@ -17,6 +18,7 @@ export const restaurantPhrases: Phrase[] = [
     czech: 'Účet, prosím',
     portuguese: 'A conta, por favor',
     spanish: 'La cuenta, por favor',
+    german: 'Die Rechnung, bitte',
     category: 'Restaurant',
   },
   {
@@ -26,6 +28,7 @@ export const restaurantPhrases: Phrase[] = [
     czech: 'Menu, prosím',
     portuguese: 'O cardápio, por favor',
     spanish: 'El menú, por favor',
+    german: 'Die Speisekarte, bitte',
     category: 'Restaurant',
   },
   {
@@ -35,6 +38,7 @@ export const restaurantPhrases: Phrase[] = [
     czech: 'Dám si tohle',
     portuguese: 'Vou querer isto',
     spanish: 'Voy a tomar esto',
+    german: 'Ich nehme das',
     category: 'Restaurant',
   },
   {
@@ -44,6 +48,7 @@ export const restaurantPhrases: Phrase[] = [
     czech: 'Je to pálivé?',
     portuguese: 'É picante?',
     spanish: '¿Está picante?',
+    german: 'Ist das scharf?',
     category: 'Restaurant',
   },
   {
@@ -53,6 +58,7 @@ export const restaurantPhrases: Phrase[] = [
     czech: 'Bez masa, prosím',
     portuguese: 'Sem carne, por favor',
     spanish: 'Sin carne, por favor',
+    german: 'Ohne Fleisch, bitte',
     category: 'Restaurant',
   },
   {
@@ -62,6 +68,7 @@ export const restaurantPhrases: Phrase[] = [
     czech: 'Ještě vodu, prosím',
     portuguese: 'Mais água, por favor',
     spanish: 'Más agua, por favor',
+    german: 'Mehr Wasser, bitte',
     category: 'Restaurant',
   },
   {
@@ -71,6 +78,7 @@ export const restaurantPhrases: Phrase[] = [
     czech: 'Tohle je chutné',
     portuguese: 'Isto está delicioso',
     spanish: 'Esto está delicioso',
+    german: 'Das ist köstlich',
     category: 'Restaurant',
   },
   {
@@ -80,6 +88,7 @@ export const restaurantPhrases: Phrase[] = [
     czech: 'Máte WiFi?',
     portuguese: 'Vocês têm WiFi?',
     spanish: '¿Tienen WiFi?',
+    german: 'Haben Sie WLAN?',
     category: 'Restaurant',
   },
   {
@@ -89,6 +98,7 @@ export const restaurantPhrases: Phrase[] = [
     czech: 'Mohu platit kartou?',
     portuguese: 'Posso pagar com cartão?',
     spanish: '¿Puedo pagar con tarjeta?',
+    german: 'Kann ich mit Karte zahlen?',
     category: 'Restaurant',
   },
 ];

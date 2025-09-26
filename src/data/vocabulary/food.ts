@@ -8,6 +8,7 @@ export const foodWords: VocabularyWord[] = [
     czech: 'Voda',
     portuguese: 'Água',
     spanish: 'Agua',
+    german: 'Wasser',
     category: 'Food',
   },
   {
@@ -17,6 +18,7 @@ export const foodWords: VocabularyWord[] = [
     czech: 'Chléb',
     portuguese: 'Pão',
     spanish: 'Pan',
+    german: 'Brot',
     category: 'Food',
   },
   {
@@ -26,6 +28,7 @@ export const foodWords: VocabularyWord[] = [
     czech: 'Víno',
     portuguese: 'Vinho',
     spanish: 'Vino',
+    german: 'Wein',
     category: 'Food',
   },
   {
@@ -35,6 +38,7 @@ export const foodWords: VocabularyWord[] = [
     czech: 'Káva',
     portuguese: 'Café',
     spanish: 'Café',
+    german: 'Kaffee',
     category: 'Food',
   },
   {
@@ -44,6 +48,7 @@ export const foodWords: VocabularyWord[] = [
     czech: 'Pizza',
     portuguese: 'Pizza',
     spanish: 'Pizza',
+    german: 'Pizza',
     category: 'Food',
   },
   {
@@ -53,6 +58,7 @@ export const foodWords: VocabularyWord[] = [
     czech: 'Těstoviny',
     portuguese: 'Massa',
     spanish: 'Pasta',
+    german: 'Nudeln',
     category: 'Food',
   },
   {
@@ -62,6 +68,7 @@ export const foodWords: VocabularyWord[] = [
     czech: 'Zmrzlina',
     portuguese: 'Sorvete',
     spanish: 'Helado',
+    german: 'Eis',
     category: 'Food',
   },
   {
@@ -71,6 +78,7 @@ export const foodWords: VocabularyWord[] = [
     czech: 'Sýr',
     portuguese: 'Queijo',
     spanish: 'Queso',
+    german: 'Käse',
     category: 'Food',
   },
   {
@@ -80,6 +88,7 @@ export const foodWords: VocabularyWord[] = [
     czech: 'Maso',
     portuguese: 'Carne',
     spanish: 'Carne',
+    german: 'Fleisch',
     category: 'Food',
   },
   {
@@ -89,6 +98,7 @@ export const foodWords: VocabularyWord[] = [
     czech: 'Ryba',
     portuguese: 'Peixe',
     spanish: 'Pescado',
+    german: 'Fisch',
     category: 'Food',
   },
 ];

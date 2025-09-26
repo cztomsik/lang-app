@@ -8,6 +8,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Šťastný',
     portuguese: 'Feliz',
     spanish: 'Feliz',
+    german: 'Glücklich',
     category: 'Emotions',
   },
   {
@@ -17,6 +18,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Smutný',
     portuguese: 'Triste',
     spanish: 'Triste',
+    german: 'Traurig',
     category: 'Emotions',
   },
   {
@@ -26,6 +28,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Nasrálý',
     portuguese: 'Bravo',
     spanish: 'Enojado',
+    german: 'Wütend',
     category: 'Emotions',
   },
   {
@@ -35,6 +38,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Unavoný',
     portuguese: 'Cansado',
     spanish: 'Cansado',
+    german: 'Müde',
     category: 'Emotions',
   },
   {
@@ -44,6 +48,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Hladný',
     portuguese: 'Com fome',
     spanish: 'Hambriento',
+    german: 'Hungrig',
     category: 'Emotions',
   },
   {
@@ -53,6 +58,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Žíznivý',
     portuguese: 'Com sede',
     spanish: 'Sediento',
+    german: 'Durstig',
     category: 'Emotions',
   },
   {
@@ -62,6 +68,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Nemocný',
     portuguese: 'Doente',
     spanish: 'Enfermo',
+    german: 'Krank',
     category: 'Emotions',
   },
   {
@@ -71,6 +78,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Vystrashený',
     portuguese: 'Assustado',
     spanish: 'Asustado',
+    german: 'Ängstlich',
     category: 'Emotions',
   },
   {
@@ -80,6 +88,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Vzrušený',
     portuguese: 'Animado',
     spanish: 'Emocionado',
+    german: 'Aufgeregt',
     category: 'Emotions',
   },
   {
@@ -89,6 +98,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Znudaný',
     portuguese: 'Entediado',
     spanish: 'Aburrido',
+    german: 'Gelangweilt',
     category: 'Emotions',
   },
   {
@@ -98,6 +108,7 @@ export const emotionsWords: VocabularyWord[] = [
     czech: 'Překvapený',
     portuguese: 'Surpreso',
     spanish: 'Sorprendido',
+    german: 'Überrascht',
     category: 'Emotions',
   },
 ];

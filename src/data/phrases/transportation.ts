@@ -8,6 +8,7 @@ export const transportationPhrases: Phrase[] = [
     czech: 'Jak se dostanu do...?',
     portuguese: 'Como chego a...?',
     spanish: '¿Cómo llego a...?',
+    german: 'Wie komme ich zu...?',
     category: 'Transportation',
   },
   {
@@ -17,6 +18,7 @@ export const transportationPhrases: Phrase[] = [
     czech: 'Je to daleko?',
     portuguese: 'É longe?',
     spanish: '¿Está lejos?',
+    german: 'Ist es weit?',
     category: 'Transportation',
   },
 ];

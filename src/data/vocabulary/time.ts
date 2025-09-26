@@ -8,6 +8,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Dnes',
     portuguese: 'Hoje',
     spanish: 'Hoy',
+    german: 'Heute',
     category: 'Time',
   },
   {
@@ -17,6 +18,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Zítra',
     portuguese: 'Amanhã',
     spanish: 'Mañana',
+    german: 'Morgen',
     category: 'Time',
   },
   {
@@ -26,6 +28,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Včera',
     portuguese: 'Ontem',
     spanish: 'Ayer',
+    german: 'Gestern',
     category: 'Time',
   },
   {
@@ -35,6 +38,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Teď',
     portuguese: 'Agora',
     spanish: 'Ahora',
+    german: 'Jetzt',
     category: 'Time',
   },
   {
@@ -44,6 +48,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Později',
     portuguese: 'Mais tarde',
     spanish: 'Después',
+    german: 'Später',
     category: 'Time',
   },
   {
@@ -53,6 +58,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Ráno',
     portuguese: 'Manhã',
     spanish: 'Mañana',
+    german: 'Morgen',
     category: 'Time',
   },
   {
@@ -62,6 +68,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Odpoledne',
     portuguese: 'Tarde',
     spanish: 'Tarde',
+    german: 'Nachmittag',
     category: 'Time',
   },
   {
@@ -71,6 +78,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'večer',
     portuguese: 'Noite',
     spanish: 'Noche',
+    german: 'Abend',
     category: 'Time',
   },
   {
@@ -80,6 +88,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Noc',
     portuguese: 'Noite',
     spanish: 'Noche',
+    german: 'Nacht',
     category: 'Time',
   },
   {
@@ -89,6 +98,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Týden',
     portuguese: 'Semana',
     spanish: 'Semana',
+    german: 'Woche',
     category: 'Time',
   },
   {
@@ -98,6 +108,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Měsíc',
     portuguese: 'Mês',
     spanish: 'Mes',
+    german: 'Monat',
     category: 'Time',
   },
   {
@@ -107,6 +118,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Rok',
     portuguese: 'Ano',
     spanish: 'Año',
+    german: 'Jahr',
     category: 'Time',
   },
   {
@@ -116,6 +128,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Vždycky',
     portuguese: 'Sempre',
     spanish: 'Siempre',
+    german: 'Immer',
     category: 'Time',
   },
   {
@@ -125,6 +138,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Nikdy',
     portuguese: 'Nunca',
     spanish: 'Nunca',
+    german: 'Nie',
     category: 'Time',
   },
   {
@@ -134,6 +148,7 @@ export const timeWords: VocabularyWord[] = [
     czech: 'Někdy',
     portuguese: 'Às vezes',
     spanish: 'A veces',
+    german: 'Manchmal',
     category: 'Time',
   },
 ];

@@ -4,7 +4,7 @@ import { useSpacedRepetition } from './hooks/useSpacedRepetition';
 import type { VocabularyWord } from './vocabulary';
 import type { Phrase } from './phrases';
 
-type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish';
+type Language = 'english' | 'italian' | 'japanese' | 'czech' | 'portuguese' | 'spanish' | 'german';
 
 import { Button, Card, WordDisplay, Input, Feedback, ChoiceButton, Header, SettingsPanel, ProgressPanel } from './components';
 
@@ -67,6 +67,8 @@ export function LangApp() {
         return { label: 'Portuguese', flag: '🇵🇹' };
       case 'spanish':
         return { label: 'Spanish', flag: '🇪🇸' };
+      case 'german':
+        return { label: 'German', flag: '🇩🇪' };
     }
   };
 
@@ -255,6 +257,9 @@ export function LangApp() {
           break;
         case 'spanish':
           langCode = 'es-ES';
+          break;
+        case 'german':
+          langCode = 'de-DE';
           break;
         default:
           langCode = 'en-US';

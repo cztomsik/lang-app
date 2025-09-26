@@ -8,6 +8,7 @@ export const directionsPhrases: Phrase[] = [
     czech: 'Zahniťte doleva',
     portuguese: 'Vire à esquerda',
     spanish: 'Gire a la izquierda',
+    german: 'Biegen Sie links ab',
     category: 'Directions',
   },
   {
@@ -17,6 +18,7 @@ export const directionsPhrases: Phrase[] = [
     czech: 'Zahniťte doprava',
     portuguese: 'Vire à direita',
     spanish: 'Gire a la derecha',
+    german: 'Biegen Sie rechts ab',
     category: 'Directions',
   },
   {
@@ -26,6 +28,7 @@ export const directionsPhrases: Phrase[] = [
     czech: 'Jděte rovně',
     portuguese: 'Siga em frente',
     spanish: 'Siga derecho',
+    german: 'Gehen Sie geradeaus',
     category: 'Directions',
   },
   {
@@ -35,6 +38,7 @@ export const directionsPhrases: Phrase[] = [
     czech: 'Je to vpravo',
     portuguese: 'Está à direita',
     spanish: 'Está a la derecha',
+    german: 'Es ist auf der rechten Seite',
     category: 'Directions',
   },
   {
@@ -44,6 +48,7 @@ export const directionsPhrases: Phrase[] = [
     czech: 'Hledám...',
     portuguese: 'Estou procurando...',
     spanish: 'Estoy buscando...',
+    german: 'Ich suche...',
     category: 'Directions',
   },
   {
@@ -53,6 +58,7 @@ export const directionsPhrases: Phrase[] = [
     czech: 'Můžete mi to ukázat na mapě?',
     portuguese: 'Você pode me mostrar no mapa?',
     spanish: '¿Puede enseñarme en el mapa?',
+    german: 'Können Sie es mir auf der Karte zeigen?',
     category: 'Directions',
   },
 ];

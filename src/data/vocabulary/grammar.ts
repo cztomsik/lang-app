@@ -8,6 +8,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Já',
     portuguese: 'Eu',
     spanish: 'Yo',
+    german: 'Ich',
     category: 'Grammar',
   },
   {
@@ -17,6 +18,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Ty',
     portuguese: 'Você',
     spanish: 'Tú',
+    german: 'Du',
     category: 'Grammar',
   },
   {
@@ -26,6 +28,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'On',
     portuguese: 'Ele',
     spanish: 'Él',
+    german: 'Er',
     category: 'Grammar',
   },
   {
@@ -35,6 +38,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Ona',
     portuguese: 'Ela',
     spanish: 'Ella',
+    german: 'Sie',
     category: 'Grammar',
   },
   {
@@ -44,6 +48,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'My',
     portuguese: 'Nós',
     spanish: 'Nosotros',
+    german: 'Wir',
     category: 'Grammar',
   },
   {
@@ -53,6 +58,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Oni',
     portuguese: 'Eles',
     spanish: 'Ellos',
+    german: 'Sie',
     category: 'Grammar',
   },
   {
@@ -62,6 +68,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Můj/Má',
     portuguese: 'Meu/Minha',
     spanish: 'Mi',
+    german: 'Mein',
     category: 'Grammar',
   },
   {
@@ -71,6 +78,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Tvůj/Tvá',
     portuguese: 'Seu/Sua',
     spanish: 'Tu',
+    german: 'Dein',
     category: 'Grammar',
   },
   {
@@ -80,6 +88,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Jeho',
     portuguese: 'Dele',
     spanish: 'Su',
+    german: 'Sein',
     category: 'Grammar',
   },
   {
@@ -89,6 +98,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Její',
     portuguese: 'Dela',
     spanish: 'Su',
+    german: 'Ihr',
     category: 'Grammar',
   },
   {
@@ -98,6 +108,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Náš',
     portuguese: 'Nosso/Nossa',
     spanish: 'Nuestro',
+    german: 'Unser',
     category: 'Grammar',
   },
   {
@@ -107,6 +118,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Jejich',
     portuguese: 'Deles/Delas',
     spanish: 'Su',
+    german: 'Ihr',
     category: 'Grammar',
   },
   {
@@ -116,6 +128,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Ten/Ta/To',
     portuguese: 'O/A/Os/As',
     spanish: 'El/La/Los/Las',
+    german: 'Der/Die/Das',
     category: 'Grammar',
   },
   {
@@ -125,6 +138,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Jeden/Jedna',
     portuguese: 'Um/Uma',
     spanish: 'Un/Una',
+    german: 'Ein/Eine',
     category: 'Grammar',
   },
   {
@@ -134,6 +148,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'V/Ve',
     portuguese: 'Em',
     spanish: 'En',
+    german: 'In',
     category: 'Grammar',
   },
   {
@@ -143,6 +158,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Na',
     portuguese: 'Em',
     spanish: 'En',
+    german: 'Bei/Auf',
     category: 'Grammar',
   },
   {
@@ -152,6 +168,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Na',
     portuguese: 'Em/Sobre',
     spanish: 'En/Sobre',
+    german: 'Auf',
     category: 'Grammar',
   },
   {
@@ -161,6 +178,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Do/K',
     portuguese: 'Para',
     spanish: 'A/Para',
+    german: 'Zu/Nach',
     category: 'Grammar',
   },
   {
@@ -170,6 +188,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Od/Z',
     portuguese: 'De',
     spanish: 'De/Desde',
+    german: 'Von/Aus',
     category: 'Grammar',
   },
   {
@@ -179,6 +198,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'S/Se',
     portuguese: 'Com',
     spanish: 'Con',
+    german: 'Mit',
     category: 'Grammar',
   },
   {
@@ -188,6 +208,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Pro',
     portuguese: 'Para',
     spanish: 'Para/Por',
+    german: 'Für',
     category: 'Grammar',
   },
   {
@@ -197,6 +218,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Z/Ze',
     portuguese: 'De',
     spanish: 'De',
+    german: 'Von',
     category: 'Grammar',
   },
   {
@@ -206,6 +228,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'A',
     portuguese: 'E',
     spanish: 'Y',
+    german: 'Und',
     category: 'Grammar',
   },
   {
@@ -215,6 +238,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Ale',
     portuguese: 'Mas',
     spanish: 'Pero',
+    german: 'Aber',
     category: 'Grammar',
   },
   {
@@ -224,6 +248,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Nebo',
     portuguese: 'Ou',
     spanish: 'O',
+    german: 'Oder',
     category: 'Grammar',
   },
   {
@@ -233,6 +258,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Můžu',
     portuguese: 'Posso',
     spanish: 'Puedo',
+    german: 'Kann',
     category: 'Grammar',
   },
   {
@@ -242,6 +268,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Musím',
     portuguese: 'Devo',
     spanish: 'Debo/Tengo que',
+    german: 'Muss',
     category: 'Grammar',
   },
   {
@@ -251,6 +278,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Líbí se',
     portuguese: 'Gostar',
     spanish: 'Gustar',
+    german: 'Mögen',
     category: 'Grammar',
   },
   {
@@ -260,6 +288,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Velmi',
     portuguese: 'Muito',
     spanish: 'Muy',
+    german: 'Sehr',
     category: 'Grammar',
   },
   {
@@ -269,6 +298,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Ne',
     portuguese: 'Não',
     spanish: 'No',
+    german: 'Nicht',
     category: 'Grammar',
   },
   {
@@ -278,6 +308,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Zde/Tady',
     portuguese: 'Aqui',
     spanish: 'Aquí',
+    german: 'Hier',
     category: 'Grammar',
   },
   {
@@ -287,6 +318,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Tam',
     portuguese: 'Lá',
     spanish: 'Allí',
+    german: 'Dort',
     category: 'Grammar',
   },
   {
@@ -296,6 +328,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Toto/Tento',
     portuguese: 'Este/Esta',
     spanish: 'Este/Esta',
+    german: 'Dies',
     category: 'Grammar',
   },
   {
@@ -305,6 +338,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'To/Tamto',
     portuguese: 'Esse/Essa',
     spanish: 'Ese/Esa',
+    german: 'Das',
     category: 'Grammar',
   },
   {
@@ -314,6 +348,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Všechno',
     portuguese: 'Tudo',
     spanish: 'Todo',
+    german: 'Alle',
     category: 'Grammar',
   },
   {
@@ -323,6 +358,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Některé',
     portuguese: 'Alguns',
     spanish: 'Algunos',
+    german: 'Einige',
     category: 'Grammar',
   },
   {
@@ -332,6 +368,7 @@ export const grammarWords: VocabularyWord[] = [
     czech: 'Mnoho',
     portuguese: 'Muitos',
     spanish: 'Muchos',
+    german: 'Viele',
     category: 'Grammar',
   },
 ];

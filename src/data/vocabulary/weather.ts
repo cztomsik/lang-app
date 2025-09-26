@@ -8,6 +8,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Horký',
     portuguese: 'Quente',
     spanish: 'Caliente',
+    german: 'Heiß',
     category: 'Weather',
   },
   {
@@ -17,6 +18,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Studený',
     portuguese: 'Frio',
     spanish: 'Frío',
+    german: 'Kalt',
     category: 'Weather',
   },
   {
@@ -26,6 +28,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Teplý',
     portuguese: 'Morno',
     spanish: 'Tibio',
+    german: 'Warm',
     category: 'Weather',
   },
   {
@@ -35,6 +38,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Chladný',
     portuguese: 'Fresco',
     spanish: 'Fresco',
+    german: 'Kühl',
     category: 'Weather',
   },
   {
@@ -44,6 +48,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Slunečný',
     portuguese: 'Ensolarado',
     spanish: 'Soleado',
+    german: 'Sonnig',
     category: 'Weather',
   },
   {
@@ -53,6 +58,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Deštivý',
     portuguese: 'Chuvoso',
     spanish: 'Lluvioso',
+    german: 'Regnerisch',
     category: 'Weather',
   },
   {
@@ -62,6 +68,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Zatažený',
     portuguese: 'Nublado',
     spanish: 'Nublado',
+    german: 'Wolkig',
     category: 'Weather',
   },
   {
@@ -71,6 +78,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Větrný',
     portuguese: 'Ventoso',
     spanish: 'Ventoso',
+    german: 'Windig',
     category: 'Weather',
   },
   {
@@ -80,6 +88,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Sněžný',
     portuguese: 'Nevado',
     spanish: 'Nevado',
+    german: 'Schneereich',
     category: 'Weather',
   },
   {
@@ -89,6 +98,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Jaro',
     portuguese: 'Primavera',
     spanish: 'Primavera',
+    german: 'Frühling',
     category: 'Weather',
   },
   {
@@ -98,6 +108,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Léto',
     portuguese: 'Verão',
     spanish: 'Verano',
+    german: 'Sommer',
     category: 'Weather',
   },
   {
@@ -107,6 +118,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Podzim',
     portuguese: 'Outono',
     spanish: 'Otoño',
+    german: 'Herbst',
     category: 'Weather',
   },
   {
@@ -116,6 +128,7 @@ export const weatherWords: VocabularyWord[] = [
     czech: 'Zima',
     portuguese: 'Inverno',
     spanish: 'Invierno',
+    german: 'Winter',
     category: 'Weather',
   },
 ];

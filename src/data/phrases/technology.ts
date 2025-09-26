@@ -8,6 +8,7 @@ export const technologyPhrases: Phrase[] = [
     czech: 'Můj telefon je vybitý',
     portuguese: 'Meu telefone está sem bateria',
     spanish: 'Mi teléfono está muerto',
+    german: 'Mein Handy ist leer',
     category: 'Technology',
   },
   {
@@ -17,6 +18,7 @@ export const technologyPhrases: Phrase[] = [
     czech: 'Kde to mohu nabít?',
     portuguese: 'Onde posso carregar isto?',
     spanish: '¿Dónde puedo cargar esto?',
+    german: 'Wo kann ich das aufladen?',
     category: 'Technology',
   },
   {
@@ -26,6 +28,7 @@ export const technologyPhrases: Phrase[] = [
     czech: 'Jaké je heslo k WiFi?',
     portuguese: 'Qual é a senha do WiFi?',
     spanish: '¿Cuál es la contraseña del WiFi?',
+    german: 'Wie ist das WLAN-Passwort?',
     category: 'Technology',
   },
   {
@@ -35,6 +38,7 @@ export const technologyPhrases: Phrase[] = [
     czech: 'Můžete vyčit fotku?',
     portuguese: 'Você pode tirar uma foto?',
     spanish: '¿Puede tomar una foto?',
+    german: 'Können Sie ein Foto machen?',
     category: 'Technology',
   },
 ];

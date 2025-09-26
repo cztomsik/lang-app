@@ -8,6 +8,7 @@ export const weatherPhrases: Phrase[] = [
     czech: 'Jaké je počasí?',
     portuguese: 'Como está o tempo?',
     spanish: '¿Cómo está el clima?',
+    german: 'Wie ist das Wetter?',
     category: 'Weather',
   },
   {
@@ -17,6 +18,7 @@ export const weatherPhrases: Phrase[] = [
     czech: 'Prší',
     portuguese: 'Está chovendo',
     spanish: 'Está lloviendo',
+    german: 'Es regnet',
     category: 'Weather',
   },
   {
@@ -26,6 +28,7 @@ export const weatherPhrases: Phrase[] = [
     czech: 'Potřebuji deštník',
     portuguese: 'Preciso de um guarda-chuva',
     spanish: 'Necesito un paraguas',
+    german: 'Ich brauche einen Regenschirm',
     category: 'Weather',
   },
 ];

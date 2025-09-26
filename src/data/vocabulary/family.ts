@@ -8,6 +8,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Matka',
     portuguese: 'Mãe',
     spanish: 'Madre',
+    german: 'Mutter',
     category: 'Family',
   },
   {
@@ -17,6 +18,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Otec',
     portuguese: 'Pai',
     spanish: 'Padre',
+    german: 'Vater',
     category: 'Family',
   },
   {
@@ -26,6 +28,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Rodiče',
     portuguese: 'Pais',
     spanish: 'Padres',
+    german: 'Eltern',
     category: 'Family',
   },
   {
@@ -35,6 +38,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Syn',
     portuguese: 'Filho',
     spanish: 'Hijo',
+    german: 'Sohn',
     category: 'Family',
   },
   {
@@ -44,6 +48,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Dcera',
     portuguese: 'Filha',
     spanish: 'Hija',
+    german: 'Tochter',
     category: 'Family',
   },
   {
@@ -53,6 +58,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Bratr',
     portuguese: 'Irmão',
     spanish: 'Hermano',
+    german: 'Bruder',
     category: 'Family',
   },
   {
@@ -62,6 +68,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Sestra',
     portuguese: 'Irmã',
     spanish: 'Hermana',
+    german: 'Schwester',
     category: 'Family',
   },
   {
@@ -71,6 +78,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Dědeček',
     portuguese: 'Avô',
     spanish: 'Abuelo',
+    german: 'Großvater',
     category: 'Family',
   },
   {
@@ -80,6 +88,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Babička',
     portuguese: 'Avó',
     spanish: 'Abuela',
+    german: 'Großmutter',
     category: 'Family',
   },
   {
@@ -89,6 +98,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Manžel',
     portuguese: 'Marido',
     spanish: 'Esposo',
+    german: 'Ehemann',
     category: 'Family',
   },
   {
@@ -98,6 +108,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Manželka',
     portuguese: 'Esposa',
     spanish: 'Esposa',
+    german: 'Ehefrau',
     category: 'Family',
   },
   {
@@ -107,6 +118,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Dítě',
     portuguese: 'Criança',
     spanish: 'Niño',
+    german: 'Kind',
     category: 'Family',
   },
   {
@@ -116,6 +128,7 @@ export const familyWords: VocabularyWord[] = [
     czech: 'Mimino',
     portuguese: 'Bebê',
     spanish: 'Bebé',
+    german: 'Baby',
     category: 'Family',
   },
 ];

@@ -8,6 +8,7 @@ export const shoppingPhrases: Phrase[] = [
     czech: 'Kolik tohle stojí?',
     portuguese: 'Quanto custa isto?',
     spanish: '¿Cuánto cuesta esto?',
+    german: 'Wie viel kostet das?',
     category: 'Shopping',
   },
   {
@@ -17,6 +18,7 @@ export const shoppingPhrases: Phrase[] = [
     czech: 'Mohu si tohle zkusit?',
     portuguese: 'Posso experimentar isto?',
     spanish: '¿Puedo probarme esto?',
+    german: 'Kann ich das anprobieren?',
     category: 'Shopping',
   },
   {
@@ -26,6 +28,7 @@ export const shoppingPhrases: Phrase[] = [
     czech: 'Máte tohle ve velikosti L?',
     portuguese: 'Vocês têm isto em tamanho grande?',
     spanish: '¿Tienen esto en talla grande?',
+    german: 'Haben Sie das in groß?',
     category: 'Shopping',
   },
   {
@@ -35,6 +38,7 @@ export const shoppingPhrases: Phrase[] = [
     czech: 'Jiná barva?',
     portuguese: 'Cor diferente?',
     spanish: '¿Color diferente?',
+    german: 'Andere Farbe?',
     category: 'Shopping',
   },
   {
@@ -44,6 +48,7 @@ export const shoppingPhrases: Phrase[] = [
     czech: 'Příliš drahé',
     portuguese: 'Muito caro',
     spanish: 'Muy caro',
+    german: 'Zu teuer',
     category: 'Shopping',
   },
   {
@@ -53,6 +58,7 @@ export const shoppingPhrases: Phrase[] = [
     czech: 'Vezmu si to',
     portuguese: 'Vou levar',
     spanish: 'Me lo llevo',
+    german: 'Ich nehme es',
     category: 'Shopping',
   },
   {
@@ -62,6 +68,7 @@ export const shoppingPhrases: Phrase[] = [
     czech: 'Igelitku, prosím',
     portuguese: 'Saco plástico, por favor',
     spanish: 'Bolsa plástica, por favor',
+    german: 'Eine Tüte, bitte',
     category: 'Shopping',
   },
   {
@@ -71,6 +78,7 @@ export const shoppingPhrases: Phrase[] = [
     czech: 'Účtenku, prosím',
     portuguese: 'Recibo, por favor',
     spanish: 'Recibo, por favor',
+    german: 'Quittung, bitte',
     category: 'Shopping',
   },
 ];

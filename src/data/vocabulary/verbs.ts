@@ -8,6 +8,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Být',
     portuguese: 'Ser/Estar',
     spanish: 'Ser/Estar',
+    german: 'Sein',
     category: 'Verbs',
   },
   {
@@ -17,6 +18,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Mít',
     portuguese: 'Ter',
     spanish: 'Tener',
+    german: 'Haben',
     category: 'Verbs',
   },
   {
@@ -26,6 +28,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Dělat',
     portuguese: 'Fazer',
     spanish: 'Hacer',
+    german: 'Machen',
     category: 'Verbs',
   },
   {
@@ -35,6 +38,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Jít',
     portuguese: 'Ir',
     spanish: 'Ir',
+    german: 'Gehen',
     category: 'Verbs',
   },
   {
@@ -44,6 +48,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Přijít',
     portuguese: 'Vir',
     spanish: 'Venir',
+    german: 'Kommen',
     category: 'Verbs',
   },
   {
@@ -53,6 +58,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Chtít',
     portuguese: 'Querer',
     spanish: 'Querer',
+    german: 'Wollen',
     category: 'Verbs',
   },
   {
@@ -62,6 +68,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Jíst',
     portuguese: 'Comer',
     spanish: 'Comer',
+    german: 'Essen',
     category: 'Verbs',
   },
   {
@@ -71,6 +78,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Pít',
     portuguese: 'Beber',
     spanish: 'Beber',
+    german: 'Trinken',
     category: 'Verbs',
   },
   {
@@ -80,6 +88,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Vidět',
     portuguese: 'Ver',
     spanish: 'Ver',
+    german: 'Sehen',
     category: 'Verbs',
   },
   {
@@ -89,6 +98,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Mluvit',
     portuguese: 'Falar',
     spanish: 'Hablar',
+    german: 'Sprechen',
     category: 'Verbs',
   },
   {
@@ -98,6 +108,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Rozumět',
     portuguese: 'Entender',
     spanish: 'Entender',
+    german: 'Verstehen',
     category: 'Verbs',
   },
   {
@@ -107,6 +118,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Vědět',
     portuguese: 'Saber',
     spanish: 'Saber',
+    german: 'Wissen',
     category: 'Verbs',
   },
   {
@@ -116,6 +128,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Myslet',
     portuguese: 'Pensar',
     spanish: 'Pensar',
+    german: 'Denken',
     category: 'Verbs',
   },
   {
@@ -125,6 +138,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Pracovat',
     portuguese: 'Trabalhar',
     spanish: 'Trabajar',
+    german: 'Arbeiten',
     category: 'Verbs',
   },
   {
@@ -134,6 +148,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Spát',
     portuguese: 'Dormir',
     spanish: 'Dormir',
+    german: 'Schlafen',
     category: 'Verbs',
   },
   {
@@ -143,6 +158,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Žít',
     portuguese: 'Viver',
     spanish: 'Vivir',
+    german: 'Leben',
     category: 'Verbs',
   },
   {
@@ -152,6 +168,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Kupovat',
     portuguese: 'Comprar',
     spanish: 'Comprar',
+    german: 'Kaufen',
     category: 'Verbs',
   },
   {
@@ -161,6 +178,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Prodávat',
     portuguese: 'Vender',
     spanish: 'Vender',
+    german: 'Verkaufen',
     category: 'Verbs',
   },
   {
@@ -170,6 +188,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Číst',
     portuguese: 'Ler',
     spanish: 'Leer',
+    german: 'Lesen',
     category: 'Verbs',
   },
   {
@@ -179,6 +198,7 @@ export const verbsWords: VocabularyWord[] = [
     czech: 'Psát',
     portuguese: 'Escrever',
     spanish: 'Escribir',
+    german: 'Schreiben',
     category: 'Verbs',
   },
 ];

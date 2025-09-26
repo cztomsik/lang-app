@@ -8,6 +8,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Červená',
     portuguese: 'Vermelho',
     spanish: 'Rojo',
+    german: 'Rot',
     category: 'Colors',
   },
   {
@@ -17,6 +18,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Modrá',
     portuguese: 'Azul',
     spanish: 'Azul',
+    german: 'Blau',
     category: 'Colors',
   },
   {
@@ -26,6 +28,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Zelená',
     portuguese: 'Verde',
     spanish: 'Verde',
+    german: 'Grün',
     category: 'Colors',
   },
   {
@@ -35,6 +38,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Žlutá',
     portuguese: 'Amarelo',
     spanish: 'Amarillo',
+    german: 'Gelb',
     category: 'Colors',
   },
   {
@@ -44,6 +48,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Černá',
     portuguese: 'Preto',
     spanish: 'Negro',
+    german: 'Schwarz',
     category: 'Colors',
   },
   {
@@ -53,6 +58,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Bílá',
     portuguese: 'Branco',
     spanish: 'Blanco',
+    german: 'Weiß',
     category: 'Colors',
   },
   {
@@ -62,6 +68,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Oranžová',
     portuguese: 'Laranja',
     spanish: 'Naranja',
+    german: 'Orange',
     category: 'Colors',
   },
   {
@@ -71,6 +78,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Fialová',
     portuguese: 'Roxo',
     spanish: 'Morado',
+    german: 'Lila',
     category: 'Colors',
   },
   {
@@ -80,6 +88,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Růžová',
     portuguese: 'Rosa',
     spanish: 'Rosa',
+    german: 'Rosa',
     category: 'Colors',
   },
   {
@@ -89,6 +98,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Hnědá',
     portuguese: 'Marrom',
     spanish: 'Marrón',
+    german: 'Braun',
     category: 'Colors',
   },
   {
@@ -98,6 +108,7 @@ export const colorsWords: VocabularyWord[] = [
     czech: 'Šedá',
     portuguese: 'Cinza',
     spanish: 'Gris',
+    german: 'Grau',
     category: 'Colors',
   },
 ];

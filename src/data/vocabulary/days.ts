@@ -8,6 +8,7 @@ export const daysWords: VocabularyWord[] = [
     czech: 'Pondělí',
     portuguese: 'Segunda-feira',
     spanish: 'Lunes',
+    german: 'Montag',
     category: 'Days',
   },
   {
@@ -17,6 +18,7 @@ export const daysWords: VocabularyWord[] = [
     czech: 'Úterý',
     portuguese: 'Terça-feira',
     spanish: 'Martes',
+    german: 'Dienstag',
     category: 'Days',
   },
   {
@@ -26,6 +28,7 @@ export const daysWords: VocabularyWord[] = [
     czech: 'Středa',
     portuguese: 'Quarta-feira',
     spanish: 'Miércoles',
+    german: 'Mittwoch',
     category: 'Days',
   },
   {
@@ -35,6 +38,7 @@ export const daysWords: VocabularyWord[] = [
     czech: 'Čtvrtek',
     portuguese: 'Quinta-feira',
     spanish: 'Jueves',
+    german: 'Donnerstag',
     category: 'Days',
   },
   {
@@ -44,6 +48,7 @@ export const daysWords: VocabularyWord[] = [
     czech: 'Pátek',
     portuguese: 'Sexta-feira',
     spanish: 'Viernes',
+    german: 'Freitag',
     category: 'Days',
   },
   {
@@ -53,6 +58,7 @@ export const daysWords: VocabularyWord[] = [
     czech: 'Sobota',
     portuguese: 'Sábado',
     spanish: 'Sábado',
+    german: 'Samstag',
     category: 'Days',
   },
   {
@@ -62,6 +68,7 @@ export const daysWords: VocabularyWord[] = [
     czech: 'Neděle',
     portuguese: 'Domingo',
     spanish: 'Domingo',
+    german: 'Sonntag',
     category: 'Days',
   },
 ];

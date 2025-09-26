@@ -8,6 +8,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Domov',
     portuguese: 'Casa',
     spanish: 'Casa',
+    german: 'Zuhause',
     category: 'Places',
   },
   {
@@ -17,6 +18,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Škola',
     portuguese: 'Escola',
     spanish: 'Escuela',
+    german: 'Schule',
     category: 'Places',
   },
   {
@@ -26,6 +28,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Práce',
     portuguese: 'Trabalho',
     spanish: 'Trabajo',
+    german: 'Arbeit',
     category: 'Places',
   },
   {
@@ -35,6 +38,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Obchod',
     portuguese: 'Loja',
     spanish: 'Tienda',
+    german: 'Geschäft',
     category: 'Places',
   },
   {
@@ -44,6 +48,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Restaurace',
     portuguese: 'Restaurante',
     spanish: 'Restaurante',
+    german: 'Restaurant',
     category: 'Places',
   },
   {
@@ -53,6 +58,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Hotel',
     portuguese: 'Hotel',
     spanish: 'Hotel',
+    german: 'Hotel',
     category: 'Places',
   },
   {
@@ -62,6 +68,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Nemocnice',
     portuguese: 'Hospital',
     spanish: 'Hospital',
+    german: 'Krankenhaus',
     category: 'Places',
   },
   {
@@ -71,6 +78,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Stanice',
     portuguese: 'Estação',
     spanish: 'Estación',
+    german: 'Bahnhof',
     category: 'Places',
   },
   {
@@ -80,6 +88,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Letiště',
     portuguese: 'Aeroporto',
     spanish: 'Aeropuerto',
+    german: 'Flughafen',
     category: 'Places',
   },
   {
@@ -89,6 +98,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Banka',
     portuguese: 'Banco',
     spanish: 'Banco',
+    german: 'Bank',
     category: 'Places',
   },
   {
@@ -98,6 +108,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Pošta',
     portuguese: 'Correios',
     spanish: 'Oficina de correos',
+    german: 'Post',
     category: 'Places',
   },
   {
@@ -107,6 +118,7 @@ export const placesWords: VocabularyWord[] = [
     czech: 'Koupelna',
     portuguese: 'Banheiro',
     spanish: 'Baño',
+    german: 'Badezimmer',
     category: 'Places',
   },
 ];

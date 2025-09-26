@@ -17,6 +17,7 @@ export type Phrase = {
   czech: string;
   portuguese: string;
   spanish: string;
+  german: string;
   category: string;
 };
 

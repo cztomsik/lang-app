@@ -8,6 +8,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Hlava',
     portuguese: 'Cabeça',
     spanish: 'Cabeza',
+    german: 'Kopf',
     category: 'Body',
   },
   {
@@ -17,6 +18,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Vlasy',
     portuguese: 'Cabelo',
     spanish: 'Cabello',
+    german: 'Haar',
     category: 'Body',
   },
   {
@@ -26,6 +28,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Tvář',
     portuguese: 'Rosto',
     spanish: 'Cara',
+    german: 'Gesicht',
     category: 'Body',
   },
   {
@@ -35,6 +38,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Oči',
     portuguese: 'Olhos',
     spanish: 'Ojos',
+    german: 'Augen',
     category: 'Body',
   },
   {
@@ -44,6 +48,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Nos',
     portuguese: 'Nariz',
     spanish: 'Nariz',
+    german: 'Nase',
     category: 'Body',
   },
   {
@@ -53,6 +58,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Ústa',
     portuguese: 'Boca',
     spanish: 'Boca',
+    german: 'Mund',
     category: 'Body',
   },
   {
@@ -62,6 +68,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Zuby',
     portuguese: 'Dentes',
     spanish: 'Dientes',
+    german: 'Zähne',
     category: 'Body',
   },
   {
@@ -71,6 +78,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Ucho',
     portuguese: 'Orelha',
     spanish: 'Oreja',
+    german: 'Ohr',
     category: 'Body',
   },
   {
@@ -80,6 +88,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Krk',
     portuguese: 'Pescoço',
     spanish: 'Cuello',
+    german: 'Hals',
     category: 'Body',
   },
   {
@@ -89,6 +98,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Rameno',
     portuguese: 'Ombro',
     spanish: 'Hombro',
+    german: 'Schulter',
     category: 'Body',
   },
   {
@@ -98,6 +108,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Paže',
     portuguese: 'Braço',
     spanish: 'Brazo',
+    german: 'Arm',
     category: 'Body',
   },
   {
@@ -107,6 +118,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Ruka',
     portuguese: 'Mão',
     spanish: 'Mano',
+    german: 'Hand',
     category: 'Body',
   },
   {
@@ -116,6 +128,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Prst',
     portuguese: 'Dedo',
     spanish: 'Dedo',
+    german: 'Finger',
     category: 'Body',
   },
   {
@@ -125,6 +138,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Hrudík',
     portuguese: 'Peito',
     spanish: 'Pecho',
+    german: 'Brust',
     category: 'Body',
   },
   {
@@ -134,6 +148,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Záda',
     portuguese: 'Costas',
     spanish: 'Espalda',
+    german: 'Rücken',
     category: 'Body',
   },
   {
@@ -143,6 +158,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Břicho',
     portuguese: 'Barriga',
     spanish: 'Estómago',
+    german: 'Bauch',
     category: 'Body',
   },
   {
@@ -152,6 +168,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Noha',
     portuguese: 'Perna',
     spanish: 'Pierna',
+    german: 'Bein',
     category: 'Body',
   },
   {
@@ -161,6 +178,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Koleno',
     portuguese: 'Joelho',
     spanish: 'Rodilla',
+    german: 'Knie',
     category: 'Body',
   },
   {
@@ -170,6 +188,7 @@ export const bodyWords: VocabularyWord[] = [
     czech: 'Chodidlo',
     portuguese: 'Pé',
     spanish: 'Pie',
+    german: 'Fuß',
     category: 'Body',
   },
 ];

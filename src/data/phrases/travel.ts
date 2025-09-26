@@ -8,6 +8,7 @@ export const travelPhrases: Phrase[] = [
     czech: 'Jeden lístek, prosím',
     portuguese: 'Um bilhete, por favor',
     spanish: 'Un boleto, por favor',
+    german: 'Ein Ticket, bitte',
     category: 'Travel',
   },
   {
@@ -17,6 +18,7 @@ export const travelPhrases: Phrase[] = [
     czech: 'Zpáteční lístek',
     portuguese: 'Bilhete de ida e volta',
     spanish: 'Boleto de ida y vuelta',
+    german: 'Hin- und Rückfahrkarte',
     category: 'Travel',
   },
   {
@@ -26,6 +28,7 @@ export const travelPhrases: Phrase[] = [
     czech: 'V kolik jede vlak?',
     portuguese: 'Que horas é o trem?',
     spanish: '¿A qué hora es el tren?',
+    german: 'Um wie viel Uhr fährt der Zug?',
     category: 'Travel',
   },
   {
@@ -35,6 +38,7 @@ export const travelPhrases: Phrase[] = [
     czech: 'Číslo nástupiště?',
     portuguese: 'Número da plataforma?',
     spanish: '¿Número de andén?',
+    german: 'Welches Gleis?',
     category: 'Travel',
   },
   {
@@ -44,6 +48,7 @@ export const travelPhrases: Phrase[] = [
     czech: 'Je tohle místo volné?',
     portuguese: 'Este lugar está livre?',
     spanish: '¿Está libre este asiento?',
+    german: 'Ist dieser Platz frei?',
     category: 'Travel',
   },
   {
@@ -53,6 +58,7 @@ export const travelPhrases: Phrase[] = [
     czech: 'Mám rezervaci',
     portuguese: 'Tenho uma reserva',
     spanish: 'Tengo una reservación',
+    german: 'Ich habe eine Reservierung',
     category: 'Travel',
   },
   {
@@ -62,6 +68,7 @@ export const travelPhrases: Phrase[] = [
     czech: 'Check-in, prosím',
     portuguese: 'Check-in, por favor',
     spanish: 'Check-in, por favor',
+    german: 'Einchecken, bitte',
     category: 'Travel',
   },
   {
@@ -71,6 +78,7 @@ export const travelPhrases: Phrase[] = [
     czech: 'Můj pas',
     portuguese: 'Meu passaporte',
     spanish: 'Mi pasaporte',
+    german: 'Mein Reisepass',
     category: 'Travel',
   },
   {
@@ -80,6 +88,7 @@ export const travelPhrases: Phrase[] = [
     czech: 'Který gate?',
     portuguese: 'Qual portão?',
     spanish: '¿Cuál puerta?',
+    german: 'Welcher Gate?',
     category: 'Travel',
   },
   {
@@ -89,6 +98,7 @@ export const travelPhrases: Phrase[] = [
     czech: 'Je let opožděný?',
     portuguese: 'O voo está atrasado?',
     spanish: '¿Está retrasado el vuelo?',
+    german: 'Ist der Flug verspätet?',
     category: 'Travel',
   },
 ];

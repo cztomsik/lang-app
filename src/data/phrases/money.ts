@@ -8,6 +8,7 @@ export const moneyPhrases: Phrase[] = [
     czech: 'Kde je bankomat?',
     portuguese: 'Onde é o caixa eletrônico?',
     spanish: '¿Dónde está el cajero?',
+    german: 'Wo ist der Geldautomat?',
     category: 'Money',
   },
   {
@@ -17,6 +18,7 @@ export const moneyPhrases: Phrase[] = [
     czech: 'Můžete rozměnit tuto bankovku?',
     portuguese: 'Pode trocar esta nota?',
     spanish: '¿Puede cambiar este billete?',
+    german: 'Können Sie diesen Schein wechseln?',
     category: 'Money',
   },
   {
@@ -26,6 +28,7 @@ export const moneyPhrases: Phrase[] = [
     czech: 'Je spršné začenuto?',
     portuguese: 'A gorjeta está incluída?',
     spanish: '¿Está incluida la propina?',
+    german: 'Ist das Trinkgeld inbegriffen?',
     category: 'Money',
   },
   {
@@ -35,6 +38,7 @@ export const moneyPhrases: Phrase[] = [
     czech: 'Kolik to stojí?',
     portuguese: 'Quanto custa?',
     spanish: '¿Cuánto cuesta?',
+    german: 'Wie viel kostet das?',
     category: 'Money',
   },
 ];

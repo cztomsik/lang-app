@@ -8,6 +8,7 @@ export const numbersWords: VocabularyWord[] = [
     czech: 'Jeden',
     portuguese: 'Um',
     spanish: 'Uno',
+    german: 'Eins',
     category: 'Numbers',
   },
   {
@@ -17,6 +18,7 @@ export const numbersWords: VocabularyWord[] = [
     czech: 'Dva',
     portuguese: 'Dois',
     spanish: 'Dos',
+    german: 'Zwei',
     category: 'Numbers',
   },
   {
@@ -26,6 +28,7 @@ export const numbersWords: VocabularyWord[] = [
     czech: 'Tři',
     portuguese: 'Três',
     spanish: 'Tres',
+    german: 'Drei',
     category: 'Numbers',
   },
   {
@@ -35,6 +38,7 @@ export const numbersWords: VocabularyWord[] = [
     czech: 'Čtyři',
     portuguese: 'Quatro',
     spanish: 'Cuatro',
+    german: 'Vier',
     category: 'Numbers',
   },
   {
@@ -44,6 +48,7 @@ export const numbersWords: VocabularyWord[] = [
     czech: 'Pět',
     portuguese: 'Cinco',
     spanish: 'Cinco',
+    german: 'Fünf',
     category: 'Numbers',
   },
   {
@@ -53,6 +58,7 @@ export const numbersWords: VocabularyWord[] = [
     czech: 'Šest',
     portuguese: 'Seis',
     spanish: 'Seis',
+    german: 'Sechs',
     category: 'Numbers',
   },
   {
@@ -62,6 +68,7 @@ export const numbersWords: VocabularyWord[] = [
     czech: 'Sedm',
     portuguese: 'Sete',
     spanish: 'Siete',
+    german: 'Sieben',
     category: 'Numbers',
   },
   {
@@ -71,6 +78,7 @@ export const numbersWords: VocabularyWord[] = [
     czech: 'Osm',
     portuguese: 'Oito',
     spanish: 'Ocho',
+    german: 'Acht',
     category: 'Numbers',
   },
   {
@@ -80,6 +88,7 @@ export const numbersWords: VocabularyWord[] = [
     czech: 'Devět',
     portuguese: 'Nove',
     spanish: 'Nueve',
+    german: 'Neun',
     category: 'Numbers',
   },
   {
@@ -89,6 +98,7 @@ export const numbersWords: VocabularyWord[] = [
     czech: 'Deset',
     portuguese: 'Dez',
     spanish: 'Diez',
+    german: 'Zehn',
     category: 'Numbers',
   },
 ];

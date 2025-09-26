@@ -8,6 +8,7 @@ export const healthPhrases: Phrase[] = [
     czech: 'Bolí mě hlava',
     portuguese: 'Minha cabeça dói',
     spanish: 'Me duele la cabeza',
+    german: 'Mein Kopf tut weh',
     category: 'Health',
   },
   {
@@ -17,6 +18,7 @@ export const healthPhrases: Phrase[] = [
     czech: 'Mám horŭčku',
     portuguese: 'Tenho febre',
     spanish: 'Tengo fiebre',
+    german: 'Ich habe Fieber',
     category: 'Health',
   },
   {
@@ -26,6 +28,7 @@ export const healthPhrases: Phrase[] = [
     czech: 'Je mi závratě',
     portuguese: 'Sinto-me tonto',
     spanish: 'Me siento mareado',
+    german: 'Mir ist schwindelig',
     category: 'Health',
   },
   {
@@ -35,6 +38,7 @@ export const healthPhrases: Phrase[] = [
     czech: 'Potřebuji léky',
     portuguese: 'Preciso de remédios',
     spanish: 'Necesito medicina',
+    german: 'Ich brauche Medikamente',
     category: 'Health',
   },
   {
@@ -44,6 +48,7 @@ export const healthPhrases: Phrase[] = [
     czech: 'Kde je lékárna?',
     portuguese: 'Onde é a farmácia?',
     spanish: '¿Dónde está la farmacia?',
+    german: 'Wo ist die Apotheke?',
     category: 'Health',
   },
   {
@@ -53,6 +58,7 @@ export const healthPhrases: Phrase[] = [
     czech: 'Jsem alergický na...',
     portuguese: 'Sou alérgico a...',
     spanish: 'Soy alérgico a...',
+    german: 'Ich bin allergisch gegen...',
     category: 'Health',
   },
   {
@@ -62,6 +68,7 @@ export const healthPhrases: Phrase[] = [
     czech: 'Zavolejte lékaře',
     portuguese: 'Chame um médico',
     spanish: 'Llame un médico',
+    german: 'Rufen Sie einen Arzt',
     category: 'Health',
   },
   {
@@ -71,6 +78,7 @@ export const healthPhrases: Phrase[] = [
     czech: 'Řízl jsem si prst',
     portuguese: 'Cortei meu dedo',
     spanish: 'Me corté el dedo',
+    german: 'Ich habe mir den Finger geschnitten',
     category: 'Health',
   },
 ];

@@ -8,6 +8,7 @@ export const basicPhrases: Phrase[] = [
     czech: 'Prominťte',
     portuguese: 'Com licença',
     spanish: 'Disculpe',
+    german: 'Entschuldigung',
     category: 'Basic',
   },
   {
@@ -17,6 +18,7 @@ export const basicPhrases: Phrase[] = [
     czech: 'Promiňte',
     portuguese: 'Desculpe',
     spanish: 'Lo siento',
+    german: 'Es tut mir leid',
     category: 'Basic',
   },
   {
@@ -26,6 +28,7 @@ export const basicPhrases: Phrase[] = [
     czech: 'Pomoc',
     portuguese: 'Ajuda',
     spanish: 'Ayuda',
+    german: 'Hilfe',
     category: 'Basic',
   },
   {
@@ -35,6 +38,7 @@ export const basicPhrases: Phrase[] = [
     czech: 'Nerozumím',
     portuguese: 'Não entendo',
     spanish: 'No entiendo',
+    german: 'Ich verstehe nicht',
     category: 'Basic',
   },
   {
@@ -44,6 +48,7 @@ export const basicPhrases: Phrase[] = [
     czech: 'Mluvite anglicky?',
     portuguese: 'Você fala inglês?',
     spanish: '¿Habla inglés?',
+    german: 'Sprechen Sie Englisch?',
     category: 'Basic',
   },
   {
@@ -53,6 +58,7 @@ export const basicPhrases: Phrase[] = [
     czech: 'Kolik to stojí?',
     portuguese: 'Quanto custa?',
     spanish: '¿Cuánto cuesta?',
+    german: 'Wie viel kostet das?',
     category: 'Basic',
   },
   {
@@ -62,6 +68,7 @@ export const basicPhrases: Phrase[] = [
     czech: 'Kde je...?',
     portuguese: 'Onde é...?',
     spanish: '¿Dónde está...?',
+    german: 'Wo ist...?',
     category: 'Basic',
   },
   {
@@ -71,6 +78,7 @@ export const basicPhrases: Phrase[] = [
     czech: 'Chtěl bych...',
     portuguese: 'Eu gostaria...',
     spanish: 'Me gustaría...',
+    german: 'Ich hätte gern...',
     category: 'Basic',
   },
   {
@@ -80,6 +88,7 @@ export const basicPhrases: Phrase[] = [
     czech: 'Můžete mi pomoci?',
     portuguese: 'Você pode me ajudar?',
     spanish: '¿Puede ayudarme?',
+    german: 'Können Sie mir helfen?',
     category: 'Basic',
   },
   {
@@ -89,6 +98,7 @@ export const basicPhrases: Phrase[] = [
     czech: 'Těší mě',
     portuguese: 'Prazer em conhecê-lo',
     spanish: 'Mucho gusto',
+    german: 'Freut mich Sie kennenzulernen',
     category: 'Basic',
   },
 ];
